@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=LXGW+WenKai+TC:wght@400;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
 <style>
-/* Layout：一條由上往下的闖關路線（開場 → 四關 → 收尾），每關的遊戲以全螢幕「作戰桌」疊在上面；手機切換成玩家端。 */
+/* Layout：一條由上往下的闖關路線（開場 → 四關 → 收尾），每關的遊戲以全螢幕「作戰桌」疊在上面； */
 :root{
   --paper:#EEF0EA; --paper-a:rgba(238,240,234,.93); --panel:#E3E7DF; --card:#F7F8F4;
   --ink:#16302B; --ink-2:#4C5F58; --ink-3:#77877F;
@@ -126,7 +126,7 @@ body.show-notes .notes{display:block}
 .chips{display:flex;flex-wrap:wrap;gap:6px;max-height:9em;overflow:auto}
 .chip{font-size:.82em;padding:2px 10px;border-radius:99px;background:var(--panel);border:1px solid var(--line);animation:pop .35s ease-out}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
-.route4{margin-top:clamp(32px,4.5vw,56px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.route4{margin-top:clamp(32px,4.5vw,56px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .lv{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:14px 14px 12px;display:grid;gap:4px;align-content:start}
 .lv .no{font-family:var(--f-num);font-weight:700;font-size:28px;line-height:1}
 .lv b{font-size:1.02em}
@@ -163,7 +163,7 @@ body.show-notes .notes{display:block}
 .ask .k{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--f-num);font-weight:700;font-size:22px}
 .ask b{font-size:.92em}
 .ask p{font-family:var(--f-hand);font-size:clamp(17px,1.45vw,21px);line-height:1.5}
-.homework{margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.homework{margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 footer{padding-block:40px 80px;color:var(--ink-3);font-size:.82em}
 
 /* ---------- 按鈕 ---------- */
@@ -310,25 +310,6 @@ footer{padding-block:40px 80px;color:var(--ink-3);font-size:.82em}
 .seven-mini li b{margin-right:8px}
 .seven-mini li span{color:var(--ink-2)}
 .wbox .spd{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
-@media (max-width: 900px){
-  .s7{grid-template-columns:40px minmax(0,1fr) auto;gap:6px 12px}
-  .s7.head{display:none}
-  .s7 .dd,.s7 .oo{grid-column:2 / -1}
-  .s7 .tag{grid-row:1;grid-column:3}
-  .s7 .lb{display:inline-block;font-size:.75em;color:var(--ink-3);font-weight:700;margin-right:8px;font-family:var(--f-body)}
-}
-@media (max-width: 640px){
-  .tree,.tbranch{flex-direction:column;align-items:flex-start}
-  .tree{min-width:0}
-  .tkids{padding-left:0;margin-left:14px;border-left:1.5px solid var(--ink);align-self:stretch}
-  .tkids::before{display:none}
-  .tbranch{padding:6px 0 2px 14px;align-self:stretch}
-  .tbranch::before{top:21px;width:14px}
-  .tbranch::after{display:none}
-  .tdrop{margin:6px 0 0 0;max-width:none;align-self:stretch;min-width:0}
-  .tdrop::before{display:none}
-  .tnode.tblank{align-self:flex-start}
-}
 .dzone{display:flex;flex-wrap:wrap;gap:6px;min-height:40px;border:1.5px dashed transparent;border-radius:8px;padding:2px}
 /* 估算 */
 .hints{display:flex;flex-wrap:wrap;gap:6px}
@@ -350,7 +331,7 @@ footer{padding-block:40px 80px;color:var(--ink-3);font-size:.82em}
 .lamps{display:flex;gap:5px;align-items:center;font-size:.86em}
 .lamp{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--ink);background:var(--marker)}
 .lamp.off{background:transparent}
-.fogs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fogs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .fogc{border:1.5px solid var(--ink);border-radius:12px;background:var(--card);padding:6px 8px;display:grid;gap:4px;text-align:left;cursor:pointer;min-width:0}
 .fogc b{font-size:.8em;line-height:1.3}
 .fogc .veil{height:64px;border-radius:8px;background:repeating-linear-gradient(135deg,var(--fog) 0 7px,var(--fog-2) 7px 14px);display:grid;place-items:center;color:var(--ink-3);font-family:var(--f-num);font-size:20px;font-weight:700}
@@ -432,26 +413,307 @@ svg .axl{fill:var(--ink-2);font-size:11px;font-family:var(--f-num)}
 .p-result{text-align:center;display:grid;gap:6px;justify-items:center}
 .p-pts{font-size:2.2em;font-weight:700}
 
-@media (max-width: 900px){
-  .hero-grid{grid-template-columns:minmax(0,1fr)}
-  .route4,.four{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cols{grid-template-columns:minmax(0,1fr)}
-  .mission{grid-template-columns:auto minmax(0,1fr)}
-  .mission > div:last-child{grid-column:1 / -1}
-}
-@media (max-width: 600px){
-  .chhead{grid-template-columns:minmax(0,1fr)}
-  .route4,.four{grid-template-columns:minmax(0,1fr)}
-  .fogs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .results{grid-template-columns:minmax(0,1fr)}
-  .cin{grid-template-columns:auto minmax(0,1fr)}
-  .cin .inp{grid-column:2}
-  .months{grid-template-columns:repeat(6,minmax(0,1fr))}
-}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* v3 教學卡 */
+.hero .sub2{font-size:.95em;margin-top:12px;max-width:34em;color:var(--ink-2);border-left:3px solid var(--marker);padding-left:12px}
+.entry-line{font-size:.92em;color:var(--ink-2);margin:6px 0 10px}
+.mini .tnode{font-size:.82em;padding:5px 10px}
+.mini .tnode.root{padding:8px 12px}
+.qline{margin-top:12px;font-weight:700}
+.calcline{font-family:var(--f-body);font-size:.95em;background:var(--paper);border:1.5px dashed var(--ink-3);border-radius:10px;padding:8px 12px;margin-top:8px}
+.ex.wide .row{grid-template-columns:6.6em minmax(0,1fr)}
+.ex .lb.strong{font-family:var(--f-body);font-weight:700;color:var(--ink);letter-spacing:0;font-size:.92em}
+.ex .eg{display:block;color:var(--ink-3);font-size:.9em;margin-top:2px}
+.pyr{display:grid;gap:6px;justify-items:center;margin:12px 0 6px}
+.pyr div{border:1.5px solid var(--ink);border-radius:10px;background:var(--paper);padding:8px 12px;text-align:center;font-size:.92em;line-height:1.45}
+.pyr div b{display:block}
+.pyr .p1{width:52%;background:var(--marker);color:var(--on-marker)}
+.pyr .p2{width:78%}
+.pyr .p3{width:100%}
+.pyr span{color:var(--ink-2);font-size:.9em}
+.pyr .p1 span{color:inherit}
+.steps2{margin:0;padding-left:1.3em;display:grid;gap:6px}
+.s7g{font-weight:700;color:var(--ink-3);font-size:.8em;letter-spacing:.12em;margin:10px 0 0 4px}
+.fbtn .ex2{color:var(--ink-3)}
+.recap ul{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.92em}
+.reflist{display:grid;gap:4px}
+.reflist .formula{margin-top:0;font-size:.9em}
+.hintbtn{justify-self:start}
+.hintbtn.armed{border-color:var(--pin);color:var(--pin)}
+.prev{font-family:var(--f-num);color:var(--ink-3);font-size:.86em;margin-left:8px;white-space:nowrap}
+/* v4 文字分層與結構色 */
+:root{--s1:#2F7D6B;--s2:#B7791F;--s3:#A0466B;--s4:#2B6CB0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--s1:#5FBFA6;--s2:#E0A84A;--s3:#D97AA0;--s4:#6EA8E6}}
+:root[data-theme="dark"]{--s1:#5FBFA6;--s2:#E0A84A;--s3:#D97AA0;--s4:#6EA8E6}
+.keyline{display:block;font-weight:700;color:var(--ink);background:var(--hl);border-radius:8px;padding:8px 12px;margin:8px 0 10px;line-height:1.6}
+.aside{color:var(--ink-3);font-size:.86em;line-height:1.6}
+.task{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:14px 18px;margin-bottom:18px;display:grid;gap:6px}
+.task .lb{font-size:.8em;font-weight:700;color:var(--ink-3);letter-spacing:.08em}
+.task b{font-size:1.08em}
+.mini .tnode{white-space:pre-line;text-align:left;line-height:1.4}
+.s4grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.s4{border-radius:12px;background:var(--paper);border:1px solid var(--line);overflow:hidden;display:grid;align-content:start}
+.s4 h4{margin:0;padding:6px 12px;color:#fff;font-size:.98em}
+.s4 p{margin:8px 12px 0;font-size:.9em;font-weight:700}
+.s4 .eg{margin:4px 12px 10px;color:var(--ink-3);font-size:.82em;line-height:1.5}
+.s4.st-c1 h4,.fformula.st-c1{background:var(--s1)} .s4.st-c2 h4,.fformula.st-c2{background:var(--s2)} .s4.st-c3 h4,.fformula.st-c3{background:var(--s3)} .s4.st-c4 h4,.fformula.st-c4{background:var(--s4)}
+.fformula.st-c1,.fformula.st-c2,.fformula.st-c3,.fformula.st-c4{color:#fff;border-radius:8px;padding:2px 10px}
+.fbtn.st-c1{border-left-width:1.5px;box-shadow:inset 0 0 0 0 transparent} 
+.fbtn.st-c1 b{color:var(--s1)} .fbtn.st-c2 b{color:var(--s2)} .fbtn.st-c3 b{color:var(--s3)} .fbtn.st-c4 b{color:var(--s4)}
+.steps4{display:grid;gap:0;margin-top:10px}
+.steps4 .st{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start;padding:8px 0}
+.steps4 .no{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--f-num);font-weight:700}
+.steps4 .st.first .no{background:var(--marker);color:var(--on-marker)}
+.steps4 b{display:block}
+.steps4 span{color:var(--ink-2);font-size:.92em}
+.steps4 .arrow{margin-left:16px;border-left:2px dashed var(--line);height:10px}
+/* v6 結論框、範例 */
+.concl{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:14px 18px;display:grid;gap:10px;margin-top:6px;box-shadow:var(--shadow)}
+.concl h4{margin:0;font-size:1.02em;display:flex;gap:8px;align-items:center}
+.concl h4::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--marker);border:1.5px solid var(--ink);flex:none}
+.concl dl{margin:0;display:grid;grid-template-columns:5.2em minmax(0,1fr);gap:8px 12px}
+.concl dt{font-weight:700;color:var(--ink-3);font-size:.86em;padding-top:2px}
+.concl dd{margin:0;line-height:1.6}
+.concl-next{margin:0;font-size:.9em;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:8px}
+.concl-next b{background:var(--hl);border-radius:4px;padding:0 6px;margin-right:8px;color:var(--ink)}
+.sticky.exs{background:var(--paper);color:var(--ink);border:1.5px dashed var(--ink-3);box-shadow:none}
+.rec.big.exrec{background:var(--card);color:var(--ink);border-style:dashed}
+.rec.big.exrec .f b{color:var(--ink-3);opacity:1}
+.pv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:10px}
+.pv div{border-radius:10px;padding:8px 12px;background:var(--paper);border:1px solid var(--line);font-size:.9em;line-height:1.55}
+.pv b{display:block;font-size:.92em}
+.pv .p{border-left:4px solid var(--marker)}
+.pv .g{border-left:4px solid var(--s4)}
+.pv span{color:var(--ink-2)}
+/* v9 首頁、整合策劃力頁 */
+.home{padding-block:56px 48px}
+.home-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:start}
+.home h1{font-size:56px;font-weight:900;line-height:1.1}
+.home-sub{font-size:18px;color:var(--ink-2);margin-top:12px;max-width:26em}
+.home .ticks{margin-top:24px;font-size:17px}
+.score{display:flex;justify-content:space-between;align-items:baseline;background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow)}
+.score span{color:var(--ink-2)}
+.score b{font-family:var(--f-num);font-size:34px;font-weight:700}
+.score small{font-family:var(--f-num);font-size:18px;color:var(--ink-3)}
+.lvlist{display:grid;margin-top:14px;border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card)}
+.lvlist a{display:grid;grid-template-columns:48px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 16px;text-decoration:none;color:var(--ink);border-top:1px solid var(--line)}
+.lvlist a:first-child{border-top:none}
+.lvlist a:hover{background:var(--hl)}
+.lvlist .no{font-family:var(--f-num);font-weight:700;font-size:22px}
+.lvlist b{font-size:16px;display:block}
+.lvlist small{font-family:var(--f-num);font-size:13px;color:var(--ink-3);letter-spacing:.03em}
+.lvlist em{font-style:normal;font-size:14px;color:var(--ink-3)}
+.lvlist i{font-style:normal;font-size:13px;color:var(--go)}
+.lvlist .bonus{font-size:12px;background:var(--hl);border-radius:6px;padding:1px 6px;margin-left:6px;font-weight:700}
+.linkbtn{background:none;border:none;color:var(--ink-3);font-size:13px;cursor:pointer;text-decoration:underline;justify-self:end;margin-top:10px;padding:0}
+.blk{font-size:20px;margin:28px 0 12px;display:flex;gap:10px;align-items:baseline}
+.blk small{font-family:var(--f-num);font-size:15px;color:var(--ink-3);font-weight:600;letter-spacing:.04em}
+.abil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.abil > div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);display:grid;gap:4px;align-content:start}
+.abil .n{font-family:var(--f-num);font-weight:700;font-size:34px;line-height:1;color:var(--s4)}
+.abil b{font-size:18px;margin-top:6px}
+.abil .en{font-family:var(--f-num);font-size:14px;color:var(--ink-3);letter-spacing:.03em}
+.abil p{margin:6px 0 0;color:var(--ink-2);font-size:15px;line-height:1.6}
+.flow7{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,2.3fr) 28px minmax(0,1fr);align-items:center}
+.flow7 .ar{text-align:center;color:var(--ink-3);font-size:20px}
+.stp{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:12px 8px;text-align:center;display:grid;gap:3px}
+.stp b{font-size:17px}
+.stp span{font-family:var(--f-num);font-size:13px;color:var(--ink-3);letter-spacing:.03em}
+.stp em{font-style:normal;font-size:13px;font-weight:700;justify-self:center;background:var(--hl);border-radius:6px;padding:1px 8px;margin-top:4px}
+.grp{background:var(--panel);border-radius:14px;padding:10px 12px 12px}
+.grp .gl{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:8px}
+.grp .gl small{font-family:var(--f-num);font-weight:600;color:var(--ink-3);margin-left:6px;letter-spacing:.03em}
+.grp .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* v10 首頁＝七步地圖；能力頁方框對齊 */
+.home{padding-block:36px 40px}
+.home-c{display:grid;gap:24px}
+.home-c h1{font-size:56px;font-weight:900;line-height:1.15;margin-top:8px}
+.home-c .home-sub{margin:10px 0 0;max-width:none}
+.home-top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+.home-title{grid-column:1;display:grid;align-content:center}
+.purpose{grid-column:2 / 4;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:grid;align-content:center;gap:8px}
+.purpose h3{font-size:16px;display:flex;align-items:center;gap:8px}
+.purpose h3::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--marker);border:1.5px solid var(--ink)}
+.purpose p{margin:0;font-size:17px;line-height:1.8;color:var(--ink-2);text-wrap:pretty}
+.sec.home{padding-top:40px;padding-bottom:40px}
+.rules3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
+.rules3 div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:center;text-align:left;font-size:16px;color:var(--ink-2)}
+.rules3 b{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--f-num);font-size:16px;flex:none}
+.flow7{display:grid;width:100%;align-items:center;grid-template-columns:calc((100% - 132px) / 5) 32px calc((100% - 132px) / 5) 32px calc((100% - 132px) * 2 / 5 + 36px) 32px calc((100% - 132px) / 5)}
+.flow7 .ar{text-align:center;color:var(--ink-3);font-size:20px}
+.stp{box-sizing:border-box;height:168px;background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px 8px 10px;text-align:center;display:grid;grid-template-rows:auto auto 1fr auto auto auto;justify-items:center;gap:3px;text-decoration:none;color:var(--ink);min-width:0}
+a.stp:hover{background:var(--hl)}
+.stp b{font-size:18px}
+.stp span{font-family:var(--f-num);font-size:13px;color:var(--ink-3);letter-spacing:.03em}
+.stp em{grid-row:4;font-style:normal;font-size:13px;font-weight:700;background:var(--hl);border-radius:6px;padding:1px 8px;margin:0}
+.stp small{grid-row:5;font-size:13px;color:var(--ink-2)}
+.stp i{grid-row:6;font-style:normal;font-size:12px;color:var(--go);height:20px;line-height:20px;display:block}
+.grp{box-sizing:border-box;background:var(--panel);border-radius:14px;padding:10px 12px 12px}
+.grp .gl{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:8px;text-align:left}
+.grp .gl small{font-family:var(--f-num);font-weight:600;color:var(--ink-3);margin-left:6px;letter-spacing:.03em}
+.grp .g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.scoreline{display:flex;gap:12px;align-items:baseline;justify-content:flex-start}
+.scoreline span{color:var(--ink-2);font-size:16px}
+.scoreline b{font-family:var(--f-num);font-size:40px;font-weight:700}
+.scoreline small{font-family:var(--f-num);font-size:18px;color:var(--ink-3)}
+.scoreline .linkbtn{margin:0 0 0 10px}
+.abil > div{grid-template-rows:auto auto auto auto 1fr}
+.abil p{min-height:3.3em}
+.sk{display:grid;gap:6px;margin-top:14px;align-content:start}
+.sk .skl{font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em}
+.sk a{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border:1px solid var(--line);border-left:4px solid var(--s4);border-radius:0;background:var(--paper);padding:8px 10px;font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;cursor:pointer}
+.sk a:hover{background:var(--hl);border-color:var(--ink);border-left-color:var(--s4)}
+.sk small{font-family:var(--f-num);font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.03em}
+/* v12 筆電一頁一畫面：全站縮小一級 */
+body{font-size:15px;line-height:1.65}
+section.sec{padding-block:24px 28px}
+section.sec.home{padding-block:20px 24px}
+.chhead{gap:16px;margin-bottom:10px;align-items:center}
+.stamp{width:58px;font-size:30px;border-width:2.5px}
+.chhead h2{font-size:30px;margin-top:0}
+.tags{margin-top:4px}
+.lead{font-size:22px;margin-bottom:12px}
+.grid2{gap:16px}
+.card{padding:14px 18px}
+.card h3{margin-bottom:6px}
+.keyline{margin:4px 0 8px;padding:6px 12px}
+.ticks{gap:4px}
+.mission{margin-top:14px;padding:12px 20px}
+.mission .mno{font-size:38px}
+.mission h3{font-size:19px}
+.mission .btn{padding:10px 18px}
+.task{padding:10px 16px;margin-bottom:12px;gap:4px}
+.home-c{gap:14px}
+.home-c h1{font-size:44px}
+.rules3 div{padding:10px 16px;font-size:15px}
+.stp{height:auto;min-height:0;padding:10px 8px 8px}
+.stp b{font-size:16px}
+.purpose{padding:14px 20px}
+.purpose p{font-size:15.5px;line-height:1.75}
+.scoreline b{font-size:34px}
+.abil > div{padding:14px 16px}
+.dossier{padding:16px 20px}
+.boss-line{margin-bottom:10px}
+.seven{gap:6px}
+.s7{padding:7px 12px;gap:12px}
+.s7 .k{width:32px;height:32px;font-size:16px}
+.s7 .oo{font-size:1em}
+.closing{font-size:19px;margin-top:12px;padding:8px 14px}
+.homework{margin-top:12px}
+.st-top{padding-bottom:6px}
+.st-x{width:34px;height:34px;font-size:18px}
+.st-body{padding-block:10px}
+.st-q{font-size:24px;margin-bottom:4px}
+.st-desc{margin-bottom:10px;font-size:.95em}
+.st-foot{padding-top:8px}
+.st-foot .btn{padding:8px 16px}
+.chat{max-height:170px}
+.bub{padding:5px 10px}
+.wbox{padding:10px;gap:8px}
+.tree-wrap{padding:2px 2px 6px}
+.tbranch{padding:3px 0 3px 16px}
+.tnode{padding:4px 10px;font-size:.9em}
+.tnode.tblank{min-height:30px;min-width:110px;padding:2px 6px}
+.tbox textarea{min-height:44px;padding:6px 10px}
+.lesson{font-size:19px;margin-top:10px}
+.concl{padding:12px 16px;gap:8px}
+.fogc{padding:5px 7px}
+.calcq{padding:8px 12px;gap:6px}
+/* v12b 版面再收緊 */
+.chhead > div:not(.stamp){display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.chhead > div:not(.stamp) > .eyebrow{grid-column:1 / -1}
+.chhead .tags{margin-top:0}
+.task.task-1{display:flex;gap:14px;align-items:baseline}
+.widget.two{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start}
+.widget.two > .wsub{grid-column:1 / -1}
+.tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 16px}
+.recgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;align-items:start}
+.recap ul{font-size:.88em}
+.s7{padding:6px 12px}
+/* v12c 遊戲畫面並排 */
+.framew{grid-template-columns:minmax(0,1fr) 300px;align-items:start;gap:16px}
+.frameside{position:sticky;top:0;align-content:start}
+.frameside .tray.stickytray{position:static;box-shadow:none}
+.framew .tbranch{padding:2px 0 2px 16px}
+.framew .tnode{padding:3px 9px;font-size:.86em}
+.framew .tnode.tblank{min-height:28px;min-width:104px}
+.fogw{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:start}
+.fogw > .fhead,.fogw > .wsub{grid-column:1 / -1}
+.fogw .fogs{grid-column:1}
+.fogw .zoom{grid-column:2;grid-row:2}
+.calcw{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.calcw > .wbox,.calcw > .wsub{grid-column:1 / -1}
+.recap ul{gap:2px}
+section#s-end{padding-block:18px 20px}
+.s7{font-size:.94em;padding:5px 12px}
+.closing{margin-top:8px}
+/* v12d */
+.widget{max-width:1240px}
+.framew .tbranch{padding:1px 0 1px 16px}
+.framew .tnode{line-height:1.35}
+.framew .tnode.tblank{min-height:26px}
+.reflist{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.recgrid .tbox textarea{min-height:40px}
+.recgrid .tbox{gap:2px}
+/* v12e */
+.st-desc{max-width:none}
+.fogw .zoom svg{max-height:236px;width:auto;max-width:100%}
+.navscore{margin-left:auto;display:flex;align-items:baseline;gap:12px;border:1.5px solid var(--ink);border-radius:99px;background:var(--card);padding:1px 28px;white-space:nowrap;min-width:340px;justify-content:center}
+.navscore span{font-size:17px;color:var(--ink-2)}
+.navscore b{font-family:var(--f-num);font-size:34px;font-weight:700;line-height:1}
+.navscore small{font-family:var(--f-num);font-size:20px;color:var(--ink-3)}
+.navscore .linkbtn{margin:0 0 0 10px;font-size:13px}
+.stops{flex:0 1 auto}
+.route{padding-top:5px;padding-bottom:5px}
+.stp i.todo{color:var(--ink-3)}
+section#s-intro,section#s-case{min-height:calc(100vh - 54px);display:grid;align-content:center}
+section.sec{scroll-margin-top:54px}
+.card-flex{display:flex;flex-direction:column}
+.pts2{flex:1;display:grid;grid-template-rows:1fr 1fr;gap:14px;margin-top:4px}
+.s4.big{align-content:stretch;grid-template-rows:auto 1fr}
+.s4.big h4{font-size:19px;padding:10px 18px}
+.s4.big p{font-size:18px;font-weight:500;line-height:1.75;margin:0;padding:14px 18px;display:flex;align-items:center;color:var(--ink)}
+/* v13 第 2 關卡片區左移放大 */
+.framew{grid-template-columns:610px minmax(0,1fr);gap:40px}
+.framew .tree-wrap{font-size:1.07em}
+.frameside .wnote{font-size:15px}
+.frameside .tray{gap:9px;padding:14px}
+.frameside .tray .dcard{font-size:16px}
+/* v13 量化分析：常用算法改成提示樣式 */
+.hintbox{background:color-mix(in srgb,var(--marker) 9%,var(--card));border:1.5px dashed var(--marker)}
+.hintbox .hhead{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.hintbox .htag{background:var(--marker);color:#1d1d1d;font-weight:700;border-radius:6px;padding:1px 10px;font-size:.85em}
+.hintbox .hhead b{font-size:.95em}
+.hintbox .fx{border-radius:10px;background:var(--card);border:1.5px solid color-mix(in srgb,var(--c) 45%,transparent);border-left:6px solid var(--c);padding:8px 12px;display:grid;gap:3px;align-content:start}
+.hintbox .fx b{color:var(--c);font-size:.95em}
+.hintbox .fx span{font-size:.92em;color:var(--ink)}
+.hintbox .fx i{font-style:normal;color:var(--c);font-weight:700;padding:0 3px}
+.fxc1{--c:var(--s1)} .fxc2{--c:var(--s2)} .fxc3{--c:var(--s3)}
+.calcq .tp.fxc1,.calcq .tp.fxc2,.calcq .tp.fxc3{color:var(--c);font-weight:700}
+/* v13 第 4 關：三種結構填滿、時間軸提示、建議左欄 */
+.s4grid.fill{flex:1;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr);gap:10px;margin-top:4px}
+.s4grid.fill .s4{align-content:stretch;grid-template-rows:auto auto 1fr}
+.s4grid.fill .s4 h4{font-size:17px;padding:5px 16px}
+.s4grid.fill .s4 p{font-size:16px;margin:8px 16px 0;color:var(--ink)}
+.s4grid.fill .s4 .eg{font-size:14px;margin:2px 16px 8px}
+.tgrid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.brhint{display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--marker) 9%,var(--card));border:1.5px dashed var(--marker);border-radius:10px;padding:6px 12px;margin:2px 0 8px;color:var(--ink)}
+.brhint .htag{background:var(--marker);color:#1d1d1d;font-weight:700;border-radius:6px;padding:1px 10px;font-size:.85em;flex:none}
+.recfocus{font-weight:700;color:var(--ink);background:var(--hl);border-radius:10px;padding:8px 12px;line-height:1.6}
+.recmine ul{margin:0;padding-left:1.2em;display:grid;gap:2px;font-size:.88em}
+.recmine .none{color:var(--ink-3)}
+.recgrid > .w:first-child{align-content:start}
+.chainin{gap:4px}
+.cin input{padding:3px 10px}
+.cin .u{min-width:4.6em}
+/* v14 第 3 關放大圖固定在右上；遊戲畫面左右留白 */
+.fogw > .fhead[hidden] ~ .zoom{grid-row:1}
+.st-body{padding-inline:24px}
+.st-body > *{max-width:1240px;margin-inline:auto}
 </style>
 </head>
 <body>
@@ -461,41 +723,69 @@ svg .axl{fill:var(--ink-2);font-size:11px;font-family:var(--f-num)}
   <div class="wrap">
     <span class="brand">策劃作戰室</span>
     <nav class="stops" aria-label="課程路線">
-      <a class="stop on" href="#s-hero" data-ch="-2"><b>序</b><span class="num">2'</span></a>
-      <a class="stop" href="#s-case" data-ch="-1"><b>案</b><span class="num">1'</span></a>
-      <a class="stop" href="#s-l1" data-ch="0"><b>1</b><span class="num">9'</span></a>
-      <a class="stop" href="#s-l2" data-ch="1"><b>2</b><span class="num">9'</span></a>
-      <a class="stop" href="#s-l3" data-ch="2"><b>3</b><span class="num">9'</span></a>
-      <a class="stop" href="#s-l4" data-ch="3"><b>4</b><span class="num">9'</span></a>
-      <a class="stop" href="#s-end" data-ch="4"><b>收</b><span class="num">1'</span></a>
+      <a class="stop on" href="#s-hero" data-ch="-3"><b>首頁</b></a>
+      <a class="stop" href="#s-intro" data-ch="-2"><b>能力</b></a>
+      <a class="stop" href="#s-case" data-ch="-1"><b>案例</b></a>
+      <a class="stop" href="#s-l1" data-ch="0"><b>1</b></a>
+      <a class="stop" href="#s-l2" data-ch="1"><b>2</b></a>
+      <a class="stop" href="#s-l25" data-ch="2"><b>2.5</b></a>
+      <a class="stop" href="#s-l3" data-ch="3"><b>3</b></a>
+      <a class="stop" href="#s-l4" data-ch="4"><b>4</b></a>
+      <a class="stop" href="#s-end" data-ch="5"><b>收尾</b></a>
     </nav>
+    <div class="navscore"><span>總分</span><b id="homeScore">0</b><small>/ 4,900</small><button class="linkbtn" type="button" id="clearRec">清除紀錄</button></div>
     <button class="tool" id="notesBtn" type="button" aria-pressed="false" hidden>講稿</button>
   </div>
 </header>
 
 <main class="wrap">
 
-<!-- ================= 序 ================= -->
-<section class="sec hero" id="s-hero" data-ch="-2">
-  <div class="hero-grid">
-    <div>
-      <div class="eyebrow">網站部 PM 內訓 · 整合策劃力 · 40 分鐘</div>
-      <h1><span class="hl">策劃</span>作戰室</h1>
-      <p class="sub">用整合策劃的思考順序，替<strong>傑克房地產公司</strong>的官網想一份<strong>五年藍圖</strong>：先問清楚問題、拆解、估算、讀圖算帳，最後提出建議。四關闖關，手機就是你的作答板。</p>
+<!-- ================= 首頁 ================= -->
+<section class="sec home" id="s-hero" data-ch="-3">
+  <div class="home-c">
+    <div class="home-top">
+      <div class="home-title">
+        <div class="eyebrow">整合策劃力 · Integrated Planning</div>
+        <h1>策劃作戰室</h1>
+        <p class="home-sub">替傑克房地產公司的官網想五年藍圖</p>
+      </div>
+      <div class="purpose">
+        <h3>今天的目的</h3>
+        <p>老闆、主管或組長突然丟來一句需求時，先問清楚他到底想要什麼。接著用框架把問題拆成能查、能動手的小塊。再估出量級，算清楚我們做得到多少、值不值得做。最後從數據找出真正的問題，提出建議。</p>
+      </div>
     </div>
-    <div class="entry" id="entry" aria-live="polite">
-      <h3 id="entryTitle">怎麼玩</h3>
-      <div class="entry-status" id="entryStatus"><span>Jak 講完一關，就按那一關的「開始」。</span></div>
-      <div class="entry-actions" id="entryActions"></div>
+    <div class="rules3">
+      <div><b>1</b><span>Jak 講完一關，按那一關的「開始」</span></div>
+      <div><b>2</b><span>每關 3–8 分鐘，越快分數越高</span></div>
+      <div><b>3</b><span>只算第一次作答，最後截圖總分</span></div>
     </div>
+    <nav class="flow7" aria-label="七個步驟與關卡">
+      <a class="stp" href="#s-l1"><b>釐清問題</b><span>Clarifying Question</span><em>第 1 關</em><small>3 分鐘</small><i data-lvstat="1"></i></a>
+      <div class="ar">→</div>
+      <a class="stp" href="#s-l2"><b>框架</b><span>Framework</span><em>第 2 關</em><small>5 分鐘</small><i data-lvstat="2"></i></a>
+      <div class="ar">→</div>
+      <div class="grp"><div class="gl">驗證假設<small>Hypothesis Testing</small></div><div class="g2">
+        <a class="stp" href="#s-l25"><b>估算市場</b><span>Market Sizing</span><em>第 2.5 關 · 加分</em><small>3 分鐘</small><i data-lvstat="2.5"></i></a>
+        <a class="stp" href="#s-l3"><b>解讀圖表</b><span>Chart Interpretation</span><em>第 3 關前段</em><small>兩段共 7 分鐘</small><i data-lvstat="3"></i></a>
+        <a class="stp" href="#s-l3"><b>量化分析</b><span>Quantitative Analysis</span><em>第 3 關後段</em><small>兩段共 7 分鐘</small><i data-lvstat="3"></i></a>
+        <a class="stp" href="#s-l4"><b>結構化發想</b><span>Brainstorming</span><em>第 4 關前段</em><small>兩段共 8 分鐘</small><i data-lvstat="4"></i></a>
+      </div></div>
+      <div class="ar">→</div>
+      <a class="stp" href="#s-l4"><b>提出建議</b><span>Recommendation</span><em>第 4 關後段</em><small>兩段共 8 分鐘</small><i data-lvstat="4"></i></a>
+    </nav>
   </div>
-  <div class="route4">
-    <div class="lv"><span class="no">1</span><b>釐清問題＋框架</b><span class="en">Clarifying Question · Framework</span><span class="tag t1 cp">挖掘數據</span></div>
-    <div class="lv"><span class="no">2</span><b>估算市場</b><span class="en">Market Sizing</span><span class="tag t1 cp">挖掘數據</span></div>
-    <div class="lv"><span class="no">3</span><b>解讀圖表＋量化算帳</b><span class="en">Chart Interpretation · Quantitative</span><span class="tag t2 cp">整合大數據</span></div>
-    <div class="lv"><span class="no">4</span><b>結構化發想＋提出建議</b><span class="en">Brainstorming · Recommendation</span><span class="tag t3 cp">評估選擇＋對焦組織</span></div>
+</section>
+
+<!-- ================= 整合策劃力 ================= -->
+<section class="sec" id="s-intro" data-ch="-2">
+  <div class="eyebrow">整合策劃力 · Integrated Planning</div>
+  <p class="lead">整合策劃力的<span class="hl">四種能力</span></p>
+  <div class="abil">
+    <div><span class="n">1</span><b>挖掘數據</b><span class="en">Data Mining</span><p>運用數據取得資訊，快速找出影響長遠目標的重要問題</p><div class="sk"><span class="skl">練到的步驟</span><a href="#s-l1">釐清問題<small>Clarifying Question</small></a><a href="#s-l2">框架<small>Framework</small></a><a href="#s-l25">估算市場<small>Market Sizing</small></a></div></div>
+    <div><span class="n">2</span><b>整合大數據</b><span class="en">Data Integration</span><p>整合不同觀點，看清短期和長期的影響</p><div class="sk"><span class="skl">練到的步驟</span><a href="#s-l3">解讀圖表<small>Chart Interpretation</small></a><a href="#s-l3">量化分析<small>Quantitative Analysis</small></a></div></div>
+    <div><span class="n">3</span><b>評估及選擇策略</b><span class="en">Strategy Selection</span><p>依據已經取得的數據及背景資料發想</p><div class="sk"><span class="skl">練到的步驟</span><a href="#s-l4">結構化發想<small>Brainstorming</small></a></div></div>
+    <div><span class="n">4</span><b>對焦組織計劃</b><span class="en">Organizational Alignment</span><p>漸進試行，依結果和對客戶的影響調整排序</p><div class="sk"><span class="skl">練到的步驟</span><a href="#s-l4">提出建議<small>Recommendation</small></a></div></div>
   </div>
-  <p class="defbox">整合策劃力：運用大數據取得資訊，並快速辨識出影響長遠目標達成之重要問題<sup>挖掘數據</sup>；透過整合不同觀點形成整體洞察，取得對短期與長期影響的深度了解<sup>整合大數據</sup>；依據邏輯、事實、有限資源、限制，及組織價值，發展可行方案，並投入於最佳行動方案以達到長期目標<sup>評估及選擇策略</sup>；漸進式地試行每項規劃，並依據階段性結果及對客戶的影響，持續調整規劃排序<sup>對焦組織計劃</sup>。</p>
 </section>
 
 <!-- ================= 案 ================= -->
@@ -505,18 +795,12 @@ svg .axl{fill:var(--ink-2);font-size:11px;font-family:var(--f-num)}
       <div class="eyebrow">貫穿全場的情境</div>
       <p class="lead">老闆只丟下一句話</p>
       <p class="boss-line">「幫我想官網未來五年的藍圖。」</p>
-      <p class="muted">四關都是這份藍圖的一個步驟。前一關的結論，就是下一關的起點。</p>
-      <div class="agenda" aria-label="40 分鐘時間分配">
-        <span style="flex:2">開場 2'</span><span style="flex:4">講 1</span><span class="g" style="flex:5">玩 1</span><span style="flex:4">講 2</span><span class="g" style="flex:5">玩 2</span><span style="flex:4">講 3</span><span class="g" style="flex:5">玩 3</span><span style="flex:4">講 4</span><span class="g" style="flex:5">玩 4</span><span style="flex:2">收 2'</span>
-      </div>
-      <p class="small muted" style="margin-top:6px">每關約 9 分鐘：講 4 分鐘、玩 5 分鐘。</p>
     </div>
     <div class="dossier">
       <dl>
         <dt>你的角色</dt><dd>傑克房地產公司網站部 PM，要交出官網的五年藍圖</dd>
-        <dt>核心公式</dt><dd>留單 ＝ 流量 × 轉換率，流量帶來留單</dd>
-        <dt>今年的狀況</dt><dd>廣告預算縮減，留單比去年少了一成</dd>
-        <dt>今天要做</dt><dd>問清楚 → 拆解 → 估算 → 讀圖算帳 → 提出建議</dd>
+        <dt>你手上有</dt><dd>老闆的一句話。其他的，要自己去問、去找</dd>
+        <dt>今天要做</dt><dd>問清楚 → 拆開來 → 估量級 → 讀圖分析 → 發想 → 提出建議</dd>
       </dl>
       <p class="small muted" style="margin-top:12px">傑克房地產公司是虛構的公司；遊戲裡的圖表和計算題數字都是課堂設計的虛構數字，市場估算的提示卡用公開統計加上課堂假設。</p>
     </div>
@@ -528,40 +812,39 @@ svg .axl{fill:var(--ink-2);font-size:11px;font-family:var(--f-num)}
   <div class="chhead">
     <div class="stamp" aria-hidden="true">1</div>
     <div>
-      <div class="eyebrow">第 1 關 · 約 9 分鐘</div>
-      <h2>釐清問題＋框架</h2>
-      <div class="tags"><span class="tag k">Clarifying Question</span><span class="tag k">Framework</span><span class="tag t1">挖掘數據</span></div>
+      <div class="eyebrow">第 1 關</div>
+      <h2>釐清問題</h2>
+      <div class="tags"><span class="tag k">Clarifying Question</span></div>
     </div>
   </div>
-  <p class="lead">接到題目先別動手，<span class="hl">先問清楚，再拆開來看</span></p>
+  <p class="lead">接到題目先別動手，<span class="hl">先問清楚</span></p>
   <div class="grid2">
     <div class="card">
-      <h3>釐清問題：先問四件事</h3>
+      <h3>釐清問題</h3>
       <ul class="ticks">
-        <li><span>目標是什麼指標？流量、留單，還是市占？</span></li>
-        <li><span>要成長多少？</span></li>
-        <li><span>什麼時候要看到成果？</span></li>
-        <li><span>有什麼限制？預算、人力、時程。</span></li>
+        <li><span><b>目的</b>：為什麼要做？最後想變成什麼樣子？</span></li>
+        <li><span><b>指標</b>：要看什麼？流量、留單，還是市占？</span></li>
+        <li><span><b>幅度</b>：要成長多少？</span></li>
+        <li><span><b>期限</b>：什麼時候要看到成果？</span></li>
+        <li><span><b>限制</b>：預算、人力、時程有什麼條件？</span></li>
       </ul>
       <div class="ex">
         <div class="row"><span class="lb">老闆說</span><span class="bad">幫我想官網未來五年的藍圖。</span></div>
-        <div class="row"><span class="lb">問清楚後</span><span class="good">在某個期限前、某個限制下，讓某個指標成長多少。</span></div>
+        <div class="row"><span class="lb">問清楚後</span><span class="good">為了某個目的，在某個期限前、某個限制下，讓某幾個指標成長多少。</span></div>
       </div>
     </div>
     <div class="card">
-      <h3>框架：不重複、不遺漏</h3>
-      <p>把問題拆成幾塊，同一層只用一種分法，才不會重疊（Mutually Exclusive）；該有的都要有，才不會遺漏（Collectively Exhaustive）。</p>
-      <ul class="ticks" style="margin-top:10px">
-        <li><span>貼合這個案子，不要硬套模板</span></li>
-        <li><span>排出優先順序，先看影響最大的</span></li>
-        <li><span>列出九成的原因就夠，不用鑽到太細</span></li>
-      </ul>
-      <p class="small muted" style="margin-top:12px">例如門市營收，由左往右拆，越往下越細、格子越多：</p><div class="mini" id="miniTree"></div><p class="small muted">黃色圓圈是運算符號（× 相乘、+ 相加、− 相減），標在第二項前面：門市營收 ＝ 來客數 × 客單價；來客數 ＝ 新客 + 舊客；客單價 ＝ 購買件數 × 平均單價。</p><p class="small muted">遊戲裡有三種框架：留單公式（流量 × 轉換率）、損益框架（營收 − 成本）、3C＋大環境（顧客、競爭者、自己、大環境）。</p>
+      <h3>目的 vs 目標：兩個都要問</h3>
+      <span class="keyline">目的是方向，目標是可以衡量的終點。</span>
+      <div class="pv">
+        <div class="p"><b>目的：方向</b><span>回答「為什麼做」。例：讓附近上班族把我們當成每天的固定一杯。</span></div>
+        <div class="g"><b>目標：可以衡量</b><span>回答「做到多少算成功」。例：三年內營收成長三成。</span></div>
+      </div>
     </div>
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>01</div>
-    <div><h3>先問老闆，組出問題；再選一種框架拆解</h3><p>前段：點問題卡問老闆，把詞卡放進句子。後段：三種框架選一種，把卡片放進樹狀圖裡挖空的格子。</p><div class="meta">兩段共 5 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>先問老闆，組出一個好問題</h3><div class="meta">限時 3 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="1">開始第 1 關</button></div>
   </div>
 </section>
@@ -571,118 +854,171 @@ svg .axl{fill:var(--ink-2);font-size:11px;font-family:var(--f-num)}
   <div class="chhead">
     <div class="stamp" aria-hidden="true">2</div>
     <div>
-      <div class="eyebrow">第 2 關 · 約 9 分鐘</div>
-      <h2>估算市場</h2>
-      <div class="tags"><span class="tag k">Market Sizing</span><span class="tag t1">挖掘數據</span></div>
+      <div class="eyebrow">第 2 關</div>
+      <h2>框架</h2>
+      <div class="tags"><span class="tag k">Framework</span></div>
     </div>
   </div>
-  <p class="lead">資料不夠時，<span class="hl">用邏輯推出一個合理的數字</span></p>
+  <p class="lead">問清楚之後，<span class="hl">把大問題拆開來</span></p>
   <div class="grid2">
     <div class="card">
-      <h3>五個步驟</h3>
-      <div class="chain"><span>釐清問題</span><i>→</i><span>搭結構</span><i>→</i><span>做假設</span><i>→</i><span>計算</span><i>→</i><span>交叉驗證</span></div>
-      <p style="margin-top:12px">重點不是答案有多準，而是推論的脈絡合不合理。脈絡對、數量級對，就是好的估算。</p>
-      <p class="muted small">單位記得：千 K → 百萬 M → 十億 B。</p>
+      <h3>框架：把大問題拆成不重不漏的小塊</h3>
+      <p>題目是「怎麼做到」，就把目標拆成驅動因子，每一支都能查數據、能行動。</p>
+      <p class="qline">例：手搖飲店營收三年要成長三成</p>
+      <div class="mini" data-tree="frame"></div>
     </div>
-    <div class="card">
-      <h3>今天的估算鏈</h3>
-      <div class="formula">一年找房的人 × 上網比例 × 來我們官網的比例 × 每人一年造訪次數 ＝ 年造訪數</div>
-      <div class="formula">年造訪數 ÷ 365 ＝ 日流量　·　年造訪數 × 轉換率 ＝ 年留單</div>
-      <p class="muted small" style="margin-top:10px">每個數字都可以自己推。旁邊有提示卡，有些有用、有些沒用，想看再點開。</p>
+    <div class="card card-flex">
+      <h3>拆的時候注意兩件事</h3>
+      <div class="pts2">
+        <div class="s4 big st-c1"><h4>1　同一層一種分法</h4><p>來客數分成新客、舊客後，不能再放「學生」：學生也可能是新客或舊客，會重複算。</p></div>
+        <div class="s4 big st-c2"><h4>2　排優先</h4><p>先挖影響最大的那支。成本暴增，就只往成本那支深挖。</p></div>
+      </div>
     </div>
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>02</div>
-    <div><h3>估算我們官網的日流量和年留單</h3><p>照估算鏈填入假設，結果即時算出來。推論合理、結果落在合理區間就過關。</p><div class="meta">限時 5 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>選一種框架，把挖空的格子補起來</h3><div class="meta">限時 5 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="2">開始第 2 關</button></div>
   </div>
 </section>
 
+<!-- ================= 第 2.5 關 ================= -->
+<section class="sec" id="s-l25" data-ch="2">
+  <div class="chhead">
+    <div class="stamp" aria-hidden="true" style="font-size:.8em">2.5</div>
+    <div>
+      <div class="eyebrow">第 2.5 關 · 加分題</div>
+      <h2>估算市場</h2>
+      <div class="tags"><span class="tag k">Market Sizing</span></div>
+    </div>
+  </div>
+  <p class="lead">從 0 推估，<span class="hl">求量級對、推論合理</span></p>
+  <div class="task task-1"><span class="lb">這一題要估</span><b>傑克房地產官網一天有多少人次？一年有多少筆留單？</b></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>什麼時候要估：查不到資料的時候</h3>
+      <p>平常的數字查內部資料就好；做新服務、看新市場，查不到資料時才要估。</p>
+      <div class="chain" style="margin-top:12px"><span>釐清</span><i>→</i><span>拆解</span><i>→</i><span>假設</span><i>→</i><span>計算</span><i>→</i><span>交叉檢查</span></div>
+    </div>
+    <div class="card">
+      <h3>怎麼估：先抓關鍵因子，再往下拆</h3>
+      <p class="qline" style="margin-top:0">例：一家手搖飲店，一天賣多少錢？</p>
+      <div class="mini" data-tree="size"></div>
+      <span class="keyline">每小時 60 杯 × 營業 10 小時 ＝ 600 杯；600 杯 × 60 元 ≈ 每天 3.6 萬元</span>
+      <ul class="ticks">
+        <li><span><b>假設要有依據</b>：事實、基準或自己的經驗，取好算的整數。</span></li>
+        <li><span><b>拆到有把握就停</b>：每個數字都說得出合理的依據，就不用再往下拆。</span></li>
+        <li><span><b>算完檢查</b>：一天 3.6 萬，一個月 100 萬上下，跟你的經驗對得上嗎？</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mission">
+    <div class="mno"><small>BONUS</small>2.5</div>
+    <div><h3>加分題：從 0 推估官網的流量和留單</h3><p>推估傑克房地產官網一天多少人次、一年多少筆留單。數據提示卡免費看；卡住了可以看估算鏈，但這題滿分會減半。</p><div class="meta">限時 3 分鐘 · 加分題，最多 ＋500</div></div>
+    <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="2.5">開始第 2.5 關</button></div>
+  </div>
+</section>
+
 <!-- ================= 第 3 關 ================= -->
-<section class="sec" id="s-l3" data-ch="2">
+<section class="sec" id="s-l3" data-ch="3">
   <div class="chhead">
     <div class="stamp" aria-hidden="true">3</div>
     <div>
-      <div class="eyebrow">第 3 關 · 約 9 分鐘</div>
-      <h2>解讀圖表＋量化算帳</h2>
-      <div class="tags"><span class="tag k">Chart Interpretation</span><span class="tag k">Quantitative Analysis</span><span class="tag t2">整合大數據</span></div>
+      <div class="eyebrow">第 3 關</div>
+      <h2>解讀圖表＋量化分析</h2>
+      <div class="tags"><span class="tag k">Chart Interpretation</span><span class="tag k">Quantitative Analysis</span></div>
     </div>
   </div>
-  <p class="lead">圖表告訴你發生什麼事，<span class="hl">算帳告訴你值不值得做</span></p>
+  <p class="lead">AI 能幫你算，<span class="hl">但要先知道看哪裡、算什麼</span></p>
   <div class="grid2">
     <div class="card">
-      <h3>看圖三步</h3>
-      <div class="ex">
-        <div class="row"><span class="lb">看懂圖</span><span>先讀標題、座標、單位，講出你看到什麼。</span></div>
-        <div class="row"><span class="lb">找洞見</span><span>比大小、比成長、看趨勢、找相關、抓突變。對時間點：從哪個月開始變？比幅度：變的量對不對得上？再分清楚「持續下滑」和「一次性波動」。</span></div>
-        <div class="row"><span class="lb">連回目標</span><span>所以呢？這跟我們的目標有什麼關係？下一步要做什麼？</span></div>
+      <h3>解讀圖表：每種圖能回答的問題不一樣</h3>
+      <span class="keyline">先看懂標題、座標、單位，再找轉折和幅度。</span>
+      <div class="ex wide">
+        <div class="row"><span class="lb strong">折線圖</span><span>看趨勢：從哪個時間點開始變。</span></div>
+        <div class="row"><span class="lb strong">堆疊長條</span><span>看組成：總量裡誰貢獻最大。</span></div>
+        <div class="row"><span class="lb strong">100% 堆疊</span><span>看占比：占比下降，不代表數量下降。</span></div>
+        <div class="row"><span class="lb strong">散佈圖</span><span>看特例：找出跟別人不一樣的點。</span></div>
       </div>
     </div>
     <div class="card">
-      <h3>三個常用算法</h3>
-      <div class="formula">損益平衡 ＝ 投入成本 ÷ 每筆帶來的價值</div>
-      <div class="formula">回本期 ＝ 損益平衡所需數量 ÷ 每月帶來的數量</div>
-      <div class="formula">淨現值（NPV）：把未來每年的錢折算成今天的價值，再扣掉投入</div>
+      <h3>量化分析：算之前，先想要算什麼</h3>
+      <span class="keyline">先想清楚這個決策需要哪幾個數字。</span>
+      <ul class="ticks">
+        <li><span>這個決策要回答什麼？需要哪幾個數字？</span></li>
+        <li><span>缺的資料先問，例如成本、毛利、要看幾年。</span></li>
+        <li><span>這個數字讓我們做什麼決定？</span></li>
+      </ul>
+      <div class="ex">
+        <div class="row"><span class="lb">例</span><span>一台機器 200 萬，每月省 10 萬 → 20 個月回本。</span></div>
+        <div class="row"><span class="lb">所以呢</span><span class="good">如果機器只能用 18 個月，就不值得買。</span></div>
+      </div>
     </div>
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>03</div>
-    <div><h3>找出留單變少的原因，再算值不值得投資</h3><p>前段：七張圖找出留單變少的主因，和它從哪個月開始。後段：四題計算，可以用手機計算機。</p><div class="meta">兩段共 5 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>找出報表的問題，再分析團隊的方案</h3><p>前段：八張不同的圖，找出兩張主因，和問題從哪個月開始。後段：團隊提了一個方案，用四題計算看值不值得做，可以用計算機。</p><div class="meta">兩段共 7 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="3">開始第 3 關</button></div>
   </div>
 </section>
 
 <!-- ================= 第 4 關 ================= -->
-<section class="sec" id="s-l4" data-ch="3">
+<section class="sec" id="s-l4" data-ch="4">
   <div class="chhead">
     <div class="stamp" aria-hidden="true">4</div>
     <div>
-      <div class="eyebrow">第 4 關 · 約 9 分鐘</div>
+      <div class="eyebrow">第 4 關</div>
       <h2>結構化發想＋提出建議</h2>
-      <div class="tags"><span class="tag k">Brainstorming</span><span class="tag k">Recommendation</span><span class="tag t3">評估及選擇策略</span><span class="tag t4">對焦組織計劃</span></div>
+      <div class="tags"><span class="tag k">Brainstorming</span><span class="tag k">Recommendation</span></div>
     </div>
   </div>
-  <p class="lead">先選結構再發想；<span class="hl">結論先講，再講理由</span></p>
+  <p class="lead">先選結構再發想；<span class="hl">結論先講，再用數字撐住</span></p>
   <div class="grid2">
-    <div class="card">
-      <h3>結構化發想</h3>
-      <p>發想不是想到什麼說什麼，要先選一個結構，再往裡面填點子。先求廣度，每一塊都想到；再求深度。</p>
-      <div class="chain" style="margin-top:12px"><span>流程（使用者旅程）</span><span>數學拆解</span><span>客群分眾</span><span>優缺點</span></div>
+    <div class="card card-flex">
+      <h3>結構化發想：依前面的數據和分析，找出對應的做法</h3>
+      <div class="s4grid fill">
+        <div class="s4 st-c1"><h4>流程</h4><p>照事情發生的順序，一段一段找</p><span class="eg">例：學童入學率低 → 政策法規、學校設施、師資、家庭</span></div>
+        <div class="s4 st-c3"><h4>分群</h4><p>把對象分成幾群，每一群各想做法</p><span class="eg">例：手搖飲想多賣 → 學生、上班族、家庭</span></div>
+        <div class="s4 st-c4"><h4>時間軸</h4><p>照時間先後，各想該做的事</p><span class="eg">例：準備馬拉松 → 這個月、三個月內、比賽前</span></div>
+      </div>
     </div>
     <div class="card">
-      <h3>由上而下提建議</h3>
-      <div class="chain"><span>結論</span><i>→</i><span>理由</span><i>→</i><span>風險</span><i>→</i><span>下一步</span></div>
-      <ul class="ticks" style="margin-top:12px">
-        <li><span>先花 10 秒整理前面的分析</span></li>
-        <li><span>第一句就講結論：「我建議……」</span></li>
-        <li><span>一分鐘內講完，每個理由一兩句</span></li>
-      </ul>
+      <h3>由上而下提建議：照這個順序寫</h3>
+      <div class="steps4">
+        <div class="st first"><span class="no">1</span><div><b>結論</b><span>一句話回答老闆的問題，而且連回目的：「我建議……」</span></div></div>
+        <div class="arrow"></div>
+        <div class="st"><span class="no">2</span><div><b>支持事實</b><span>第一、第二、第三，用前面算出的數字，最有力的放前面</span></div></div>
+        <div class="arrow"></div>
+        <div class="st"><span class="no">3</span><div><b>風險</b><span>可能遇到什麼、打算怎麼因應</span></div></div>
+        <div class="arrow"></div>
+        <div class="st"><span class="no">4</span><div><b>下一步</b><span>先做什麼、怎麼檢視；回去看框架裡還沒驗證的分支</span></div></div>
+      </div>
+      <span class="keyline">一分鐘內講完，第一句就是結論。</span>
     </div>
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>04</div>
-    <div><h3>想出做法，再寫成一份建議</h3><p>前段：選一種結構，寫下具體的做法。後段：寫下結論、理由、風險、下一步。Jak 會挑幾份現場分享。</p><div class="meta">兩段共 5 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>想出做法，再寫成一份建議</h3><p>前段：選一種結構，寫下具體的做法。後段：先回顧前三關的結論，再依序寫出結論、支持事實、風險、下一步。</p><div class="meta">兩段共 8 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="4">開始第 4 關</button></div>
   </div>
 </section>
 
 <!-- ================= 收尾 ================= -->
-<section class="sec" id="s-end" data-ch="4">
+<section class="sec" id="s-end" data-ch="5">
   <div class="eyebrow">帶走這條脈絡</div>
   <p class="lead">整合策劃<span class="hl">七步</span>，串起今天的四關</p>
   <div class="seven">
     <div class="s7 head" aria-hidden="true"><span></span><span>步驟</span><span>做什麼</span><span>在這個案子得出</span><span>能力</span></div>
-    <div class="s7"><span class="k">1</span><div class="nm"><b>釐清問題</b><small>Clarifying Question</small></div><div class="dd"><span class="lb">做什麼</span>把模糊的需求，問成可以衡量的目標</div><div class="oo"><span class="lb">這個案子</span>2030 年前、廣告預算不增加，讓年留單成長五成</div><span class="tag t1">挖掘數據</span></div>
-    <div class="s7"><span class="k">2</span><div class="nm"><b>框架</b><small>Framework</small></div><div class="dd"><span class="lb">做什麼</span>不重複、不遺漏地把問題拆開，越往下越細</div><div class="oo"><span class="lb">這個案子</span>年留單 ＝ 流量（付費、自然、自有）× 轉換率（買方、賣方）</div><span class="tag t1">挖掘數據</span></div>
-    <div class="s7"><span class="k">3</span><div class="nm"><b>估算市場</b><small>Market Sizing</small></div><div class="dd"><span class="lb">做什麼</span>用公開數據推出規模，判斷目標撐不撐得起</div><div class="oo"><span class="lb">這個案子</span>日流量約 5.6 萬人次、年留單約 8 萬筆，市場撐得起目標</div><span class="tag t1">挖掘數據</span></div>
-    <div class="s7"><span class="k">4</span><div class="nm"><b>解讀圖表</b><small>Chart Interpretation</small></div><div class="dd"><span class="lb">做什麼</span>對時間點、比幅度，找出真正的主因</div><div class="oo"><span class="lb">這個案子</span>6 月廣告預算縮減，廣告流量掉到一半左右，自然流量持平</div><span class="tag t2">整合大數據</span></div>
-    <div class="s7"><span class="k">5</span><div class="nm"><b>量化算帳</b><small>Quantitative Analysis</small></div><div class="dd"><span class="lb">做什麼</span>算缺口、損益平衡、回本期、淨現值，判斷值不值得做</div><div class="oo"><span class="lb">這個案子</span>缺口一年約 2.2 萬筆；內容投資 12 個月回本，三年淨現值約 ＋446 萬</div><span class="tag t2">整合大數據</span></div>
-    <div class="s7"><span class="k">6</span><div class="nm"><b>結構化發想</b><small>Brainstorming</small></div><div class="dd"><span class="lb">做什麼</span>先選結構再發想，每一塊都想到，再挑最值得做的</div><div class="oo"><span class="lb">這個案子</span>照使用者旅程列做法：被看見、找得到、看得懂、願意留、會回來</div><span class="tag t3">評估及選擇策略</span></div>
-    <div class="s7"><span class="k">7</span><div class="nm"><b>提出建議</b><small>Recommendation</small></div><div class="dd"><span class="lb">做什麼</span>結論先講，再給理由、風險和下一步</div><div class="oo"><span class="lb">這個案子</span>五年內逐年把預算從廣告移到內容；先改社區內容頁，一季後檢視再調整</div><span class="tag t4">對焦組織計劃</span></div>
+    <div class="s7"><span class="k">1</span><div class="nm"><b>釐清問題</b><small>Clarifying Question</small></div><div class="dd"><span class="lb">做什麼</span>先問清楚目標和限制，跟出題的人對齊期待</div><div class="oo"><span class="lb">這個案子</span>目的：成為客戶最依賴的房產數位服務窗口；目標：2030 年前、廣告預算不增加，流量和留單都成長五成</div><span class="tag t1">挖掘數據</span></div>
+    <div class="s7"><span class="k">2</span><div class="nm"><b>框架</b><small>Framework</small></div><div class="dd"><span class="lb">做什麼</span>把大問題拆成不重不漏的小塊，知道要查什麼、先查哪裡</div><div class="oo"><span class="lb">這個案子</span>留單 ＝ 流量（付費、自然、自有）× 留資料的比例（買方、賣方）</div><span class="tag t1">挖掘數據</span></div>
+    <div class="s7"><span class="k">3</span><div class="nm"><b>估算市場</b><small>Market Sizing</small></div><div class="dd"><span class="lb">做什麼</span>抓出關鍵因子，拆到有把握就停，估出量級</div><div class="oo"><span class="lb">這個案子</span>從 0 推估：一天約 5.6 萬人次、一年約 8 萬筆留單</div><span class="tag t1">挖掘數據</span></div>
+    <div class="s7"><span class="k">4</span><div class="nm"><b>解讀圖表</b><small>Chart Interpretation</small></div><div class="dd"><span class="lb">做什麼</span>看懂這張圖能說什麼，找出轉折和幅度</div><div class="oo"><span class="lb">這個案子</span>6 月廣告預算砍半，流量和留單少了將近兩成；自然流量持平</div><span class="tag t2">整合大數據</span></div>
+    <div class="s7"><span class="k">5</span><div class="nm"><b>量化分析</b><small>Quantitative Analysis</small></div><div class="dd"><span class="lb">做什麼</span>先想清楚這個決策需要哪幾個數字</div><div class="oo"><span class="lb">這個案子</span>缺口一年約 1.1 萬筆；網頁改版 12 個月回本，三年淨現值約 ＋446 萬</div><span class="tag t2">整合大數據</span></div>
+    <div class="s7"><span class="k">6</span><div class="nm"><b>結構化發想</b><small>Brainstorming</small></div><div class="dd"><span class="lb">做什麼</span>依前面的數據和分析，找出對應的做法</div><div class="oo"><span class="lb">這個案子</span>照時間軸找做法：短期網頁改版、中期生活圈文章做 SEO、長期累積生活圈內容</div><span class="tag t3">評估及選擇策略</span></div>
+    <div class="s7"><span class="k">7</span><div class="nm"><b>提出建議</b><small>Recommendation</small></div><div class="dd"><span class="lb">做什麼</span>一句話結論，用前面的數字撐住，再補風險和下一步</div><div class="oo"><span class="lb">這個案子</span>先做網頁改版，再逐年把預算移到自然流量，朝客戶最依賴的數位服務窗口前進</div><span class="tag t4">對焦組織計劃</span></div>
   </div>
   <p class="closing">整合策劃力，就是用這條脈絡，把一句模糊的需求，變成一份有數據、能執行、可以邊做邊調整的計畫。</p>
   <div class="homework">
-    <p class="note-hand" style="margin-top:0">回去後：挑一個手上的專案，照這七步各寫一句。</p>
     <button class="btn primary" type="button" id="finalBtn">看我的總分</button>
   </div>
 </section>
@@ -715,68 +1051,72 @@ const num = s => { if (s == null) return NaN; const t = String(s).replace(/[,，
 
 /* ================= 題目資料 ================= */
 const BOSS_QS = [
-  { id: 'goal', q: '目標是流量還是留單？', a: '流量只是手段，我要看的是留單。' },
-  { id: 'time', q: '要多久看到成果？', a: '五年，2030 年要交出成績。' },
-  { id: 'budget', q: '預算怎麼抓？', a: '廣告預算維持現在的水準，不會再加。' },
-  { id: 'growth', q: '要成長多少？', a: '至少比現在多五成。' },
-  { id: 'style', q: '網站要用什麼風格？', a: '這不是現在的重點。' }
+  { id: 'purpose', q: '這份藍圖最終想做到什麼？', a: '我希望幾年後，客戶不管是想買房、賣房，還是只是想看看行情，第一個打開的就是我們的官網，而且信得過我們。不是衝一時的量。' },
+  { id: 'goal', q: '我們的目標要怎麼定？', a: '我最在意兩件事：有多少人來官網看，還有多少人在官網留資料給業務。' },
+  { id: 'growth', q: '要提升幾成？', a: '兩個都至少要多一半。' },
+  { id: 'time', q: '什麼時候要看到？', a: '跟公司中長期計畫同一個終點，2030 年要交出成績。' },
+  { id: 'budget', q: '有什麼限制嗎？', a: '行銷的錢就這麼多了，不要期待廣告會加碼。' },
+  { id: 'other', q: '還有什麼要注意的？', a: '人力的事之後再談，你先想方向。' }
 ];
-const SLOTS = [{ id: 'deadline', t: '期限' }, { id: 'limit', t: '限制' }, { id: 'metric', t: '指標' }, { id: 'growth', t: '成長幅度' }];
+const SLOTS = [{ id: 'purpose', t: '目的', k: 'purpose', pts: 200 }, { id: 'deadline', t: '期限', k: 'deadline' }, { id: 'limit', t: '限制', k: 'limit' }, { id: 'm1', t: '指標', k: 'metric' }, { id: 'm2', t: '指標', k: 'metric' }, { id: 'growth', t: '成長幅度', k: 'growth' }];
+const SLOT_PTS = 160, FRAME_MAX = 1000;
 const TILES = [
   { id: 'tnext', t: '下次改版上線', why: '這是專案時程，不是目標期限' },
-  { id: 'tlead', t: '年留單數', score: { metric: 100 } },
+  { id: 'psearch', t: '成為找房最好用的搜尋工具', why: '只講到找房；老闆說的是買房、賣房、看行情都會先想到我們，而且信得過' },
+  { id: 'tlead', t: '年留單數', score: { metric: 1 } },
   { id: 'tbud20', t: '廣告預算增加兩成', why: '跟老闆說的不符' },
-  { id: 't85', t: '每年成長約 8.5%', score: { growth: 100 }, why: '算一下：1.085 的 5 次方約 1.5，也是成長五成' },
+  { id: 't85', t: '每年成長約 8.5%', score: { growth: 1 }, why: '算一下：1.085 的 5 次方約 1.5，也是成長五成' },
   { id: 'trevamp', t: '全面改版官網', trap: true, why: '這是做法，不是目標' },
-  { id: 't2030', t: '2030 年', score: { deadline: 100 } },
-  { id: 'tstay', t: '網站停留時間', why: '過程指標，不是老闆要的結果' },
-  { id: 'tdev', t: '不增加開發人力', why: '老闆沒提，是自己加的限制' },
+  { id: 't2030', t: '2030 年', score: { deadline: 1 } },
+  { id: 'pwin', t: '成為客戶最依賴的房產數位服務窗口', score: { purpose: 1 } },
+  { id: 'tstay', t: '網站停留時間', why: '過程指標，不是老闆說的兩件事' },
+  { id: 'tdev', t: '不增加開發人力', why: '老闆說人力之後再談，不是限制' },
   { id: 't5x', t: '成長五倍', why: '五成和五倍差很多' },
   { id: 'tai', t: '導入 AI 找房功能', trap: true, why: '這是做法，不是目標' },
-  { id: 'ttraffic', t: '月流量', score: { metric: 50 }, why: '流量是手段，老闆要的是留單' },
-  { id: 't2026', t: '2026 年底', why: '太短，老闆要的是五年藍圖' },
-  { id: 'tbud', t: '廣告預算維持現有水準', score: { limit: 100 } },
-  { id: 'tfirst', t: '成為市場第一', why: '換了指標，也無法衡量' },
-  { id: 'tcr', t: '留單轉換率', score: { metric: 50 }, why: '是中間指標，不是最終目標' },
-  { id: 'tads', t: '加碼關鍵字廣告', trap: true, why: '這是做法，不是目標' },
-  { id: 't50', t: '成長五成', score: { growth: 100 } }
+  { id: 'pbig', t: '成為台灣流量最大的房產網站', why: '這是衝量；老闆說不是衝一時的量，要的是客戶信得過' },
+  { id: 'ttraffic', t: '官網流量', score: { metric: 1 } },
+  { id: 'tbud', t: '廣告預算維持現有水準', score: { limit: 1 } },
+  { id: 'pnow', t: '今年把留單衝上來', why: '這是短期的事，老闆要的是幾年後的樣子' },
+  { id: 'tcr', t: '留單轉換率', score: { metric: 0.5 }, why: '流量和留單都成長五成時，轉換率其實不變，它只是中間指標' },
+  { id: 'pads', t: '降低對廣告的依賴', why: '這是手段，不是最終想做到的樣子' },
+  { id: 't50', t: '成長五成', score: { growth: 1 } }
 ];
 const TILE = Object.fromEntries(TILES.map(t => [t.id, t]));
 
 /* 樹狀圖節點：t 文字、op 運算符號、x 挖空（值是答案卡的 id）、kids 下一層 */
 const FRAMES = [
-  { id: 'A', name: '留單公式', desc: '年留單 ＝ 流量 × 轉換率', formula: '年留單 ＝ 流量 × 轉換率',
-    tree: { t: '年留單', kids: [
+  { id: 'A', name: '留單公式框架', desc: '留單 ＝ 流量 × 留資料的比例', formula: '留單 ＝ 流量 × 留資料的比例',
+    tree: { t: '留單公式框架', kids: [
       { t: '流量', kids: [
         { t: '付費流量', kids: [{ t: '關鍵字廣告', x: 'a1' }, { t: '社群廣告', x: 'a2' }, { t: '聯播網廣告' }] },
         { t: '自然流量', x: 'a3', kids: [{ t: '自然搜尋' }, { t: '社群貼文分享' }, { t: '外部網站連結' }] },
         { t: '自有流量', kids: [{ t: '直接輸入網址', x: 'a4' }, { t: 'LINE／EDM 推播' }, { t: 'App 推播通知' }] }] },
-      { t: '轉換率', op: '×', x: 'a5', kids: [
-        { t: '買方留單率', kids: [{ t: '列表 → 明細點擊率' }, { t: '明細 → 留單率', op: '×', x: 'a6' }] },
-        { t: '賣方委託率', op: '+', x: 'a7', kids: [{ t: '估價工具使用率', x: 'a8' }, { t: '估價 → 委託率', op: '×' }] }] }] },
-    traps: [{ id: 'ax1', t: '手機流量', why: '裝置是另一種分法，跟每一種來源都重疊' }, { id: 'ax2', t: '回訪使用者', why: '新舊客是另一種分法，跟自有流量重疊' }, { id: 'ax3', t: '全面改版官網', why: '這是做法，不是分類' }],
+      { t: '留資料的比例', x: 'a5', kids: [
+        { t: '買方', kids: [{ t: '從列表點進物件明細' }, { t: '在明細頁留資料', x: 'a6' }] },
+        { t: '賣方', x: 'a7', kids: [{ t: '使用線上估價', x: 'a8' }, { t: '估價後委託' }] }] }] },
+    traps: [{ id: 'ax1', t: '手機流量', why: '裝置是另一種分法，跟每一種來源都重疊' }, { id: 'ax2', t: '廣告帶來的留單', why: '廣告已經算在流量裡，放在留資料的比例底下就重複了' }, { id: 'ax3', t: '全面改版官網', why: '這是做法，不是分類' }],
     order: ['a6', 'ax1', 'a3', 'a1', 'ax2', 'a8', 'a5', 'a4', 'ax3', 'a7', 'a2'] },
-  { id: 'B', name: '損益框架', desc: '官網貢獻 ＝ 營收 − 成本', formula: '官網貢獻 ＝ 營收 − 成本',
-    tree: { t: '官網貢獻', kids: [
+  { id: 'B', name: '損益框架', desc: '營收 − 成本', formula: '營收 − 成本',
+    tree: { t: '損益框架', kids: [
       { t: '營收', kids: [
-        { t: '成交件數', kids: [{ t: '留單數', x: 'b1' }, { t: '留單成交率', op: '×' }] },
-        { t: '每件服務費', op: '×', x: 'b2', kids: [{ t: '平均成交總價', x: 'b3' }, { t: '服務費率', op: '×' }] }] },
-      { t: '成本', op: '−', x: 'b4', kids: [
+        { t: '成交件數', kids: [{ t: '留單數', x: 'b1' }, { t: '留單成交率' }] },
+        { t: '每件服務費', x: 'b2', kids: [{ t: '平均成交總價', x: 'b3' }, { t: '服務費率' }] }] },
+      { t: '成本', x: 'b4', kids: [
         { t: '固定成本', kids: [{ t: '系統維護', x: 'b5' }, { t: '團隊人力', x: 'b6' }, { t: '內容製作' }] },
-        { t: '變動成本', op: '+', x: 'b7', kids: [{ t: '廣告費', x: 'b8' }, { t: '客服處理' }, { t: '簡訊推播費' }] }] }] },
-    traps: [{ id: 'bx1', t: '房價漲跌', why: '外部因素，不是官網的營收或成本' }, { id: 'bx2', t: '網站改版', why: '這是做法，不是分類' }, { id: 'bx3', t: '自然流量', why: '這是留單公式的拆法，混進來就重疊了' }],
+        { t: '變動成本', x: 'b7', kids: [{ t: '廣告費', x: 'b8' }, { t: '客服處理' }, { t: '簡訊推播費' }] }] }] },
+    traps: [{ id: 'bx1', t: '房價漲跌', why: '外部因素，不是官網的營收或成本' }, { id: 'bx2', t: '網站改版', why: '這是做法，不是分類' }, { id: 'bx3', t: '自然流量', why: '這是留單公式框架的拆法，混進來就重疊了' }],
     order: ['b3', 'bx1', 'b6', 'b2', 'b8', 'bx3', 'b4', 'b1', 'bx2', 'b7', 'b5'] },
-  { id: 'C', name: '3C＋大環境', desc: '顧客、競爭者、自己、大環境', formula: '官網五年藍圖 ＝ 外部（顧客、競爭者、大環境）＋ 內部（自己）',
-    tree: { t: '官網五年藍圖', kids: [
+  { id: 'C', name: '3C＋大環境框架', desc: '顧客、競爭者、自己、大環境', formula: '外部（顧客、競爭者、大環境）＋ 內部（自己）',
+    tree: { t: '3C＋大環境框架', kids: [
       { t: '外部', x: 'c1', kids: [
         { t: '顧客', kids: [{ t: '首購族' }, { t: '換屋族', x: 'c2' }, { t: '賣方屋主' }] },
         { t: '競爭者', x: 'c3', kids: [{ t: '其他房仲品牌官網' }, { t: '找房平台網站' }] },
         { t: '大環境', kids: [{ t: '房市政策與信用管制' }, { t: '利率走勢', x: 'c4' }, { t: 'AI 等新科技' }] }] },
-      { t: '內部（自己）', op: '+', kids: [
+      { t: '內部（自己）', kids: [
         { t: '引流能力', kids: [{ t: '廣告投放' }, { t: 'SEO 與內容', x: 'c5' }] },
         { t: '網站體驗', kids: [{ t: '搜尋與篩選', x: 'c6' }, { t: '物件明細頁' }] },
         { t: '業務承接', x: 'c7', kids: [{ t: '留單回覆速度', x: 'c8' }, { t: '帶看安排' }] }] }] },
-    traps: [{ id: 'cx1', t: '今年留單少一成', why: '這是現象，不是分類' }, { id: 'cx2', t: '全面改版官網', why: '這是做法，不是分類' }, { id: 'cx3', t: '手機版使用者', why: '裝置是另一種分法，跟顧客分群重疊' }],
+    traps: [{ id: 'cx1', t: '成長五成', why: '這是目標的幅度，不是分類' }, { id: 'cx2', t: '全面改版官網', why: '這是做法，不是分類' }, { id: 'cx3', t: '手機版使用者', why: '裝置是另一種分法，跟顧客分群重疊' }],
     order: ['c5', 'cx1', 'c2', 'c7', 'cx3', 'c4', 'c1', 'c8', 'cx2', 'c6', 'c3'] }
 ];
 const FRAME = Object.fromEntries(FRAMES.map(f => [f.id, f]));
@@ -791,29 +1131,40 @@ FRAMES.forEach(f => {
   f.ct = Object.fromEntries(f.cards.map(c => [c.id, c.t]));
   f.blanks = f.cards.filter(c => !c.trap).length;
 });
-/* 第 1 關教學卡的示範樹（不是遊戲答案） */
-const MINI_TREE = { t: '門市營收', kids: [{ t: '來客數', kids: [{ t: '新客' }, { t: '舊客', op: '+' }] }, { t: '客單價', op: '×', kids: [{ t: '購買件數' }, { t: '平均單價', op: '×' }] }] };
+/* 教學卡的示範樹（不是遊戲答案） */
+const TEACH_TREES = {
+  frame: { t: '營收三年\n成長三成', kids: [
+    { t: '來客數\n怎麼讓更多人來？', kids: [{ t: '新客\n沒來過的人怎麼走進來？' }, { t: '舊客\n怎麼讓人常回來？' }] },
+    { t: '客單價\n怎麼讓每人多花一點？', kids: [{ t: '杯數\n怎麼讓人多買一杯？' }, { t: '單價\n怎麼讓人願意買貴一點？' }] }] },
+  size: { t: '一天營收', kids: [
+    { t: '每天賣出杯數（600 杯）', kids: [{ t: '每小時做幾杯（60 杯）' }, { t: '營業時數（10 小時）' }] },
+    { t: '平均單價（60 元）' }] }
+};
 
 const SIZE_IN = [
   { id: 'a', t: '一年找房的人', u: '萬組' },
   { id: 'b', t: '上網比例', u: '%' },
   { id: 'c', t: '來我們官網的比例', u: '%' },
   { id: 'd', t: '每人一年造訪次數', u: '次' },
-  { id: 'e', t: '留單轉換率', u: '%' }
+  { id: 'e', t: '留資料的比例', u: '%' }
 ];
 const HINTS = [
   { t: '家戶統計', b: '全台約 976 萬戶（主計總處 2025）。' },
-  { t: '品牌調查', b: '上網找房的人裡，約兩成到兩成五曾造訪大型房仲品牌官網。（課堂假設）' },
+  { t: '官網觸及調查', b: '上網找房的人裡，約兩成到兩成五逛過傑克房地產的官網。（課堂假設）' },
   { t: '新屋市場', b: '去年建物第一次登記約 17.7 萬棟。' },
   { t: '房市交易量', b: '去年（2025）全台買賣移轉約 26 萬棟。業界常說，每成交一戶，市場上約有 8–12 組人在找房。' },
   { t: '社群互動', b: '房產相關社群貼文，每月互動約 50 萬次。（課堂假設）' },
-  { t: '電商參考值', b: '電商平均約 1.5% 的人會下單；留電話的門檻更高，約是電商的五分之一到三分之一。' },
+  { t: '留資料比例推估', b: '一般電商約 1.5% 的訪客會下單；從官網留資料、讓業務聯絡的門檻比下單高，大約只有電商的五分之一到三分之一。' },
   { t: '成交流程', b: '成交約六成透過房仲；每 3 筆留單約有 1 筆會走到成交。（課堂假設）' },
   { t: '數位調查', b: '台灣上網率約 89%（TWNIC 2025）。' },
   { t: '人口結構', b: '2025 年新生兒不到 11 萬人。' },
   { t: '使用者訪談', b: '找房期約 8–10 個月（35–45 週），平均一週上網看 1 次。' }
 ];
 const PASS = { daily: [35000, 150000], leads: [35000, 180000] };
+function sizeVals(v) {
+  if (v && v.hint) { const r = sizeCalc(v); return { daily: r.ok ? r.daily : NaN, leads: r.ok ? r.leads : NaN, hint: true }; }
+  return { daily: num(v && v.daily), leads: num(v && v.leads), hint: false };
+}
 function sizeCalc(v) {
   const g = k => num(v && v[k]);
   const a = g('a'), b = g('b'), c = g('c'), d = g('d'), e = g('e');
@@ -823,67 +1174,86 @@ function sizeCalc(v) {
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const CHARTS = [
-  { id: 'total', t: '總流量', s: [{ n: '總流量', c: 1, v: [102, 95, 107, 99, 101, 87, 79, 83, 77, 81, 79, 83] }] },
-  { id: 'pages', t: '平均瀏覽頁數', s: [{ n: '頁數', c: 1, v: [101, 84, 99, 104, 97, 102, 95, 100, 106, 98, 101, 96] }] },
-  { id: 'mix', t: '自然流量 vs 廣告流量', s: [{ n: '自然流量', c: 1, v: [101, 94, 106, 98, 103, 99, 97, 102, 96, 100, 98, 103] }, { n: '廣告流量', c: 2, v: [104, 97, 109, 100, 98, 68, 51, 55, 48, 53, 50, 54] }] },
-  { id: 'cr', t: '明細 → 留單轉換率', s: [{ n: '轉換率', c: 1, v: [99, 103, 96, 101, 98, 102, 104, 101, 105, 102, 103, 101] }] },
-  { id: 'social', t: '社群聲量', s: [{ n: '聲量', c: 1, v: [96, 112, 141, 104, 92, 101, 97, 183, 118, 95, 103, 99] }] },
-  { id: 'ctr', t: '列表 → 明細點擊率', s: [{ n: '點擊率', c: 1, v: [102, 97, 99, 104, 100, 96, 103, 98, 93, 101, 104, 99] }] },
-  { id: 'bounce', t: '手機版跳出率', s: [{ n: '跳出率', c: 1, v: [101, 97, 104, 99, 102, 138, 104, 98, 105, 100, 96, 102] }] }
+  { id: 'total', t: '總流量', type: 'line', time: true, unit: '指數，去年同月 ＝ 100', max: 140, base: 100, s: [{ n: '總流量', c: 1, v: [102, 95, 107, 99, 101, 88, 80, 85, 79, 82, 80, 85] }] },
+  { id: 'budget', t: '每月廣告預算', type: 'bar', time: true, unit: '萬元', max: 150, s: [{ n: '廣告預算', c: 1, v: [100, 100, 105, 100, 100, 50, 50, 50, 50, 50, 50, 50] }] },
+  { id: 'source', t: '各來源流量', type: 'stack', time: true, unit: '萬人次', max: 200, s: [{ n: '自然流量', c: 1, v: [101, 94, 106, 98, 103, 99, 97, 102, 96, 100, 98, 103] }, { n: '廣告流量', c: 2, v: [68, 63, 71, 65, 64, 44, 33, 36, 31, 34, 32, 35] }, { n: '自有流量', c: 3, v: [12, 11, 13, 12, 12, 12, 12, 13, 12, 12, 12, 13] }] },
+  { id: 'ptype', t: '留單的物件類型占比', type: 'pct', time: true, unit: '%', s: [{ n: '大樓', c: 1, v: [45, 46, 46, 47, 47, 48, 48, 49, 50, 50, 51, 52] }, { n: '公寓', c: 2, v: [35, 35, 34, 34, 33, 33, 32, 32, 31, 31, 30, 30] }, { n: '透天', c: 3, v: [20, 19, 20, 19, 20, 19, 20, 19, 19, 19, 19, 18] }] },
+  { id: 'cr', t: '各頁留資料比例：今年 vs 去年', type: 'group', time: false, unit: '%', max: 4, cats: ['明細 → 留單', '社區頁 → 留單', '估價 → 委託'], s: [{ n: '去年', c: 3, v: [2.4, 1.1, 3.0] }, { n: '今年', c: 1, v: [2.5, 1.1, 3.1] }] },
+  { id: 'bounce', t: '手機版跳出率', type: 'line', time: true, unit: '%', max: 80, s: [{ n: '跳出率', c: 1, v: [42, 43, 58, 42, 41, 43, 42, 41, 43, 42, 41, 42] }] },
+  { id: 'social', t: '社群聲量', type: 'bar', time: true, unit: '千則', max: 20, s: [{ n: '聲量', c: 1, v: [8.2, 9.0, 15.6, 8.5, 7.9, 8.4, 8.1, 17.2, 9.3, 8.0, 8.6, 8.3] }] },
+  { id: 'region', t: '各區物件數 vs 年留單', type: 'scatter', time: false, unit: '', xmax: 2000, max: 16, xl: '物件數（件）', yl: '年留單（千筆）', pts: [['A', 1200, 9.5], ['B', 800, 6.4], ['C', 1500, 12.1], ['D', 600, 4.6], ['E', 1000, 8.2], ['F', 1800, 14.0], ['G', 900, 12.6], ['H', 1300, 10.4]] }
 ];
+const CULPRITS = ['budget', 'source'];
 const CHART = Object.fromEntries(CHARTS.map(c => [c.id, c]));
 
 const CALC = [
-  { id: 'q1', tp: '缺口', t: '廣告流量每天少了 2 萬人次，轉換率 0.3%，一年少了多少筆留單？', u: '筆', ans: 21900, ex: '2 萬 × 0.3% × 365 ＝ 21,900 筆' },
-  { id: 'q2', tp: '損益平衡', t: '社區內容頁改版一次投入 300 萬元。同樣一筆留單用廣告買要 500 元，要多少筆自然留單才回本？', u: '筆', ans: 6000, ex: '300 萬 ÷ 500 元 ＝ 6,000 筆' },
-  { id: 'q3', tp: '回本期', t: '改版後每月多 500 筆自然留單，幾個月回本？', u: '個月', ans: 12, ex: '6,000 ÷ 500 ＝ 12 個月' },
-  { id: 'q4', tp: '淨現值 NPV', t: '這筆 300 萬元的投資，之後三年每年省下 300 萬元廣告費，折現率 10%。淨現值（NPV）約多少萬元？', u: '萬元', ans: 446, ex: '約 ＋446 萬元' }
+  { id: 'q1', tp: '缺口', t: '廣告流量每天少了約 1 萬人次，廣告流量留資料的比例約 0.3%，一年少了多少筆留單？', u: '筆', ans: 10950, ex: '1 萬 × 0.3% × 365 ＝ 10,950 筆' },
+  { id: 'q2', tp: '損益平衡', t: '團隊的方案：網頁改版，一次投入 300 萬元。同樣一筆留單用廣告買要 500 元，改版要多帶來多少筆留單才回本？', u: '筆', ans: 6000, ex: '300 萬 ÷ 500 元 ＝ 6,000 筆' },
+  { id: 'q3', tp: '回本期', t: '改版後流量不變，每月多 500 筆留單，幾個月回本？', u: '個月', ans: 12, ex: '6,000 ÷ 500 ＝ 12 個月' },
+  { id: 'q4', tp: '淨現值 NPV', t: '這個方案投入 300 萬元，接下來三年，每年預估會節省 300 萬元的廣告費，折現率 10%。淨現值（NPV）約多少萬元？', u: '萬元', ans: 446, ex: '約 ＋446 萬元' }
 ];
 
 const BRAIN = [
-  { id: 'flow', t: '流程（使用者旅程）', cats: ['被看見', '找得到', '看得懂', '願意留', '會回來'] },
-  { id: 'math', t: '數學拆解', cats: ['自然流量', '付費流量', '自有流量', '轉換率'] },
-  { id: 'seg', t: '客群分眾', cats: ['首購族', '換屋族', '賣方屋主', '投資客'] },
-  { id: 'pc', t: '優缺點', cats: ['經營內容的優點', '經營內容的缺點', '加碼廣告的優點', '加碼廣告的缺點'] }
+  { id: 'flow', col: 'c1', t: '流程（留單漏斗）', use: '照事情發生的順序，一段一段找做法', ex: '例：學童入學率低 → 政策法規、學校設施、師資、家庭', cats: ['引流 Acquisition', '探索 Discovery', '評估 Evaluation', '詢問 Inquiry', '跟進 Follow-up'], sub: ['把人從外面帶進官網', '在一堆物件裡找到想看的', '看懂物件，判斷值不值得聯絡', '留下聯絡資料', '業務接手回覆、安排帶看'] },
+  { id: 'seg', col: 'c3', t: '分群（依客群）', use: '把對象分成幾群，每一群各想做法', ex: '例：手搖飲想多賣 → 學生、上班族、家庭', cats: ['首購族', '換屋族', '賣方屋主', '租屋族'] },
+  { id: 'time', col: 'c4', t: '時間軸', use: '照時間先後，各想該做的事', ex: '例：準備馬拉松 → 這個月、三個月內、比賽前', cats: ['短期（今年）', '中期（1–2 年）', '長期（到 2030）'], hint: '可以從內容經營、網頁怎麼改版去想' }
 ];
 const BR = Object.fromEntries(BRAIN.map(b => [b.id, b]));
 const REC = [
-  { t: '結論', ph: '我建議……' }, { t: '理由', ph: '因為……' }, { t: '風險', ph: '可能遇到……' }, { t: '下一步', ph: '先做……，再……' }
+  { t: '結論', sub: '一句話回答老闆的問題', ph: '我建議……', max: 80 },
+  { t: '支持事實', sub: '第一、第二、第三，用前面的數字', ph: '第一……；第二……；第三……', max: 150 },
+  { t: '風險', sub: '可能遇到什麼', ph: '可能遇到……', max: 80 },
+  { t: '下一步', sub: '先做什麼、怎麼檢視', ph: '先做……，再看……', max: 80 }
 ];
+const RECAP = [
+  ['目的', '成為客戶最依賴的房產數位服務窗口，不是衝一時的量'],
+  ['目標', '2030 年前、廣告預算不增加，讓官網流量和年留單都成長五成'],
+  ['現在', '一天約 5.6 萬人次、一年約 8 萬筆留單（內部資料）；2030 年要做到約 8.4 萬人次、12 萬筆'],
+  ['讀圖', '6 月廣告預算砍半，之後流量和留單少了將近兩成；廣告流量是租來的，自然流量持平'],
+  ['量化分析', '缺口一年約 1.1 萬筆；網頁改版 12 個月回本，三年淨現值約 ＋446 萬']
+];
+/* 每一關最後的「這一關得出的結論」 */
+const CONCL = {
+  1: { rows: [['目的', '成為客戶最依賴的房產數位服務窗口。這是方向，回答「為什麼做」，提醒我們不是衝一時的量。'], ['目標', '2030 年前、廣告預算不增加，讓官網流量和年留單都成長五成。這是可以衡量的終點。']], next: '把目標拆開來，才知道要查什麼、先查哪裡。' },
+  2: { rows: [['公式', '留單 ＝ 流量 × 留資料的比例。'], ['流量', '人從哪裡來：付費、自然、自有。'], ['比例', '來的人在哪一步留下來：買方點進明細、留資料；賣方估價、委託。'], ['也可以', '用 3C＋大環境框架或損益框架拆，重點是同一層只用一種分法。']], next: '加分練習：假設手上沒有內部資料，從 0 推估現在的流量和留單（第 2.5 關）。' },
+  2.5: { rows: [['估出來', '官網一天約 5.6 萬人次、一年約 8 萬筆留單。'], ['所以', '2030 年要做到一天約 8.4 萬人次、一年 12 萬筆，一年要多 4 萬筆留單。']], next: '看今年的報表，找出什麼在拖累成長。' },
+  3: { rows: [['發現', '6 月以後，流量和留單都比去年少了將近兩成，全年留單約少一成。'], ['原因', '6 月廣告預算砍半，廣告流量跟著掉一半；自然流量和自有流量沒變。'], ['所以', '廣告流量是租來的，錢一停就沒了。流量一時買不回來，先讓已經進來的人更願意留：團隊的網頁改版 12 個月回本，三年淨現值約 ＋446 萬，值得做。']], next: '把這些結論變成五年的做法，寫成一份建議。' },
+  4: { rows: [['建議', '先做網頁改版，讓進來的人更願意留；同時逐年把預算從廣告移到自然流量：生活角度的內容、整合自家網站流量、跟關係企業的房產平台一起推廣。'], ['連回目的', '這些做法都在累積客戶的信任，讓買房、賣房、看行情的人第一個想到我們，朝「客戶最依賴的房產數位服務窗口」前進。']], next: '' }
+};
 
 const STAGES = [
-  { id: 's1a', lv: 1, part: '前段', kind: 'boss', time: 90, max: 400, title: '先問老闆，組出一個好問題', desc: '先點問題卡問老闆，再把詞卡放進句子的四個空格。詞卡可以拖曳，也可以先點詞卡、再點空格。',
-    lesson: '好問題要有期限、限制、指標、成長幅度，而且不能把做法當成目標。' },
-  { id: 's1b', lv: 1, part: '後段', kind: 'frame', time: 120, max: 600, title: '選一種框架，把挖空的格子補起來', desc: '三種框架選一種，把卡片放進樹狀圖裡挖空的「？」格子。上游、下游都有挖空；有些卡片用不到，留在下方就好。卡片可以拖曳，也可以先點卡片、再點格子。',
+  { id: 's1a', lv: 1, part: '', kind: 'boss', time: 90, max: 1000, title: '先問老闆，組出一個好問題', desc: '先點問題卡問老闆，再把詞卡放進句子的六個空格。詞卡可以拖曳，也可以先點詞卡、再點空格。',
+    lesson: '好問題先講目的（為什麼做、最後想變成什麼樣子），再講可以衡量的目標：期限、限制、指標、成長幅度。老闆在意的兩件事（流量、留單）都要放進來，而且不能把做法當成目標。' },
+  { id: 's1b', lv: 2, part: '', kind: 'frame', time: 300, max: 1000, title: '選一種框架，把挖空的格子補起來', desc: '',
     lesson: '同一層只用一種分法，才不會重疊；越往下拆越細，下游一定比上游多；列出九成的原因就夠，不用鑽到太細。' },
-  { id: 's2', lv: 2, part: '', kind: 'sizing', time: 180, max: 1000, title: '估算我們官網的日流量和年留單', desc: '照估算鏈填入你的假設，結果會即時算出來。提示卡想看再點開，有些有用、有些沒用。',
-    lesson: '推論脈絡對、數量級對，就是好的估算。' },
-  { id: 's3a', lv: 3, part: '前段', kind: 'fog', time: 90, max: 500, title: '今年留單少了一成，問題出在哪？', desc: '七張圖都用「去年同月 ＝ 100」的指數。點圖表放大，指定哪一張是主因，再點出它從哪個月開始出問題，最後按「送出判斷」。',
-    lesson: '看時間點也看幅度：廣告流量從 6 月開始掉，7 月後只剩去年的一半左右，自然流量幾乎持平，總流量少掉的量剛好對得上。其他圖不是一次性波動，就是沒有持續變化。廣告是租來的流量，預算一停就沒了。' },
-  { id: 's3b', lv: 3, part: '後段', kind: 'calc', time: 150, max: 500, title: '算一算：值不值得投資自然流量？', desc: '四題計算，可以用手機計算機。誤差 5% 內都算對。',
-    lesson: '缺口一年約 2.2 萬筆；內容投資 6,000 筆、12 個月回本，三年淨現值約 ＋446 萬。' },
-  { id: 's4a', lv: 4, part: '前段', kind: 'brain', time: 150, max: 500, title: '2030 年要讓年留單成長五成，有哪些做法？', desc: '先選一種結構，再在每一格寫下具體的做法。Jak 會挑幾份現場分享。',
-    lesson: '先選結構再發想，每一塊都想到，才不會漏掉機會。' },
-  { id: 's4b', lv: 4, part: '後段', kind: 'rec', time: 150, max: 500, title: '寫下你的建議', desc: '由上而下寫：結論、理由、風險、下一步。請具體寫出，Jak 會挑幾份現場分享。',
-    lesson: '結論先講，再用前面的分析當理由，最後補上風險和下一步。' }
+  { id: 's2', lv: 2.5, part: '加分題', kind: 'sizing', time: 180, max: 500, title: '加分題：從 0 推估傑克房地產官網的流量和留單', desc: '練習題：假設手上沒有任何內部資料，推估官網一天大約多少人次、一年大約多少筆留單。數據提示卡免費看；卡住了可以看估算鏈，但這題滿分會減半。',
+    lesson: '查得到的用查的，查不到的才估：先抓關鍵因子、一層層往下拆，數量級對、推論合理，就是好的估算。' },
+  { id: 's3a', lv: 3, part: '前段', kind: 'fog', time: 90, max: 500, title: '今年的留單好像變少，幫我看看哪裡出問題', desc: '八張圖的圖型和單位都不一樣，先看懂標題和座標。主因有兩張：點圖表放大，最多指定兩張主因，再選出問題從哪個月開始，最後按「送出判斷」。',
+    lesson: '主因有兩張：6 月廣告預算砍半（原因），各來源流量裡縮掉的正是廣告那一段（結果），自然和自有流量幾乎沒變。6 月以後流量和留單都比去年少了將近兩成，全年留單約少一成。總流量只是表面現象；占比、留資料比例、單月波動、區域比較都解釋不了。' },
+  { id: 's3b', lv: 3, part: '後段', kind: 'calc', time: 150, max: 500, title: '團隊提了一個方案，值不值得做？', desc: '流量一時買不回來，團隊提了一個方案：網頁改版，讓已經進來的人更願意留資料。先算廣告少掉的缺口，再算這個方案值不值得。四題計算，可以用計算機，誤差 5% 內都算對。',
+    lesson: '廣告缺口一年約 1.1 萬筆；網頁改版要多 6,000 筆留單才回本，12 個月回本，三年淨現值約 ＋446 萬，值得做。' },
+  { id: 's4a', lv: 4, part: '前段', kind: 'brain', time: 150, max: 500, title: '2030 年要讓流量和留單都成長五成，有哪些長期做法？', desc: '從前面幾關的結論出發：先選一種結構，再在每一格寫下對應的做法。每個結構都附了一個例子。',
+    lesson: '先選結構再發想：每一塊都想到，才不會漏掉機會；再挑重要的往下挖。長期做法要能累積：內容、體驗、自家網站和夥伴的流量，錢停了也不會消失。' },
+  { id: 's4b', lv: 4, part: '後段', kind: 'rec', time: 150, max: 500, title: '由上而下，寫下你的建議', desc: '先看一下前三關得到的結論，再由上往下寫：一句話結論、支持事實、風險、下一步。結論要能連回老闆的目的。請具體寫出。',
+    lesson: '結論先講，而且連回目的；支持事實用前面算出的數字，最有力的放前面；下一步回去看框架裡還沒驗證的分支。' }
 ];
 const STAGE = Object.fromEntries(STAGES.map(s => [s.id, s]));
-const MISSIONS = { 1: ['s1a', 's1b'], 2: ['s2'], 3: ['s3a', 's3b'], 4: ['s4a', 's4b'] };
-const LVNAME = { 1: '釐清問題＋框架', 2: '估算市場', 3: '解讀圖表＋量化算帳', 4: '結構化發想＋提出建議' };
+const MISSIONS = { 1: ['s1a'], 2: ['s1b'], 2.5: ['s2'], 3: ['s3a', 's3b'], 4: ['s4a', 's4b'] };
+const LVNAME = { 1: '釐清問題', 2: '框架', 2.5: '估算市場（加分題）', 3: '解讀圖表＋量化分析', 4: '結構化發想＋提出建議' };
 const CH = [
-  { n: '釐清問題＋框架', ask: '真正的目標是什麼？拆開來有沒有重複或遺漏？', pts: ['先問：指標、多少、何時、限制', '同一層只用一種分法', '列出九成的原因就夠'] },
+  { n: '釐清問題＋框架', ask: '為什麼做？目標是什麼？拆開來有沒有重複或遺漏？', pts: ['先問：目的、指標、多少、何時、限制', '同一層只用一種分法', '列出九成的原因就夠'] },
   { n: '估算市場', ask: '這個數字合理嗎？換一種算法也對得上嗎？', pts: ['釐清 → 結構 → 假設 → 計算 → 交叉驗證', '脈絡對、數量級對就是好估算'] },
-  { n: '解讀圖表＋量化算帳', ask: '問題真正出在哪？值不值得做？', pts: ['看懂圖 → 找洞見 → 連回目標', '分清楚持續下滑和一次性波動', '損益平衡、回本期、淨現值'] },
+  { n: '解讀圖表＋量化分析', ask: '問題真正出在哪？值不值得做？', pts: ['看懂圖 → 找洞見 → 連回目標', '分清楚持續下滑和一次性波動', '損益平衡、回本期、淨現值'] },
   { n: '結構化發想＋提出建議', ask: '結論先講，理由、風險、下一步呢？', pts: ['先選結構再發想', '先求廣度，再挖深度', '一分鐘內講完'] }
 ];
 const SEVEN = [
-  { n: '釐清問題', en: 'Clarifying Question', lv: 1, tg: 1, k: '挖掘數據', d: '把模糊的需求，問成可以衡量的目標', o: '2030 年前、廣告預算不增加，讓年留單成長五成' },
-  { n: '框架', en: 'Framework', lv: 1, tg: 1, k: '挖掘數據', d: '不重複、不遺漏地把問題拆開', o: '年留單 ＝ 流量（付費、自然、自有）× 轉換率（買方、賣方）' },
-  { n: '估算市場', en: 'Market Sizing', lv: 2, tg: 1, k: '挖掘數據', d: '用公開數據推出規模，判斷目標撐不撐得起', o: '日流量約 5.6 萬人次、年留單約 8 萬筆，市場撐得起目標' },
-  { n: '解讀圖表', en: 'Chart Interpretation', lv: 3, tg: 2, k: '整合大數據', d: '對時間點、比幅度，找出真正的主因', o: '6 月廣告預算縮減，廣告流量掉到一半左右，自然流量持平' },
-  { n: '量化算帳', en: 'Quantitative Analysis', lv: 3, tg: 2, k: '整合大數據', d: '算缺口、損益平衡、回本期、淨現值，判斷值不值得做', o: '缺口一年約 2.2 萬筆；內容投資 12 個月回本，三年淨現值約 ＋446 萬' },
-  { n: '結構化發想', en: 'Brainstorming', lv: 4, tg: 3, k: '評估及選擇策略', d: '先選結構再發想，每一塊都想到，再挑出最值得做的', o: '照使用者旅程列做法：被看見、找得到、看得懂、願意留、會回來' },
-  { n: '提出建議', en: 'Recommendation', lv: 4, tg: 4, k: '對焦組織計劃', d: '結論先講，再給理由、風險和下一步', o: '五年內逐年把預算從廣告移到內容；先改社區內容頁，一季後檢視再調整' }
+  { n: '釐清問題', o: '目的：成為客戶最依賴的房產數位服務窗口；目標：2030 年前、廣告預算不增加，流量和留單都成長五成' },
+  { n: '框架', o: '留單 ＝ 流量（付費、自然、自有）× 留資料的比例（買方、賣方）' },
+  { n: '估算市場', o: '從 0 推估：一天約 5.6 萬人次、一年約 8 萬筆留單' },
+  { n: '解讀圖表', o: '6 月廣告預算砍半，流量和留單少了將近兩成；自然流量持平' },
+  { n: '量化分析', o: '缺口一年約 1.1 萬筆；網頁改版 12 個月回本，三年淨現值約 ＋446 萬' },
+  { n: '結構化發想', o: '照時間軸找做法：短期網頁改版、中期生活圈文章做 SEO、長期累積生活圈內容' },
+  { n: '提出建議', o: '先做網頁改版，再逐年把預算移到自然流量，朝客戶最依賴的數位服務窗口前進' }
 ];
 const CLOSING = '整合策劃力，就是用這條脈絡，把一句模糊的需求，變成一份有數據、能執行、可以邊做邊調整的計畫。';
 
@@ -911,9 +1281,9 @@ function grade(sid, v) {
     SLOTS.forEach(s => {
       const t = TILE[sl[s.id]];
       if (!t) { detail.push(`${s.t}：沒有填`); return; }
-      const p = (t.score && t.score[s.id]) || 0; pts += p;
-      const note = p === 100 ? '' : (p === 0 && t.score && !t.trap) ? '，放錯格子了' : (t.why ? '，' + t.why : '，放錯格子了');
-      detail.push(`${s.t}：${t.t}　${p === 100 ? '對' : p ? '半分' : '錯'}${note}`);
+      const f = (t.score && t.score[s.k]) || 0, p = Math.round((s.pts || SLOT_PTS) * f); pts += p;
+      const note = f === 1 ? '' : (f === 0 && t.score && !t.trap) ? '，放錯格子了' : (t.why ? '，' + t.why : '，放錯格子了');
+      detail.push(`${s.t}：${t.t}　${f === 1 ? '對' : f ? '半分' : '錯'}${note}`);
     });
     return { pts, detail };
   }
@@ -925,31 +1295,43 @@ function grade(sid, v) {
       const put = g.map(b => pl[b]).filter(Boolean);
       g.forEach(id => { if (put.includes(id)) right++; else miss.push(f.ct[id]); });
     });
-    const pts = Math.round(600 * right / f.blanks);
+    const pts = Math.round(FRAME_MAX * right / f.blanks);
     detail.push(`選了「${f.name}」：填對 ${right} / ${f.blanks} 格`);
     if (miss.length) detail.push(`沒填對的答案：${miss.join('、')}`);
     f.traps.filter(t => Object.values(pl).includes(t.id)).forEach(t => detail.push(`陷阱卡「${t.t}」放進樹裡了：${t.why}`));
     return { pts, detail };
   }
   if (k === 'sizing') {
-    const r = sizeCalc(v); if (!r.ok) return { pts: 0, detail: ['估算鏈沒有填完'] };
+    const r = sizeVals(v), m = r.hint ? 0.5 : 1;
     const part = (x, [lo, hi]) => {
-      if (x >= lo && x <= hi) return 500;
+      if (!(x > 0)) return 0;
+      if (x >= lo && x <= hi) return 250;
       const ratio = x < lo ? lo / x : x / hi;
-      return Math.round(500 * Math.max(0, 1 - Math.log10(ratio) / Math.log10(4)));
+      return Math.round(250 * Math.max(0, 1 - Math.log10(ratio) / Math.log10(4)));
     };
+    if (!(r.daily > 0) && !(r.leads > 0)) return { pts: 0, detail: [r.hint ? '估算鏈沒有填完' : '沒有填數字'] };
     const p1 = part(r.daily, PASS.daily), p2 = part(r.leads, PASS.leads);
-    detail.push(`日流量 ${fmt(r.daily)} 人次　${p1 === 500 ? '在合理區間' : '超出區間'}（+${p1}）`);
-    detail.push(`年留單 ${fmt(r.leads)} 筆　${p2 === 500 ? '在合理區間' : '超出區間'}（+${p2}）`);
-    return { pts: p1 + p2, detail };
+    detail.push(r.daily > 0 ? `日流量 ${fmt(r.daily)} 人次　${p1 === 250 ? '在合理區間' : '超出區間'}（+${Math.round(p1 * m)}）` : '日流量沒有填（+0）');
+    detail.push(r.leads > 0 ? `年留單 ${fmt(r.leads)} 筆　${p2 === 250 ? '在合理區間' : '超出區間'}（+${Math.round(p2 * m)}）` : '年留單沒有填（+0）');
+    if (r.hint) detail.push('用了估算鏈提示，這題分數 × 0.5');
+    return { pts: Math.round((p1 + p2) * m), detail };
   }
   if (k === 'fog') {
-    if (v.culprit !== 'mix') { detail.push(v.culprit && CHART[v.culprit] ? `你選的主因「${CHART[v.culprit].t}」不是真正原因` : '沒有指定主因'); return { pts: 0, detail }; }
+    const sel = Array.isArray(v.culprits) ? [...new Set(v.culprits.filter(x => CHART[x]))].slice(0, 2) : [];
+    if (!sel.length) return { pts: 0, detail: ['沒有指定主因'] };
+    let pc = 0;
+    sel.forEach(x => {
+      if (CULPRITS.includes(x)) { pc += 200; detail.push(`主因找對了：${CHART[x].t}（+200）`); }
+      else if (x === 'total') detail.push('總流量：方向對，但它是結果，要再往下拆才是主因（+0）');
+      else { pc -= 100; detail.push(`「${CHART[x].t}」不是主因（−100）`); }
+    });
+    const right = sel.filter(x => CULPRITS.includes(x)).length;
+    if (right === 1) detail.push('還有一張主因沒找到');
+    pc = clamp(pc, 0, 400);
     const m = Number(v.month);
-    const pm = m === 6 ? 100 : m === 7 ? 50 : 0;
-    detail.push('主因找對了：自然流量 vs 廣告流量（+400）');
+    const pm = right ? (m === 6 ? 100 : m === 7 ? 50 : 0) : 0;
     detail.push(m ? `起點月份選 ${m} 月（+${pm}）` : '沒有選起點月份（+0）');
-    return { pts: 400 + pm, detail };
+    return { pts: pc + pm, detail };
   }
   if (k === 'calc') {
     let pts = 0;
@@ -982,30 +1364,71 @@ function hasInput(sid, v) {
   const k = STAGE[sid].kind;
   if (k === 'boss') return isObj(v.slots) && Object.values(v.slots).some(Boolean);
   if (k === 'frame') return !!v.f && isObj(v.place) && Object.values(v.place).some(Boolean);
-  if (k === 'sizing') return SIZE_IN.some(i => isFinite(num(v[i.id])));
-  if (k === 'fog') return !!v.culprit;
+  if (k === 'sizing') return v.hint ? SIZE_IN.some(i => isFinite(num(v[i.id]))) : (num(v.daily) > 0 || num(v.leads) > 0);
+  if (k === 'fog') return Array.isArray(v.culprits) && v.culprits.length > 0;
   if (k === 'calc') return CALC.some(q => isFinite(num(v[q.id])));
   if (k === 'brain' || k === 'rec') return Array.isArray(v.t) && v.t.some(s => typeof s === 'string' && s.trim());
   return false;
 }
 
 /* ================= 圖表 ================= */
+const colOf = n => n === 3 ? 'var(--ink-3)' : `var(--data${n})`;
+const fmtv = v => String(Math.round(v * 10) / 10);
 function chartSVG(c, opt) {
   opt = opt || {};
-  const W = opt.big ? 520 : 260, H = opt.big ? 210 : 112, pl = opt.big ? 30 : 22, pr = 8, pt = 10, pb = opt.big ? 22 : 16;
+  const big = !!opt.big;
+  const W = big ? 520 : 260, H = big ? 220 : 124, pl = big ? 40 : 30, pr = 8, pt = 10, pb = big ? 26 : 18;
   const iw = W - pl - pr, ih = H - pt - pb;
-  const X = i => pl + i * iw / 11, Y = v => pt + ih - v / 200 * ih;
+  const max = c.type === 'pct' ? 100 : c.max;
+  const Y = v => pt + ih - v / max * ih;
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${c.t}">`;
-  [0, 100, 200].forEach(t => { s += `<line class="${t === 100 ? 'base' : 'gl'}" x1="${pl}" x2="${W - pr}" y1="${Y(t)}" y2="${Y(t)}"/><text class="tk" x="${pl - 4}" y="${Y(t) + 3}" text-anchor="end">${t}</text>`; });
-  MONTHS.forEach((m, i) => { if (opt.big || i % 2 === 0) s += `<text class="tk" x="${X(i)}" y="${H - 4}" text-anchor="middle">${m}月</text>`; });
-  if (opt.mark) s += `<line class="mk" x1="${X(opt.mark - 1)}" x2="${X(opt.mark - 1)}" y1="${pt}" y2="${pt + ih}"/>`;
-  c.s.forEach(se => {
-    s += `<polyline class="ln${se.c}" points="${se.v.map((v, i) => `${X(i)},${Y(v)}`).join(' ')}"/>`;
-    se.v.forEach((v, i) => { s += `<circle class="d${se.c}" cx="${X(i)}" cy="${Y(v)}" r="${opt.big ? 3 : 2}"><title>${MONTHS[i]}月 ${se.n}：${v}</title></circle>`; });
-  });
+  [0, max / 2, max].forEach(t => { s += `<line class="gl" x1="${pl}" x2="${W - pr}" y1="${Y(t)}" y2="${Y(t)}"/><text class="tk" x="${pl - 4}" y="${Y(t) + 3}" text-anchor="end">${fmtv(t)}${c.type === 'pct' ? '%' : ''}</text>`; });
+  if (c.base) s += `<line class="base" x1="${pl}" x2="${W - pr}" y1="${Y(c.base)}" y2="${Y(c.base)}"/>`;
+  if (c.type === 'scatter') {
+    const X = x => pl + x / c.xmax * iw;
+    [0, c.xmax / 2, c.xmax].forEach(t => { s += `<text class="tk" x="${X(t)}" y="${H - 6}" text-anchor="middle">${fmtv(t)}</text>`; });
+    if (big) s += `<text class="tk" x="${pl + iw}" y="${H - 16}" text-anchor="end">${c.xl}</text><text class="tk" x="${pl + 4}" y="${pt + 8}">${c.yl}</text>`;
+    c.pts.forEach(([n, x, y]) => {
+      s += `<circle cx="${X(x)}" cy="${Y(y)}" r="${big ? 5 : 3.2}" style="fill:${colOf(1)}"><title>${n} 區：物件 ${x} 件，年留單 ${y} 千筆</title></circle>`;
+      if (big) s += `<text class="tk" x="${X(x) + 7}" y="${Y(y) + 3}">${n}</text>`;
+    });
+  } else if (c.time) {
+    const step = iw / 12, cx = i => pl + step * (i + 0.5);
+    MONTHS.forEach((m, i) => { if (big || i % 2 === 0) s += `<text class="tk" x="${cx(i)}" y="${H - 6}" text-anchor="middle">${m}月</text>`; });
+    if (c.type === 'line') {
+      c.s.forEach(se => {
+        s += `<polyline class="ln${se.c}" points="${se.v.map((v, i) => `${cx(i)},${Y(v)}`).join(' ')}"/>`;
+        se.v.forEach((v, i) => { s += `<circle class="d${se.c}" cx="${cx(i)}" cy="${Y(v)}" r="${big ? 3 : 2}"><title>${MONTHS[i]}月 ${se.n}：${v}</title></circle>`; });
+      });
+    } else {
+      const bw = step * 0.62;
+      MONTHS.forEach((m, i) => {
+        let acc = 0;
+        const tot = c.type === 'pct' ? c.s.reduce((a, se) => a + se.v[i], 0) : 1;
+        c.s.forEach(se => {
+          const val = c.type === 'pct' ? se.v[i] / tot * 100 : se.v[i];
+          const y1 = Y(acc + val), y0 = Y(acc);
+          s += `<rect x="${cx(i) - bw / 2}" y="${y1}" width="${bw}" height="${Math.max(0, y0 - y1)}" style="fill:${colOf(se.c)}"><title>${m}月 ${se.n}：${se.v[i]}${c.type === 'pct' ? '%' : ' ' + c.unit}</title></rect>`;
+          if (c.type !== 'bar') acc += val;
+        });
+      });
+    }
+    if (opt.mark) s += `<line class="mk" x1="${cx(opt.mark - 1)}" x2="${cx(opt.mark - 1)}" y1="${pt}" y2="${pt + ih}"/>`;
+  } else if (c.type === 'group') {
+    const n = c.cats.length, step = iw / n, k = c.s.length, bw = step * 0.6 / k;
+    c.cats.forEach((cat, i) => {
+      const x0 = pl + step * i + step * 0.2;
+      c.s.forEach((se, j) => {
+        const v = se.v[i];
+        s += `<rect x="${x0 + j * bw}" y="${Y(v)}" width="${bw - 2}" height="${pt + ih - Y(v)}" style="fill:${colOf(se.c)}"><title>${cat} ${se.n}：${v}%</title></rect>`;
+        if (big) s += `<text class="tk" x="${x0 + j * bw + (bw - 2) / 2}" y="${Y(v) - 3}" text-anchor="middle">${v}%</text>`;
+      });
+      s += `<text class="tk" x="${pl + step * (i + 0.5)}" y="${H - 6}" text-anchor="middle">${cat}</text>`;
+    });
+  }
   return s + '</svg>';
 }
-function legendHTML(c) { return c.s.length > 1 ? `<div class="legend">${c.s.map(se => `<span><i style="background:var(--data${se.c})"></i>${se.n}</span>`).join('')}</div>` : ''; }
+function legendHTML(c) { return c.s && c.s.length > 1 ? `<div class="legend">${c.s.map(se => `<span><i style="background:${colOf(se.c)};height:8px"></i>${se.n}</span>`).join('')}</div>` : ''; }
 
 /* ================= 拖放 ================= */
 function dnd(root, onDrop) {
@@ -1086,7 +1509,7 @@ function makeWidget(st, onSubmit) {
   W.submit = doSubmit;
 
   if (st.kind === 'boss') {
-    const s = { asked: [], slots: { deadline: null, limit: null, metric: null, growth: null } };
+    const s = { asked: [], slots: { purpose: null, deadline: null, limit: null, m1: null, m2: null, growth: null } };
     const chatBox = h('div', 'wbox'), chat = h('div', 'chat'), chips = h('div', 'qchips');
     chatBox.append(txt('h5', '', '先問老闆'), chat, chips);
     const addBub = (who, t) => { const b = h('div', 'bub ' + who); if (who === 'boss') b.append(txt('span', 'who', '老闆')); b.append(document.createTextNode(t)); chat.append(b); chat.scrollTop = chat.scrollHeight; };
@@ -1098,7 +1521,7 @@ function makeWidget(st, onSubmit) {
     });
     const build = h('div', 'wbox'), sent = h('div', 'sentence'), tray = h('div', 'tray dtarget');
     tray.dataset.k = 'tray';
-    build.append(txt('h5', '', '組出問題'), sent, tray, txt('p', 'wnote', '詞卡可以拖曳，也可以先點詞卡、再點空格。點空格裡的詞卡可以換位置，拖回下方就是拿掉。'));
+    build.append(txt('h5', '', '組出問題'), sent, tray);
     const sub = submitBtn('送出這個問題');
     const render = () => {
       sent.innerHTML = '';
@@ -1107,12 +1530,12 @@ function makeWidget(st, onSubmit) {
         if (s.slots[id]) e.append(dcard(s.slots[id], TILE[s.slots[id]].t)); else e.append(txt('span', 'lbl', sl.t));
         return e;
       };
-      sent.append('在 ', slotEl('deadline'), ' 前，在 ', slotEl('limit'), ' 下，讓 ', slotEl('metric'), ' ', slotEl('growth'), '。');
+      sent.append('為了 ', slotEl('purpose'), '，在 ', slotEl('deadline'), ' 前，在 ', slotEl('limit'), ' 下，讓 ', slotEl('m1'), ' 和 ', slotEl('m2'), ' 都 ', slotEl('growth'), '。');
       tray.innerHTML = '';
       const used = new Set(Object.values(s.slots).filter(Boolean));
       TILES.forEach(t => { if (!used.has(t.id)) tray.append(dcard(t.id, t.t)); });
       const n = Object.values(s.slots).filter(Boolean).length;
-      sub.disabled = n === 0 || W.submitted; sub.textContent = n === 4 ? '送出這個問題' : `送出（已填 ${n} / 4 格）`;
+      sub.disabled = n === 0 || W.submitted; sub.textContent = n === SLOTS.length ? '送出這個問題' : `送出（已填 ${n} / ${SLOTS.length} 格）`;
     };
     dnd(build, (id, t) => {
       const k = t.dataset.k;
@@ -1122,7 +1545,7 @@ function makeWidget(st, onSubmit) {
     });
     sub.onclick = doSubmit;
     W.getValue = () => ({ asked: s.asked.slice(), slots: Object.assign({}, s.slots) });
-    render(); root.append(chatBox, build, sub);
+    render(); root.classList.add('two'); root.append(chatBox, build, sub);
     return W;
   }
 
@@ -1147,7 +1570,7 @@ function makeWidget(st, onSubmit) {
       const head = h('div', 'fhead'); head.append(txt('span', 'fformula', f.name + '：' + f.formula));
       const sw = txt('button', 'btn sm', '換框架'); sw.type = 'button'; sw.onclick = () => { s.f = null; s.place = {}; render(); };
       head.append(sw);
-      const area = h('div', 'w');
+      const area = h('div', 'w framew');
       const tr = treeEl(f.tree, n => {
         const e = h('div', 'tnode tblank dtarget'); e.dataset.k = n.x;
         const c = s.place[n.x];
@@ -1158,7 +1581,8 @@ function makeWidget(st, onSubmit) {
       const used = new Set(Object.values(s.place));
       f.order.forEach(id => { if (!used.has(id)) tray.append(dcard(id, f.ct[id])); });
       const n = used.size;
-      area.append(txt('p', 'wnote', '黃色圓圈是運算符號：× 相乘、+ 相加、− 相減，標在第二項前面。'), tr, txt('p', 'wnote', `把下方的卡片拖進樹狀圖裡的「？」格子（已填 ${n} / ${f.blanks} 格）。有些卡片用不到，留在下方就好。`), tray);
+      const side = h('div', 'w frameside'); side.append(txt('p', 'wnote', `把卡片拖進樹狀圖裡的「？」格子（已填 ${n} / ${f.blanks} 格）。有些卡片用不到，留在這裡就好。`), tray, sub);
+      area.append(tr, side);
       dnd(area, (id, t) => {
         const k = t.dataset.k;
         Object.keys(s.place).forEach(b => { if (s.place[b] === id) delete s.place[b]; });
@@ -1175,9 +1599,9 @@ function makeWidget(st, onSubmit) {
   }
 
   if (st.kind === 'sizing') {
-    const s = {};
+    const s = { hint: false, daily: '', leads: '' };
     const hb = h('div', 'wbox'), hl = h('div', 'hints'), body = h('div', 'hintbody'); body.hidden = true;
-    hb.append(txt('h5', '', '提示卡（想看再點開）'), hl, body);
+    hb.append(txt('h5', '', '數據提示卡（免費，想看再點開）'), hl, body);
     let open = -1;
     HINTS.forEach((x, i) => {
       const b = txt('button', 'hint', x.t); b.type = 'button'; b.setAttribute('aria-expanded', 'false');
@@ -1188,79 +1612,124 @@ function makeWidget(st, onSubmit) {
       };
       hl.append(b);
     });
-    const cb = h('div', 'wbox'), ch = h('div', 'chainin');
-    cb.append(txt('h5', '', '估算鏈'), ch);
-    SIZE_IN.forEach((x, i) => {
-      const row = h('div', 'cin');
-      row.append(txt('span', 'op', i === 0 ? '' : '×'));
-      const lab = txt('label', '', x.t); lab.htmlFor = 'sz_' + x.id;
-      const inp = h('input'); inp.id = 'sz_' + x.id; inp.type = 'text'; inp.inputMode = 'decimal'; inp.autocomplete = 'off';
-      inp.oninput = () => { s[x.id] = inp.value; upd(); };
-      const w = h('span', 'inp'); w.append(inp, txt('span', 'u', x.u));
-      row.append(lab, w); ch.append(row);
-    });
-    const res = h('div', 'results');
-    const r1 = h('div', 'res', '<span>年造訪數</span><b class="num">—</b>'), r2 = h('div', 'res', '<span>日流量（人次）</span><b class="num">—</b>'), r3 = h('div', 'res', '<span>年留單（筆）</span><b class="num">—</b>');
-    res.append(r1, r2, r3);
-    cb.append(txt('p', 'wnote', '年造訪數 ＝ 前四格相乘；日流量 ＝ 年造訪數 ÷ 365；年留單 ＝ 年造訪數 × 轉換率'), res);
+    const box = h('div', 'wbox');
     const sub = submitBtn('送出估算');
+    const inpRow = (id, label, unit, key) => {
+      const row = h('div', 'cin');
+      row.append(txt('span', 'op', ''));
+      const lab = txt('label', '', label); lab.htmlFor = id;
+      const inp = h('input'); inp.id = id; inp.type = 'text'; inp.inputMode = 'decimal'; inp.autocomplete = 'off'; inp.value = s[key] || '';
+      const pv = txt('span', 'prev', '');
+      const show = () => { const n = num(inp.value); pv.textContent = n > 0 ? '≈ ' + fmt(n) : ''; };
+      inp.oninput = () => { s[key] = inp.value; show(); upd(); };
+      const w = h('span', 'inp'); w.append(inp, txt('span', 'u', unit), pv);
+      row.append(lab, w); show();
+      return row;
+    };
+    let rr = null;
+    const render = () => {
+      box.innerHTML = '';
+      if (!s.hint) {
+        box.append(txt('h5', '', '你的估算'));
+        const ch = h('div', 'chainin');
+        ch.append(inpRow('sz_daily', '官網日流量', '人次 / 天', 'daily'), inpRow('sz_leads', '一年的留單數', '筆 / 年', 'leads'));
+        box.append(ch, txt('p', 'wnote', '自己決定要從哪些數字推起，可以用計算機。'));
+        const hbtn = txt('button', 'btn sm hintbtn', '卡住了？看估算鏈（這題滿分減半）'); hbtn.type = 'button';
+        hbtn.onclick = () => {
+          if (W.submitted) return;
+          if (!hbtn.classList.contains('armed')) { hbtn.classList.add('armed'); hbtn.textContent = '再按一次確認：這題滿分會變成 250'; return; }
+          s.hint = true; render(); upd();
+        };
+        box.append(hbtn);
+      } else {
+        box.append(txt('h5', '', '估算鏈（已使用提示，這題滿分 250）'));
+        const ch = h('div', 'chainin');
+        SIZE_IN.forEach((x, i) => {
+          const row = h('div', 'cin');
+          row.append(txt('span', 'op', i === 0 ? '' : '×'));
+          const lab = txt('label', '', x.t); lab.htmlFor = 'sz_' + x.id;
+          const inp = h('input'); inp.id = 'sz_' + x.id; inp.type = 'text'; inp.inputMode = 'decimal'; inp.autocomplete = 'off'; inp.value = s[x.id] || '';
+          inp.oninput = () => { s[x.id] = inp.value; upd(); };
+          const w = h('span', 'inp'); w.append(inp, txt('span', 'u', x.u));
+          row.append(lab, w); ch.append(row);
+        });
+        const res = h('div', 'results');
+        rr = [h('div', 'res', '<span>年造訪數</span><b class="num">—</b>'), h('div', 'res', '<span>日流量（人次）</span><b class="num">—</b>'), h('div', 'res', '<span>年留單（筆）</span><b class="num">—</b>')];
+        res.append(...rr);
+        box.append(ch, txt('p', 'wnote', '年造訪數 ＝ 前四格相乘；日流量 ＝ 年造訪數 ÷ 365；年留單 ＝ 年造訪數 × 留資料的比例'), res);
+      }
+      if (W.submitted) lock();
+    };
     const upd = () => {
-      const r = sizeCalc(s);
-      const vis = SIZE_IN.slice(0, 4).every(x => isFinite(num(s[x.id])));
-      $('b', r1).textContent = vis ? fmt(r.visits) : '—';
-      $('b', r2).textContent = vis ? fmt(r.daily) : '—';
-      $('b', r3).textContent = r.ok ? fmt(r.leads) : '—';
-      sub.disabled = !r.ok || W.submitted;
+      if (s.hint) {
+        const r = sizeCalc(s);
+        const vis = SIZE_IN.slice(0, 4).every(x => num(s[x.id]) > 0);
+        if (rr) { $('b', rr[0]).textContent = vis ? fmt(r.visits) : '—'; $('b', rr[1]).textContent = vis ? fmt(r.daily) : '—'; $('b', rr[2]).textContent = r.ok ? fmt(r.leads) : '—'; }
+        sub.disabled = !r.ok || W.submitted;
+      } else sub.disabled = !(num(s.daily) > 0 && num(s.leads) > 0) || W.submitted;
     };
     sub.onclick = doSubmit;
-    W.getValue = () => { const o = {}; SIZE_IN.forEach(x => { const n = num(s[x.id]); if (isFinite(n)) o[x.id] = n; }); return o; };
-    upd(); root.append(hb, cb, sub);
+    W.getValue = () => {
+      if (!s.hint) { const o = { hint: false }; ['daily', 'leads'].forEach(k => { const n = num(s[k]); if (isFinite(n)) o[k] = n; }); return o; }
+      const o = { hint: true }; SIZE_IN.forEach(x => { const n = num(s[x.id]); if (isFinite(n)) o[x.id] = n; }); return o;
+    };
+    render(); upd(); root.append(hb, box, sub);
     return W;
   }
 
   if (st.kind === 'fog') {
-    const s = { culprit: null, month: null, zoom: null, pick: null };
+    const s = { culprits: [], month: null, zoom: null };
     const top = h('div', 'fhead'), sumy = txt('span', 'wnote', '');
     top.append(sumy);
     const grid = h('div', 'fogs'), zoom = h('div', 'zoom'); zoom.hidden = true;
     const sub = submitBtn('送出判斷');
     const render = (scroll) => {
-      sumy.innerHTML = s.culprit ? `你的判斷：<b>${CHART[s.culprit].t}</b>，${s.month ? `<b>${s.month} 月</b>開始` : '還沒選起點月份'}` : '還沒指定主因：點一張圖放大來看';
+      sumy.innerHTML = s.culprits.length ? `你的主因（${s.culprits.length} / 2）：<b>${s.culprits.map(x => CHART[x].t).join('、')}</b>　${s.month ? `從 <b>${s.month} 月</b>開始` : '還沒選起點月份'}` : '';
+      top.hidden = !s.culprits.length;
       grid.innerHTML = '';
       CHARTS.forEach(c => {
-        const b = h('button', 'fogc' + (s.zoom === c.id ? ' on' : '') + (s.culprit === c.id ? ' culprit' : '')); b.type = 'button';
-        b.append(txt('b', '', c.t));
+        const b = h('button', 'fogc' + (s.zoom === c.id ? ' on' : '') + (s.culprits.includes(c.id) ? ' culprit' : '')); b.type = 'button';
+        b.append(txt('b', '', c.t + (c.unit ? `（${c.unit}）` : '')));
         b.insertAdjacentHTML('beforeend', chartSVG(c));
-        b.onclick = () => { if (W.submitted) return; s.zoom = c.id; s.pick = s.culprit === c.id ? s.month : null; render(true); };
+        b.onclick = () => { if (W.submitted) return; s.zoom = c.id; render(true); };
         grid.append(b);
       });
       zoom.hidden = !s.zoom; zoom.innerHTML = '';
       if (s.zoom) {
         const c = CHART[s.zoom];
-        zoom.append(txt('b', '', c.t + '（去年同月 ＝ 100）'));
-        zoom.insertAdjacentHTML('beforeend', legendHTML(c) + chartSVG(c, { big: true, mark: s.pick }));
-        zoom.append(txt('p', 'wnote', '如果這張是主因，它從哪個月開始出問題？'));
-        const ms = h('div', 'months');
-        MONTHS.forEach(m => { const b = txt('button', '', m + '月'); b.type = 'button'; b.setAttribute('aria-pressed', String(s.pick === m)); b.onclick = () => { s.pick = s.pick === m ? null : m; if (s.culprit === s.zoom) s.month = s.pick; render(); }; ms.append(b); });
-        const set = txt('button', 'btn sm' + (s.culprit === s.zoom ? ' primary' : ''), s.culprit === s.zoom ? '已指定為主因' : '指定這張是主因'); set.type = 'button';
-        set.onclick = () => { s.culprit = s.zoom; s.month = s.pick; render(); };
-        zoom.append(ms, set);
+        zoom.append(txt('b', '', c.t + (c.unit ? `（單位：${c.unit}）` : '')));
+        zoom.insertAdjacentHTML('beforeend', legendHTML(c) + chartSVG(c, { big: true, mark: c.time ? s.month : null }));
+        if (c.time) {
+          zoom.append(txt('p', 'wnote', '主因是從哪個月開始的？（兩張主因共用一個月份）'));
+          const ms = h('div', 'months');
+          MONTHS.forEach(m => { const b = txt('button', '', m + '月'); b.type = 'button'; b.setAttribute('aria-pressed', String(s.month === m)); b.onclick = () => { s.month = s.month === m ? null : m; render(); }; ms.append(b); });
+          zoom.append(ms);
+        } else zoom.append(txt('p', 'wnote', '這張圖沒有時間軸，看不出變化是從哪個月開始。'));
+        const on = s.culprits.includes(c.id), full = !on && s.culprits.length >= 2;
+        const set = txt('button', 'btn sm' + (on ? ' primary' : ''), on ? '已指定為主因（再按一次取消）' : full ? '最多兩張，先取消一張' : '指定這張是主因'); set.type = 'button';
+        set.disabled = full;
+        set.onclick = () => { if (on) s.culprits = s.culprits.filter(x => x !== c.id); else if (!full) s.culprits.push(c.id); render(); };
+        zoom.append(set);
         if (scroll) requestAnimationFrame(() => zoom.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
       }
-      sub.disabled = !s.culprit || W.submitted;
+      sub.disabled = !s.culprits.length || W.submitted;
       if (W.submitted) lock();
     };
     sub.onclick = doSubmit;
-    W.getValue = () => ({ culprit: s.culprit, month: s.month });
-    render(); root.append(top, grid, zoom, sub);
+    W.getValue = () => ({ culprits: s.culprits.slice(), month: s.month });
+    render(); root.classList.add('fogw'); root.append(top, grid, zoom, sub);
     return W;
   }
 
   if (st.kind === 'calc') {
     const s = {};
+    const ref = h('div', 'wbox hintbox'); const rl = h('div', 'reflist');
+    rl.append(h('div', 'fx fxc1', '<b>損益平衡</b><span>投入成本 <i>÷</i> 每筆帶來的價值</span>'), h('div', 'fx fxc2', '<b>回本期</b><span>損益平衡所需數量 <i>÷</i> 每月帶來的數量</span>'), h('div', 'fx fxc3', '<b>淨現值 NPV</b><span>把未來每年的錢折算成今天的價值，再扣掉投入</span>'));
+    ref.append(h('div', 'hhead', '<span class="htag">提示</span><b>常用算法</b>'), rl); root.classList.add('calcw'); root.append(ref);
+    const TPC = { q2: 'fxc1', q3: 'fxc2', q4: 'fxc3' };
     CALC.forEach((q, i) => {
       const b = h('div', 'calcq');
-      b.append(txt('span', 'tp', `第 ${i + 1} 題 · ${q.tp}`), txt('p', '', q.t));
+      b.append(txt('span', 'tp' + (TPC[q.id] ? ' ' + TPC[q.id] : ''), `第 ${i + 1} 題 · ${q.tp}`), txt('p', '', q.t));
       const w = h('div', 'inp'); const inp = h('input'); inp.id = 'calc_' + q.id; inp.type = 'text'; inp.inputMode = 'decimal'; inp.autocomplete = 'off'; inp.setAttribute('aria-label', q.tp);
       inp.oninput = () => { s[q.id] = inp.value; };
       w.append(inp, txt('span', 'u', q.u)); b.append(w); root.append(b);
@@ -1277,20 +1746,22 @@ function makeWidget(st, onSubmit) {
       box.innerHTML = '';
       if (!s.s) {
         const pick = h('div', 'fpick'); pick.append(txt('p', 'wnote', '先選一種結構：'));
-        BRAIN.forEach(b => { const x = h('button', 'fbtn', `<b>${b.t}</b><span>${b.cats.join('、')}</span>`); x.type = 'button'; x.onclick = () => { s.s = b.id; s.t = b.cats.map(() => ''); render(); }; pick.append(x); });
+        BRAIN.forEach(b => { const x = h('button', 'fbtn st-' + b.col, `<b>${b.t}</b><span>${b.use}</span><span class="ex2">${b.ex}</span><span>要填：${b.cats.join('、')}</span>`); x.type = 'button'; x.onclick = () => { s.s = b.id; s.t = b.cats.map(() => ''); render(); }; pick.append(x); });
         box.append(pick); sub.hidden = true; return;
       }
       sub.hidden = false;
       const b = BR[s.s];
-      const head = h('div', 'fhead'); head.append(txt('span', 'fformula', b.t));
+      const head = h('div', 'fhead'); head.append(txt('span', 'fformula st-' + b.col, b.t));
       const sw = txt('button', 'btn sm', '換結構'); sw.type = 'button'; sw.onclick = () => { s.s = null; render(); }; head.append(sw);
-      box.append(head);
+      box.append(head, txt('p', 'wnote', `${b.use}。${b.ex}`));
+      if (b.hint) box.append(h('div', 'brhint', `<span class="htag">提示</span>${b.hint}`));
+      const tg = h('div', 'tgrid' + (b.cats.length === 3 ? ' n3' : '')); box.append(tg);
       b.cats.forEach((c, i) => {
-        const tb = h('div', 'tbox'); const lab = txt('label', '', c); lab.htmlFor = `br_${s.s}_${i}`;
-        const ta = h('textarea'); ta.id = `br_${s.s}_${i}`; ta.maxLength = 40; ta.rows = 2; ta.value = s.t[i] || ''; ta.placeholder = '寫一個做法';
+        const tb = h('div', 'tbox'); const lab = txt('label', '', c); lab.htmlFor = `br_${s.s}_${i}`; if (b.sub) lab.append(txt('span', 'muted small', '　' + b.sub[i]));
+        const ta = h('textarea'); ta.id = `br_${s.s}_${i}`; ta.maxLength = 40; ta.rows = 2; ta.value = s.t[i] || ''; ta.placeholder = '寫一個具體的做法';
         const cnt = txt('span', 'cnt', `${ta.value.length} / 40`);
         ta.oninput = () => { s.t[i] = ta.value; cnt.textContent = `${ta.value.length} / 40`; };
-        tb.append(lab, ta, cnt); box.append(tb);
+        tb.append(lab, ta, cnt); tg.append(tb);
       });
       if (W.submitted) lock();
     };
@@ -1302,15 +1773,26 @@ function makeWidget(st, onSubmit) {
 
   if (st.kind === 'rec') {
     const t = REC.map(() => '');
+    const focus = h('div', 'recfocus', '記得方向：長期經營自然流量，不靠加碼廣告。');
+    const rv = h('div', 'wbox recap'); rv.append(txt('h5', '', '先回顧：前面幾關的結論'));
+    const ul = h('ul'); RECAP.forEach(([k, x]) => ul.append(h('li', '', `<b>${k}</b>：${x}`))); rv.append(ul);
+    const pv = (typeof S !== 'undefined' && S.brain) || (typeof scores !== 'undefined' && scores.s4a && isObj(scores.s4a.v) ? scores.s4a.v : null);
+    const mb = h('div', 'wbox recmine'); const pb = pv && BR[pv.s];
+    const pt = pb && Array.isArray(pv.t) ? pv.t.map(x => String(x || '').trim()) : [];
+    if (pb && pt.some(Boolean)) {
+      mb.append(txt('h5', '', `你在前段寫的做法（${pb.t}）`));
+      const ml = h('ul'); pb.cats.forEach((c, i) => { const li = h('li'); li.append(txt('b', '', c), document.createTextNode('：')); li.append(pt[i] ? document.createTextNode(pt[i]) : txt('span', 'none', '（沒寫）')); ml.append(li); }); mb.append(ml);
+    } else { mb.append(txt('h5', '', '你在前段寫的做法')); mb.append(txt('p', 'wnote', '前段還沒寫做法')); }
+    const rg = h('div', 'recgrid'), rl = h('div', 'w'), rf = h('div', 'w'); rl.append(focus, rv, mb); rg.append(rl, rf); root.append(rg);
     REC.forEach((r, i) => {
-      const tb = h('div', 'tbox'); const lab = txt('label', '', r.t); lab.htmlFor = 'rec_' + i;
-      const ta = h('textarea'); ta.id = 'rec_' + i; ta.maxLength = 80; ta.rows = 2; ta.placeholder = r.ph;
-      const cnt = txt('span', 'cnt', '0 / 80');
-      ta.oninput = () => { t[i] = ta.value; cnt.textContent = `${ta.value.length} / 80`; };
-      tb.append(lab, ta, cnt); root.append(tb);
+      const tb = h('div', 'tbox'); const lab = h('label', '', `${r.t}<span class="muted small">　${r.sub}</span>`); lab.htmlFor = 'rec_' + i;
+      const ta = h('textarea'); ta.id = 'rec_' + i; ta.maxLength = r.max; ta.rows = r.max > 100 ? 3 : 2; ta.placeholder = r.ph;
+      const cnt = txt('span', 'cnt', `0 / ${r.max}`);
+      ta.oninput = () => { t[i] = ta.value; cnt.textContent = `${ta.value.length} / ${r.max}`; };
+      tb.append(lab, ta, cnt); rf.append(tb);
     });
-    const sub = submitBtn('送出建議'); sub.onclick = doSubmit; root.append(sub);
-    W.getValue = () => ({ t: t.map(x => String(x || '').slice(0, 80)) });
+    const sub = submitBtn('送出建議'); sub.onclick = doSubmit; rl.append(sub);
+    W.getValue = () => ({ t: t.map((x, i) => String(x || '').slice(0, REC[i].max)) });
     return W;
   }
   return W;
@@ -1329,7 +1811,7 @@ function previewEl(st) {
   } else if (st.kind === 'frame') {
     const c = h('div', 'baskets'); FRAMES.forEach(f => c.append(h('div', 'basket', `<b>${f.name}</b><span class="small muted">${f.formula}</span>`))); box.append(c);
   } else if (st.kind === 'sizing') {
-    box.append(h('div', 'formula', '一年找房的人 × 上網比例 × 來我們官網的比例 × 每人一年造訪次數 ＝ 年造訪數'), h('div', 'formula', '年造訪數 ÷ 365 ＝ 日流量　·　年造訪數 × 轉換率 ＝ 年留單'));
+    box.append(h('div', 'formula', '一年找房的人 × 上網比例 × 來我們官網的比例 × 每人一年造訪次數 ＝ 年造訪數'), h('div', 'formula', '年造訪數 ÷ 365 ＝ 日流量　·　年造訪數 × 留資料的比例 ＝ 年留單'));
     const hl = h('div', 'hints'); HINTS.forEach(x => hl.append(txt('span', 'hint', x.t))); box.append(txt('p', 'wnote', '提示卡：'), hl);
   } else if (st.kind === 'fog') {
     const g = h('div', 'fogs'); CHARTS.forEach(c => { const b = h('div', 'fogc'); b.append(txt('b', '', c.t)); b.insertAdjacentHTML('beforeend', chartSVG(c)); g.append(b); }); box.append(g);
@@ -1355,12 +1837,12 @@ function bars(rows) {
   return wrap;
 }
 function whyEl(title, items) { const w = h('div', 'why'); w.append(txt('h4', '', title)); const ul = h('ul'); items.forEach(t => ul.append(txt('li', '', t))); w.append(ul); return w; }
-function dotPlot(vals, band, label) {
-  const W = 560, H = 96, pl = 10, pr = 10, lo = 1e4, hi = 5e5;
+function dotPlot(vals, band, label, lo = 1e4, hi = 5e5) {
+  const W = 560, H = 96, pl = 10, pr = 10;
   const X = v => pl + (Math.log10(clamp(v, lo, hi)) - Math.log10(lo)) / (Math.log10(hi) - Math.log10(lo)) * (W - pl - pr);
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">`;
   s += `<rect class="band" x="${X(band[0])}" y="8" width="${X(band[1]) - X(band[0])}" height="56" rx="6"/>`;
-  [1e4, band[0], band[1], 5e5].forEach(t => { s += `<line class="gl" x1="${X(t)}" x2="${X(t)}" y1="8" y2="64"/><text class="axl" x="${X(t)}" y="82" text-anchor="middle">${fmt(t)}</text>`; });
+  [lo, band[0], band[1], hi].forEach(t => { s += `<line class="gl" x1="${X(t)}" x2="${X(t)}" y1="8" y2="64"/><text class="axl" x="${X(t)}" y="82" text-anchor="${t === lo ? 'start' : t === hi ? 'end' : 'middle'}">${fmt(t)}</text>`; });
   vals.forEach((v, i) => { if (isFinite(v) && v > 0) s += `<circle class="dotp" cx="${X(v)}" cy="${16 + (i * 37) % 44}" r="5"><title>${fmt(v)}</title></circle>`; });
   return s + '</svg>';
 }
@@ -1368,8 +1850,8 @@ function revealEl(st, mine, teacher) {
   const box = h('div', 'w');
   const v = mine && isObj(mine.v) ? mine.v : null;
   if (st.kind === 'boss') {
-    box.append(h('div', 'wbox', '<h5>建議答案</h5><div class="sentence">在 <span class="slot okc">2030 年</span> 前，在 <span class="slot okc">廣告預算維持現有水準</span> 下，讓 <span class="slot okc">年留單數</span> <span class="slot okc">成長五成</span>。</div><p class="wnote">「每年成長約 8.5%」也算對；月流量、留單轉換率給半分。三張做法卡（全面改版官網、導入 AI 找房功能、加碼關鍵字廣告）放進任何空格都是 0 分。</p>'));
-    box.append(whyEl('其他詞卡為什麼不對', TILES.filter(t => t.why && !(t.score && Object.values(t.score).includes(100))).map(t => `${t.t}：${t.why}`)));
+    box.append(h('div', 'wbox', '<h5>建議答案</h5><div class="sentence">為了 <span class="slot okc">成為客戶最依賴的房產數位服務窗口</span>，在 <span class="slot okc">2030 年</span> 前，在 <span class="slot okc">廣告預算維持現有水準</span> 下，讓 <span class="slot okc">官網流量</span> 和 <span class="slot okc">年留單數</span> 都 <span class="slot okc">成長五成</span>。</div><p class="wnote">兩個指標順序對調也算對；「每年成長約 8.5%」也算對；留單轉換率給半分。兩張做法卡（全面改版官網、導入 AI 找房功能）放進任何空格都是 0 分。</p><p class="wnote"><b>目的</b>是方向，回答「為什麼做」；<b>目標</b>是可以衡量的終點。老闆說「不是衝一時的量」，所以目的不是流量最大，而是客戶信得過、第一個想到我們。</p>'));
+    box.append(whyEl('其他詞卡為什麼不對', TILES.filter(t => t.why && !(t.score && Object.values(t.score).includes(1))).map(t => `${t.t}：${t.why}`)));
   } else if (st.kind === 'frame') {
     FRAMES.forEach(f => {
       if (v && !teacher && v.f && v.f !== f.id) return;
@@ -1380,16 +1862,15 @@ function revealEl(st, mine, teacher) {
       t.append(tr); box.append(t);
     });
   } else if (st.kind === 'sizing') {
-    const r = v ? sizeCalc(v) : null;
-    const d1 = h('div', 'wbox dots'); d1.append(txt('h5', '', `日流量（綠色是合理區間 3.5 萬–15 萬）${r && r.ok ? '　你的估算：' + fmt(r.daily) : ''}`)); d1.insertAdjacentHTML('beforeend', dotPlot(r && r.ok ? [r.daily] : [], PASS.daily, '日流量'));
-    const d2 = h('div', 'wbox dots'); d2.append(txt('h5', '', `年留單（綠色是合理區間 3.5 萬–18 萬）${r && r.ok ? '　你的估算：' + fmt(r.leads) : ''}`)); d2.insertAdjacentHTML('beforeend', dotPlot(r && r.ok ? [r.leads] : [], PASS.leads, '年留單'));
-    box.append(d1, d2, whyEl('參考解法', ['26 萬 × 10 ＝ 260 萬組 → × 89% ≈ 231 萬 → × 22% ≈ 51 萬人 → × 40 次 ≈ 2,036 萬次', '÷ 365 ≈ 每天 5.6 萬人次；× 0.4% ≈ 每年 8.1 萬筆', '交叉驗證：26 萬 × 2（買賣方）× 60%（透過房仲）× 市占 10% × 3 ≈ 9.4 萬筆', '新屋市場、社群互動、人口結構是干擾卡，用不到；家戶統計可以拿來檢查量級（260 萬組約是全台戶數的四分之一）']));
+    const r0 = v ? sizeVals(v) : null; const r = r0 ? { daily: r0.daily, leads: r0.leads, ok: r0.daily > 0 && r0.leads > 0 } : null;
+    const d1 = h('div', 'wbox dots'); d1.append(txt('h5', '', `日流量（綠色是合理區間 3.5 萬–15 萬）${r && r.daily > 0 ? '　你的估算：' + fmt(r.daily) : ''}`)); d1.insertAdjacentHTML('beforeend', dotPlot(r && r.daily > 0 ? [r.daily] : [], PASS.daily, '日流量'));
+    const d2 = h('div', 'wbox dots'); d2.append(txt('h5', '', `年留單（綠色是合理區間 3.5 萬–18 萬）${r && r.leads > 0 ? '　你的估算：' + fmt(r.leads) : ''}`)); d2.insertAdjacentHTML('beforeend', dotPlot(r && r.leads > 0 ? [r.leads] : [], PASS.leads, '年留單'));
+    box.append(d1, d2, whyEl('參考解法（估算鏈）', ['年造訪 ＝ 一年找房的人 × 上網比例 × 來官網比例 × 每人年造訪次數', '26 萬 × 10 ＝ 260 萬組 → × 89% ≈ 231 萬 → × 22% ≈ 51 萬人 → × 40 次 ≈ 2,036 萬次', '÷ 365 ≈ 每天 5.6 萬人次；× 留資料的比例 0.4% ≈ 每年 8.1 萬筆', '新屋市場、社群互動、人口結構、成交流程是干擾卡，用不到；家戶統計可以拿來檢查量級（260 萬組約是全台戶數的四分之一）']));
   } else if (st.kind === 'fog') {
-    const c = h('div', 'cols'), L = h('div', 'zoom'), R = h('div', 'w');
-    L.append(txt('b', '', '主因：自然流量 vs 廣告流量（6 月開始）'));
-    L.insertAdjacentHTML('beforeend', legendHTML(CHART.mix) + chartSVG(CHART.mix, { big: true, mark: 6 }));
-    R.append(whyEl('怎麼判斷', ['時間點：廣告流量 6 月開始掉，7 月後只剩去年的一半左右，而且沒有回來', '幅度：自然流量幾乎持平，總流量少掉的量，剛好就是廣告流量少掉的量']));
-    R.append(whyEl('其他圖表', ['總流量：6 月開始變少，但它是結果，要往下拆才知道原因', '手機版跳出率 6 月飆高、7 月就恢復：一次性波動，撐不起整年的下滑', '社群聲量 3 月、8 月的高峰：單次活動，跟留單變少無關', '明細 → 留單轉換率：6 月後反而略升，因為剩下的多是品質較好的自然流量', '平均瀏覽頁數、列表 → 明細點擊率：上下波動，沒有持續變化（2 月是春節）']));
+    const c = h('div', 'cols'), L = h('div', 'w'), R = h('div', 'w');
+    ['budget', 'source'].forEach(k => { const z = h('div', 'zoom'); z.append(txt('b', '', `主因：${CHART[k].t}（${CHART[k].unit}，6 月開始）`)); z.insertAdjacentHTML('beforeend', legendHTML(CHART[k]) + chartSVG(CHART[k], { big: true, mark: 6 })); L.append(z); });
+    R.append(whyEl('怎麼判斷', ['原因：6 月起廣告預算從每月 100 萬砍到 50 萬', '結果：各來源流量裡縮掉的是廣告那一段（每月約 65 萬 → 33 萬人次），自然和自有流量沒變', '時間點和幅度都對得上：6 月開始、之後沒回來，總流量少兩成左右']));
+    R.append(whyEl('其他圖為什麼不是', ['總流量：方向對，但它是結果，要往下拆', '物件類型占比：100% 堆疊只有占比、沒有數量，而且是全年緩慢變化', '各頁留資料比例：今年和去年差不多，問題不在「留不留」', '手機版跳出率：3 月飆高、4 月恢復，一次性，時間也對不上', '社群聲量：3 月、8 月是單次活動', '各區物件數 vs 年留單：區域比較，沒有時間變化']));
     c.append(L, R); box.append(c);
   } else if (st.kind === 'calc') {
     CALC.forEach((q, i) => {
@@ -1397,33 +1878,62 @@ function revealEl(st, mine, teacher) {
       box.append(b);
     });
   } else if (st.kind === 'brain') {
-    let items = [];
-    if (v && BR[v.s]) { const b = BR[v.s]; items = b.cats.map((c, i) => [c, Array.isArray(v.t) ? v.t[i] : '']); box.append(txt('h4', '', `你的點子（${b.t}）`)); }
-    else if (teacher) { items = [['被看見', '社區百科 SEO 頁'], ['找得到', '篩選條件放左側欄'], ['看得懂', '物件特色與照片升級'], ['願意留', '留單入口上移、線上預約看屋'], ['會回來', '降價與新物件通知']]; box.append(txt('h4', '', '範例（流程結構）')); }
-    const cols = h('div', 'wall-cols'); let d = 0;
-    items.forEach(([c, t]) => { const col = h('div', 'wall-col'); col.append(txt('b', '', c)); if (typeof t === 'string' && t.trim()) { const s = txt('div', 'sticky', t.slice(0, 40)); s.style.animationDelay = (d += 80) + 'ms'; col.append(s); } cols.append(col); });
-    if (items.length) box.append(cols);
+    const wallOf = (b, texts, title, cls) => {
+      box.append(txt('h4', '', title));
+      const cols = h('div', 'wall-cols'); let d = 0;
+      b.cats.forEach((c, i) => { const col = h('div', 'wall-col'); col.append(txt('b', '', c)); const t = texts[i]; if (typeof t === 'string' && t.trim()) { const s = txt('div', 'sticky' + (cls || ''), t.slice(0, 40)); s.style.animationDelay = (d += 80) + 'ms'; col.append(s); } cols.append(col); });
+      box.append(cols);
+    };
+    const b = v && BR[v.s] ? BR[v.s] : BR.flow;
+    if (v && BR[v.s]) wallOf(b, Array.isArray(v.t) ? v.t : [], `你的點子（${b.t}）`);
+    wallOf(b, BRAIN_EX[b.id], `範例（${b.t}）`, ' exs');
   } else if (st.kind === 'rec') {
-    let t = v && Array.isArray(v.t) ? v.t : null;
-    if (!t && teacher) t = ['五年內把預算逐年從廣告移到內容與頁面改版', '缺口來自廣告流量；內容投資 12 個月回本；三年淨現值約 ＋446 萬', '內容見效慢，前一兩年留單可能持平', '先做社區內容頁改版，一季後看自然留單再調整'];
-    if (t) {
+    const t = v && Array.isArray(v.t) ? v.t : null;
+    const recCard = (arr, name) => {
       const card = h('div', 'rec big'); card.style.cursor = 'default';
-      card.append(txt('span', 'nm', v ? '你的建議' : '建議範例'));
-      REC.forEach((r, j) => { const f = h('span', 'f'); f.append(txt('b', '', r.t), document.createTextNode(typeof t[j] === 'string' ? t[j].slice(0, 80) : '')); card.append(f); });
-      box.append(card);
-    }
+      card.append(txt('span', 'nm', name));
+      REC.forEach((r, j) => { const f = h('span', 'f'); f.append(txt('b', '', r.t), document.createTextNode(typeof arr[j] === 'string' ? arr[j].slice(0, r.max) : '')); card.append(f); });
+      return card;
+    };
+    const g = h('div', 'recs');
+    if (t && t.some(x => typeof x === 'string' && x.trim())) g.append(recCard(t, '你的建議'));
+    const ex = recCard(REC_EX, '建議範例'); ex.classList.add('exrec'); g.append(ex);
+    box.append(g);
   }
   box.append(h('p', 'lesson', `<span class="hl">${st.lesson}</span>`));
+  const ids = MISSIONS[st.lv];
+  if (ids[ids.length - 1] === st.id && CONCL[st.lv]) box.append(conclEl(st.lv));
   return box;
+}
+const BRAIN_EX = {
+  flow: ['生活圈內容做 SEO，讓搜尋的人找到官網', '列表頁篩選加上學區、通勤時間', '明細頁加上物件熱度計：多少人看過、收藏', '一鍵預約看屋、線上客服', '30 分鐘內回電、帶看前提醒'],
+  seg: ['首購指南與貸款試算', '先賣後買的時程規劃', '線上估價、委託進度通知', '租金和房貸比較試算'],
+  time: ['網頁改版，明細頁加上實價、物件熱度計', '學區、通勤等生活圈文章，做 SEO', '累積生活圈內容，讓找房的人自然找到我們']
+};
+const REC_EX = [
+  '我建議先做網頁改版，讓進來的人更願意留；再逐年把預算移到自然流量，讓官網成為客戶最依賴的房產數位服務窗口',
+  '第一，6 月廣告預算砍半，流量和留單就少了將近兩成，廣告流量是租來的；第二，網頁改版 12 個月回本，三年淨現值約 ＋446 萬；第三，2030 年一年要多 4 萬筆留單，光靠改版不夠，還要自然流量做法',
+  '內容見效慢，前一兩年留單可能持平；先跟老闆對齊期待，每季檢視',
+  '先做網頁改版，一季後看留資料的比例；再排生活內容、整合自家網站會員'
+];
+function conclEl(lv) {
+  const c = CONCL[lv], w = h('div', 'concl');
+  w.append(txt('h4', '', `第 ${lv} 關得出的結論`));
+  const dl = h('dl'); c.rows.forEach(([k, x]) => { dl.append(txt('dt', '', k), txt('dd', '', x)); }); w.append(dl);
+  if (c.next) w.append(h('p', 'concl-next', `<b>接下來</b>${c.next}`));
+  return w;
 }
 
 /* ================= 狀態（單機版） ================= */
 const isTeacher = () => window.__TEACHER === true;
-const SKEY = 'jk-scores-v2', BKEY = 'jk-budget-v2', LIMIT = 300000, MAXTOTAL = '4,400';
+const SKEY = 'jk-scores-v4', BKEY = 'jk-budget-v4', LIMITS = { 1: 180000, 2: 300000, 2.5: 180000, 3: 420000, 4: 480000 }, MAXTOTAL = '4,900';
+const limitOf = lv => LIMITS[lv] || 300000;
+const LEVELS = [1, 2, 2.5, 3, 4];
+const isBonus = lv => lv === 2.5;
 let scores = store.get(SKEY, {}); if (!isObj(scores)) scores = {};
 let budgets = store.get(BKEY, {}); if (!isObj(budgets)) budgets = {};
-const budgetOf = lv => (typeof budgets[lv] === 'number' && isFinite(budgets[lv]) ? clamp(budgets[lv], 0, LIMIT) : LIMIT);
-const saveBudget = (lv, ms) => { budgets[lv] = clamp(Math.round(ms), 0, LIMIT); store.set(BKEY, budgets); };
+const budgetOf = lv => (typeof budgets[lv] === 'number' && isFinite(budgets[lv]) ? clamp(budgets[lv], 0, limitOf(lv)) : limitOf(lv));
+const saveBudget = (lv, ms) => { budgets[lv] = clamp(Math.round(ms), 0, limitOf(lv)); store.set(BKEY, budgets); };
 const mmss = ms => { const t = Math.max(0, Math.ceil(ms / 1000)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
 const total = () => Object.values(scores).reduce((s, a) => s + (Number(a && a.pts) || 0), 0);
 const lvStage = lv => STAGES.filter(s => s.lv === lv).reduce((s, st) => s + (Number(scores[st.id] && scores[st.id].pts) || 0), 0);
@@ -1433,26 +1943,25 @@ const stage = $('#stage');
 const btn = (label, cls, fn) => { const b = txt('button', 'btn ' + (cls || ''), label); b.type = 'button'; b.onclick = fn; return b; };
 
 function renderEntry() {
-  const st = $('#entryStatus'), ac = $('#entryActions'), tt = $('#entryTitle');
-  tt.textContent = '怎麼玩';
-  st.innerHTML = ''; st.append(txt('span', '', '你目前的總分：'), h('b', 'num', `${total()}`), txt('span', '', ` / ${MAXTOTAL}`));
-  $('b', st).style.fontSize = '1.5em';
-  ac.innerHTML = '';
-  const ol = h('ol', 'p-list');
-  ['Jak 講完一關，就按那一關的「開始」', '每一關限時 5 分鐘，前後兩段共用；看結果的時候計時會暫停', '時間到會自動送出；剩下的時間會換成速度分（每關最多 100，也看你這一關的得分）', '每一段第一次作答才計分，之後可以重玩練習', '最後按「看我的總分」，截圖回報給 Jak'].forEach(t => ol.append(txt('li', '', t)));
-  ac.append(ol);
-  const rs = txt('button', 'btn sm', '清除我的作答紀錄'); rs.type = 'button';
-  rs.onclick = () => {
-    if (rs.dataset.armed) { scores = {}; budgets = {}; store.set(SKEY, scores); store.set(BKEY, budgets); renderEntry(); updateMissions(); }
-    else { rs.dataset.armed = '1'; rs.textContent = '再按一次確認清除'; setTimeout(() => { if (rs.dataset.armed) { delete rs.dataset.armed; rs.textContent = '清除我的作答紀錄'; } }, 3000); }
+  const sc = $('#homeScore'); if (sc) sc.textContent = total().toLocaleString('en-US');
+  $$('[data-lvstat]').forEach(e => {
+    const lv = Number(e.dataset.lvstat), ids = MISSIONS[lv] || [];
+    const done = ids.length && ids.every(id => scores[id]);
+    e.textContent = done ? `已完成 ${lvStage(lv) + lvSpd(lv)} 分` : '尚未作答'; e.classList.toggle('todo', !done);
+  });
+}
+{
+  const rs = $('#clearRec');
+  if (rs) rs.onclick = () => {
+    if (rs.dataset.armed) { delete rs.dataset.armed; rs.textContent = '清除紀錄'; scores = {}; budgets = {}; store.set(SKEY, scores); store.set(BKEY, budgets); renderEntry(); updateMissions(); }
+    else { rs.dataset.armed = '1'; rs.textContent = '再按一次確認清除'; setTimeout(() => { if (rs.dataset.armed) { delete rs.dataset.armed; rs.textContent = '清除紀錄'; } }, 3000); }
   };
-  ac.append(rs);
 }
 function updateMissions() {
   $$('[data-mission]').forEach(b => {
     const m = +b.dataset.mission, ids = MISSIONS[m];
     const done = ids.every(id => scores[id]);
-    const started = ids.some(id => scores[id]) || budgetOf(m) < LIMIT;
+    const started = ids.some(id => scores[id]) || budgetOf(m) < limitOf(m);
     b.textContent = done ? `已完成 ${lvStage(m) + lvSpd(m)} 分 · 看結果` : started ? `繼續第 ${m} 關（剩 ${mmss(budgetOf(m))}）` : `開始第 ${m} 關`;
     let ans = b.parentElement.querySelector('.ansbtn');
     if (isTeacher() && !ans) { ans = txt('button', 'btn sm ansbtn', 'Jak：看答案'); ans.type = 'button'; ans.onclick = () => openMission(m, true); b.after(ans); }
@@ -1481,7 +1990,7 @@ function enterStage() {
 }
 function startTimer() {
   const st = STAGE[S.sid];
-  S.deadline = Date.now() + (S.practice ? LIMIT : budgetOf(st.lv));
+  S.deadline = Date.now() + (S.practice ? limitOf(st.lv) : budgetOf(st.lv));
   clearInterval(S.timer);
   S.timer = setInterval(() => {
     const rem = S.deadline - Date.now();
@@ -1507,16 +2016,17 @@ function finish(v) {
     saveBudget(st.lv, S.timedOut ? 0 : S.deadline - Date.now());
     scores[S.sid] = { pts: g.pts, v };
     const ids = MISSIONS[st.lv];
-    if (ids.every(id => scores[id])) {
+    if (ids.every(id => scores[id]) && !isBonus(st.lv)) {
       const lp = ids.reduce((a, id) => a + (Number(scores[id].pts) || 0), 0);
       const r = budgetOf(st.lv);
-      spd = { pts: Math.round(100 * (r / LIMIT) * (lp / 1000)), rem: r };
+      spd = { pts: Math.round(100 * (r / limitOf(st.lv)) * (lp / 1000)), rem: r };
       scores['spd' + st.lv] = spd;
     }
     store.set(SKEY, scores);
   }
   S.timedOut = false;
   S.last = { v, pts: g.pts, detail, spd };
+  if (st.kind === 'brain') S.brain = v;
   S.ph = 'reveal'; render(); renderEntry(); updateMissions();
 }
 function replay() { S.practice = true; S.last = null; S.timedOut = false; S.ph = 'q'; startTimer(); render(); }
@@ -1546,7 +2056,7 @@ function render() {
   if (S.ph === 'final') {
     body.append(h('h2', 'st-q', `你的總分：<span class="num">${total()}</span> / ${MAXTOTAL}`), txt('p', 'st-desc', '請截圖這個畫面回報給 Jak。'));
     const g = h('div', 'route4'); g.style.marginTop = '8px';
-    [1, 2, 3, 4].forEach(lv => g.append(h('div', 'lv', `<span class="no">${lv}</span><b>${LVNAME[lv]}</b><span class="num" style="font-size:1.6em;font-weight:700">${lvStage(lv) + lvSpd(lv)}</span><span class="en">滿分 1,100 · 速度分 ${lvSpd(lv)}</span>`)));
+    LEVELS.forEach(lv => g.append(h('div', 'lv', `<span class="no">${lv}</span><b>${LVNAME[lv]}</b><span class="num" style="font-size:1.6em;font-weight:700">${lvStage(lv) + lvSpd(lv)}</span><span class="en">${isBonus(lv) ? '加分題 · 滿分 500' : `滿分 1,100 · 速度分 ${lvSpd(lv)}`}</span>`)));
     body.append(g);
     const sv = h('ol', 'seven-mini'); sv.style.marginTop = '24px';
     SEVEN.forEach(x => sv.append(h('li', '', `<b>${x.n}</b><span>${x.o}</span>`)));
@@ -1555,10 +2065,10 @@ function render() {
   } else if (S.ph === 'q') {
     body.append(txt('h2', 'st-q', st.title));
     if (S.practice) body.append(h('p', '', '<span class="pill mid">練習模式，不計分</span>'));
-    body.append(txt('p', 'st-desc', st.desc));
+    if (st.desc) body.append(txt('p', 'st-desc', st.desc));
     S.widget = makeWidget(st, v => finish(v));
     body.append(S.widget.el);
-    foot.append(txt('span', 'hint', S.practice ? '練習模式不計分，時間到會自動送出。' : '這一關的 5 分鐘前後兩段共用，時間到會自動送出。按右上角 × 可以先回到課程，這一段不會計分，回來要重新作答。'), btn('回到課程', '', closeStage));
+    foot.append(txt('span', 'hint', S.practice ? '練習模式不計分，時間到會自動送出。' : `這一關限時 ${Math.round(limitOf(st.lv) / 60000)} 分鐘${MISSIONS[S.m].length > 1 ? '，前後兩段共用' : ''}，時間到會自動送出。按右上角 × 可以先回到課程，這一段不會計分，回來要重新作答。`), btn('回到課程', '', closeStage));
   } else if (S.ph === 'reveal' || S.ph === 'done') {
     const rec = S.ph === 'reveal' ? S.last : scores[S.sid];
     const g = rec ? (rec.detail ? rec : Object.assign({}, rec, grade(S.sid, rec.v))) : null;
@@ -1595,7 +2105,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { e.preventDefault(); closeStage(); }
   if (e.key === 'ArrowRight' && S.ph !== 'q') { const b = $('.st-foot .btn.primary', stage); if (b) { e.preventDefault(); b.click(); } }
 });
-let curCh = -2;
+let curCh = -3;
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => {
     if (!en.isIntersecting) return;
@@ -1606,7 +2116,7 @@ const io = new IntersectionObserver(entries => {
 $$('section[data-ch]').forEach(s => io.observe(s));
 renderEntry(); applyTeacher();
 if (window.__TEACHER === true) { document.body.classList.add('show-notes'); notesBtn.setAttribute('aria-pressed', 'true'); }
-{ const mt = $('#miniTree'); if (mt) mt.append(treeEl(MINI_TREE, null)); }
+$$('[data-tree]').forEach(el => { const tr = TEACH_TREES[el.dataset.tree]; if (tr) el.append(treeEl(tr, null)); });
 })();
 
 </script>
