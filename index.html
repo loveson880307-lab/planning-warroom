@@ -734,6 +734,22 @@ section.sec{scroll-margin-top:54px}
 .gapcharts svg{width:100%;height:auto;display:block}
 .gapq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:4px 16px;align-items:start;margin-top:10px}
 .gapq > .brhint{grid-column:1 / -1}
+.mixw .gapq,.gapw .gapq{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.opts3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.qlist{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
+.qlist li{display:grid;gap:3px;font-size:13px;line-height:1.35}
+.qlist .qq{color:var(--ink)}
+.qlist .qbar{display:flex;align-items:center;gap:6px}
+.qlist .qbar i{display:block;height:7px;border-radius:4px;background:var(--data1)}
+.qlist .qbar b{font-family:var(--f-num);font-size:12px;color:var(--ink-2,var(--ink))}
+svg .hb{fill:var(--panel);stroke:var(--ink-3);stroke-width:1}
+svg .hm{fill:var(--ink);font-size:10px;font-weight:700}
+.opts3 .opt{text-align:center;font-weight:700}
+/* v19 framework trees deeper */
+.framew{grid-template-columns:700px minmax(0,1fr);gap:28px}
+.framew .tree-wrap{font-size:.98em}
+.framew .tnode.tblank{min-height:24px}
+.framew .tnode.tblank .dcard{padding-top:1px;padding-bottom:1px}
 .gql{font-weight:700;margin:4px 0 6px}
 .opts{display:grid;gap:8px}
 .opts4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -742,6 +758,10 @@ section.sec{scroll-margin-top:54px}
 .opts4 .opt{text-align:center;font-weight:700}
 .opt:disabled{cursor:default}
 .gapok{margin-top:8px}
+.gqh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gqh .gql{margin-bottom:6px}
+.gqh .gapok{margin-top:0;flex:none}
+.gqh .gapdone{margin:0;flex:none}
 .gapdone,.gapwait{margin:8px 0 0}
 .opt:hover{background:var(--hl)}
 .opt[aria-pressed="true"]{background:var(--marker);border-color:var(--marker);color:#1d1d1d;font-weight:700}
@@ -941,7 +961,7 @@ section.sec{scroll-margin-top:54px}
       <div class="tags"><span class="tag k">Chart Interpretation</span></div>
     </div>
   </div>
-  <p class="lead">往內找主因，<span class="hl">往外找差距</span></p>
+  <p class="lead">往內看結構，<span class="hl">往外找差距</span></p>
   <div class="grid2">
     <div class="card">
       <h3>解讀圖表：每種圖能回答的問題不一樣</h3>
@@ -949,23 +969,23 @@ section.sec{scroll-margin-top:54px}
       <div class="ex wide">
         <div class="row"><span class="lb strong">折線圖</span><span>看趨勢：從哪個時間點開始變。</span></div>
         <div class="row"><span class="lb strong">堆疊長條</span><span>看組成：總量裡誰貢獻最大。</span></div>
-        <div class="row"><span class="lb strong">100% 堆疊</span><span>看占比：占比下降，不代表數量下降。</span></div>
+        <div class="row"><span class="lb strong">100% 堆疊</span><span>看占比：占比上升或下降，不代表數量跟著變。</span></div>
         <div class="row"><span class="lb strong">散佈圖</span><span>看特例：找出跟別人不一樣的點。</span></div>
       </div>
     </div>
     <div class="card">
-      <h3>找差距：跟同業比，再對照公司方針</h3>
-      <span class="keyline">找到差距，先對照公司方針：公司不發展的市場，就換個角度切入。</span>
+      <h3>找差距：往內看，也往外看</h3>
+      <span class="keyline">找到差距後排優先：先挑能快速見效、又是我們自己能掌握的。</span>
       <div class="ex wide">
-        <div class="row"><span class="lb strong">往內看</span><span>跟去年比：什麼變了？時間點、幅度對得上嗎？</span></div>
-        <div class="row"><span class="lb strong">往外看</span><span>跟同業、找房平台比：我們哪一塊最弱？</span></div>
-        <div class="row"><span class="lb strong">對照方針</span><span>這是公司要發展的市場嗎？不是的話，換什麼角度切入？</span></div>
+        <div class="row"><span class="lb strong">往內看</span><span>看自己：留單從哪裡來？占比和數量要一起看。</span></div>
+        <div class="row"><span class="lb strong">往外看</span><span>跟同業比：先排除不是原因的假設，再找出卡在哪一步。</span></div>
+        <div class="row"><span class="lb strong">排優先</span><span>都要做的話，哪一個最快見效、最在我們掌握中？</span></div>
       </div>
     </div>
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>03</div>
-    <div><h3>找出主因，再看我們跟同業差在哪</h3><p>前段：六張圖找出主因，和問題從哪個月開始。後段：四張比較圖找出我們最弱的一塊，再想想可以往哪個方向發展。</p><div class="meta">兩段共 7 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>看懂留單從哪裡來，再找出卡在哪裡</h3><p>前段：四張圖看懂留單從哪裡來，想想要往哪裡成長。後段：四張圖排除假設，找出卡在哪裡、要先改哪裡。</p><div class="meta">兩段共 7 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="3">開始第 3 關</button></div>
   </div>
 </section>
@@ -985,8 +1005,8 @@ section.sec{scroll-margin-top:54px}
     <div class="card card-flex">
       <h3>可以從第 3 關的兩個發現出發</h3>
       <div class="pts2">
-        <div class="s4 big plain"><h4>1　主因：廣告是租來的</h4><p>錢一停流量就沒了。往長期、自然流量想，做錢停了也不會消失的事。</p></div>
-        <div class="s4 big plain"><h4>2　差距：租屋這塊最弱</h4><p>租轉買是其中一條符合方針的路徑：把租屋族變成未來的買方。</p></div>
+        <div class="s4 big plain"><h4>1　內部：自然流量沒長大</h4><p>占比變高是因為廣告變少。廣告不會加，要讓自然流量帶來的留單變多，做錢停了也不會消失的事。</p></div>
+        <div class="s4 big plain"><h4>2　外部：客戶找不到重點</h4><p>對標同業，瓶頸在站內轉換，點開物件、留資料兩步落後最多。先改版列表頁和明細頁。</p></div>
       </div>
     </div>
     <div class="card card-flex">
@@ -1000,7 +1020,7 @@ section.sec{scroll-margin-top:54px}
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>04</div>
-    <div><h3>依找到的問題，想出長期做法</h3><p>選一種結構，在每一格寫下對應的做法。時間軸有提示，可以往租轉買去想。</p><div class="meta">限時 6 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>依找到的問題，想出長期做法</h3><p>選一種結構，在每一格寫下對應的做法。時間軸有提示，可以往版面改善去想。</p><div class="meta">限時 6 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="4">開始第 4 關</button></div>
   </div>
 </section>
@@ -1016,7 +1036,7 @@ section.sec{scroll-margin-top:54px}
     </div>
   </div>
   <p class="lead">先估量級，<span class="hl">再算值不值得做</span></p>
-  <div class="task task-1"><span class="lb">這一關評估</span><b>第 4 關每個人想到的做法都不一樣。Jak 選的是「租轉買」：它一年能帶來多少留單？值不值得做？</b></div>
+  <div class="task task-1"><span class="lb">這一關評估</span><b>第 4 關每個人想到的做法都不一樣。Jak 選的是「版面改善」：它一年能多帶來多少留單？值不值得做？</b></div>
   <div class="grid2">
     <div class="card">
       <h3>估算市場：先抓關鍵因子，再往下拆</h3>
@@ -1045,7 +1065,7 @@ section.sec{scroll-margin-top:54px}
   </div>
   <div class="mission">
     <div class="mno"><small>LEVEL</small>05</div>
-    <div><h3>評估租轉買：能帶來多少留單？值不值得做？</h3><p>前段：估出租轉買一年能帶來多少筆留單。後段：四題計算看值不值得做，可以用計算機。</p><div class="meta">兩段共 8 分鐘 · 滿分 1,000＋速度分 100</div></div>
+    <div><h3>評估版面改善：能多帶來多少留單？值不值得做？</h3><p>前段：估出版面改善一年能多帶來多少筆留單。後段：四題計算看值不值得做，可以用計算機。</p><div class="meta">兩段共 8 分鐘 · 滿分 1,000＋速度分 100</div></div>
     <div style="display:grid;gap:8px;justify-items:stretch"><button class="btn" type="button" data-mission="5">開始第 5 關</button></div>
   </div>
 </section>
@@ -1079,7 +1099,7 @@ section.sec{scroll-margin-top:54px}
       <h3>寫建議前，記得方向</h3>
       <div class="pts2">
         <div class="s4 big st-c1"><h4>1　長期經營自然流量</h4><p>廣告是租來的，不靠加碼廣告；做錢停了也不會消失的事。</p></div>
-        <div class="s4 big st-c4"><h4>2　對齊公司方針</h4><p>不經營租屋市場、不收租屋服務費；把租屋族變成未來的買方。</p></div>
+        <div class="s4 big st-c4"><h4>2　先做最快見效的</h4><p>先改版列表頁和明細頁；內容經營、流量整合、租屋族排在後面逐步做。</p></div>
       </div>
     </div>
   </div>
@@ -1098,11 +1118,11 @@ section.sec{scroll-margin-top:54px}
     <div class="s7 head" aria-hidden="true"><span></span><span>步驟</span><span>做什麼</span><span>在這個案子得出</span><span>能力</span></div>
     <div class="s7"><span class="k">1</span><div class="nm"><b>釐清問題</b><small>Clarifying Question</small></div><div class="dd"><span class="lb">做什麼</span>先問清楚目標和限制，跟出題的人對齊期待</div><div class="oo"><span class="lb">這個案子</span>目的：成為客戶最依賴的房產數位服務窗口；目標：2030 年前、廣告預算不增加，流量和留單都成長五成</div><span class="tag t1">挖掘數據</span></div>
     <div class="s7"><span class="k">2</span><div class="nm"><b>框架</b><small>Framework</small></div><div class="dd"><span class="lb">做什麼</span>把大問題拆成不重不漏的小塊，知道要查什麼、先查哪裡</div><div class="oo"><span class="lb">這個案子</span>留單 ＝ 流量（付費、自然、自有）× 留資料的比例（買方、賣方）</div><span class="tag t1">挖掘數據</span></div>
-    <div class="s7"><span class="k">3</span><div class="nm"><b>解讀圖表</b><small>Chart Interpretation</small></div><div class="dd"><span class="lb">做什麼</span>往內找主因、往外找差距，再對照公司方針</div><div class="oo"><span class="lb">這個案子</span>6 月廣告預算砍了四成，流量和留單少了將近兩成；跟同業比租屋最弱，可以從租轉買切入</div><span class="tag t1">挖掘數據</span></div>
-    <div class="s7"><span class="k">4</span><div class="nm"><b>結構化發想</b><small>Brainstorming</small></div><div class="dd"><span class="lb">做什麼</span>依前面的數據和分析，找出對應的做法</div><div class="oo"><span class="lb">這個案子</span>照時間軸想租轉買：短期入門內容、中期規劃服務、長期成為第一個打開的地方</div><span class="tag t2">整合大數據</span></div>
-    <div class="s7"><span class="k">5</span><div class="nm"><b>估算市場</b><small>Market Sizing</small></div><div class="dd"><span class="lb">做什麼</span>抓出關鍵因子，拆到有把握就停，估出量級</div><div class="oo"><span class="lb">這個案子</span>租轉買一年約 4,500 筆留單，約補 2030 缺口的一成</div><span class="tag t3">評估及選擇策略</span></div>
-    <div class="s7"><span class="k">6</span><div class="nm"><b>量化分析</b><small>Quantitative Analysis</small></div><div class="dd"><span class="lb">做什麼</span>先想清楚這個決策需要哪幾個數字</div><div class="oo"><span class="lb">這個案子</span>約 16 個月回本，三年淨現值約 ＋260 萬，值得做</div><span class="tag t3">評估及選擇策略</span></div>
-    <div class="s7"><span class="k">7</span><div class="nm"><b>提出建議</b><small>Recommendation</small></div><div class="dd"><span class="lb">做什麼</span>一句話結論，用前面的數字撐住，再補風險和下一步</div><div class="oo"><span class="lb">這個案子</span>發展租轉買，同時逐年把預算移到自然流量，朝客戶最依賴的數位服務窗口前進</div><span class="tag t4">對焦組織計劃</span></div>
+    <div class="s7"><span class="k">3</span><div class="nm"><b>解讀圖表</b><small>Chart Interpretation</small></div><div class="dd"><span class="lb">做什麼</span>往內看結構、往外找差距，再排優先</div><div class="oo"><span class="lb">這個案子</span>自然流量占比升到七成，其實是廣告變少，自然流量沒長大；對標同業，瓶頸在站內轉換，要先改列表頁和明細頁</div><span class="tag t1">挖掘數據</span></div>
+    <div class="s7"><span class="k">4</span><div class="nm"><b>結構化發想</b><small>Brainstorming</small></div><div class="dd"><span class="lb">做什麼</span>依前面的數據和分析，找出對應的做法</div><div class="oo"><span class="lb">這個案子</span>照時間軸想版面改善：短期明細頁色塊分區、精簡內容，中期列表頁卡片式、加上 AI 和數據洞察欄位，長期整體 UI/UX 一致</div><span class="tag t2">整合大數據</span></div>
+    <div class="s7"><span class="k">5</span><div class="nm"><b>估算市場</b><small>Market Sizing</small></div><div class="dd"><span class="lb">做什麼</span>抓出關鍵因子，拆到有把握就停，估出量級</div><div class="oo"><span class="lb">這個案子</span>版面改善一年約多 8,000 筆留單，約補 2030 缺口的兩成</div><span class="tag t3">評估及選擇策略</span></div>
+    <div class="s7"><span class="k">6</span><div class="nm"><b>量化分析</b><small>Quantitative Analysis</small></div><div class="dd"><span class="lb">做什麼</span>先想清楚這個決策需要哪幾個數字</div><div class="oo"><span class="lb">這個案子</span>自然流量的留單要成長約七成；版面改善約 12 個月回本，三年淨現值約 ＋595 萬，值得做</div><span class="tag t3">評估及選擇策略</span></div>
+    <div class="s7"><span class="k">7</span><div class="nm"><b>提出建議</b><small>Recommendation</small></div><div class="dd"><span class="lb">做什麼</span>一句話結論，用前面的數字撐住，再補風險和下一步</div><div class="oo"><span class="lb">這個案子</span>先改版列表頁和明細頁，再逐步經營內容、整合流量，朝客戶最依賴的數位服務窗口前進</div><span class="tag t4">對焦組織計劃</span></div>
   </div>
   <p class="closing">整合策劃力，就是用這條脈絡，把一句模糊的需求，變成一份有數據、能執行、可以邊做邊調整的計畫。</p>
   <div class="homework">
@@ -1176,33 +1196,40 @@ const FRAMES = [
     tree: { t: '留單公式框架', kids: [
       { t: '流量', kids: [
         { t: '付費流量', kids: [{ t: '關鍵字廣告', x: 'a1' }, { t: '社群廣告', x: 'a2' }, { t: '聯播網廣告' }] },
-        { t: '自然流量', x: 'a3', kids: [{ t: '自然搜尋' }, { t: '社群貼文分享' }, { t: '外部網站連結' }] },
+        { t: '自然流量', x: 'a3', kids: [{ t: '自然搜尋（SEO）' }, { t: '社群貼文分享' }, { t: '外部網站連結' }] },
         { t: '自有流量', kids: [{ t: '直接輸入網址', x: 'a4' }, { t: 'LINE／EDM 推播' }, { t: 'App 推播通知' }] }] },
       { t: '留資料的比例', x: 'a5', kids: [
-        { t: '買方', kids: [{ t: '從列表點進物件明細' }, { t: '在明細頁留資料', x: 'a6' }] },
-        { t: '賣方', x: 'a7', kids: [{ t: '使用線上估價', x: 'a8' }, { t: '估價後委託' }] }] }] },
+        { t: '買方', kids: [{ t: '搜尋後進到列表頁' }, { t: '從列表點進物件明細' }, { t: '在明細頁留資料', x: 'a6' }] },
+        { t: '賣方', x: 'a7', kids: [{ t: '進到估價頁' }, { t: '使用線上估價', x: 'a8' }, { t: '估價後委託' }] }] }] },
     traps: [{ id: 'ax1', t: '手機流量', why: '裝置是另一種分法，跟每一種來源都重疊' }, { id: 'ax2', t: '廣告帶來的留單', why: '廣告已經算在流量裡，放在留資料的比例底下就重複了' }, { id: 'ax3', t: '全面改版官網', why: '這是做法，不是分類' }],
     order: ['a6', 'ax1', 'a3', 'a1', 'ax2', 'a8', 'a5', 'a4', 'ax3', 'a7', 'a2'] },
   { id: 'B', name: '損益框架', desc: '營收 − 成本', formula: '營收 − 成本',
     tree: { t: '損益框架', kids: [
       { t: '營收', kids: [
-        { t: '成交件數', kids: [{ t: '留單數', x: 'b1' }, { t: '留單成交率' }] },
-        { t: '每件服務費', x: 'b2', kids: [{ t: '平均成交總價', x: 'b3' }, { t: '服務費率' }] }] },
+        { t: '成交件數', kids: [
+          { t: '留單數', x: 'b1', kids: [{ t: '買方留單' }, { t: '賣方留單' }] },
+          { t: '留單成交率' }] },
+        { t: '每件服務費', x: 'b2', kids: [
+          { t: '平均成交總價', x: 'b3' },
+          { t: '服務費率', kids: [{ t: '買方服務費率' }, { t: '賣方服務費率' }] }] }] },
       { t: '成本', x: 'b4', kids: [
         { t: '固定成本', kids: [{ t: '系統維護', x: 'b5' }, { t: '團隊人力', x: 'b6' }, { t: '內容製作' }] },
-        { t: '變動成本', x: 'b7', kids: [{ t: '廣告費', x: 'b8' }, { t: '客服處理' }, { t: '簡訊推播費' }] }] }] },
+        { t: '變動成本', x: 'b7', kids: [
+          { t: '廣告費', x: 'b8', kids: [{ t: '關鍵字廣告' }, { t: '社群廣告' }] },
+          { t: '客服處理' }, { t: '簡訊推播費' }] }] }] },
     traps: [{ id: 'bx1', t: '房價漲跌', why: '外部因素，不是官網的營收或成本' }, { id: 'bx2', t: '網站改版', why: '這是做法，不是分類' }, { id: 'bx3', t: '自然流量', why: '這是留單公式框架的拆法，混進來就重疊了' }],
     order: ['b3', 'bx1', 'b6', 'b2', 'b8', 'bx3', 'b4', 'b1', 'bx2', 'b7', 'b5'] },
-  { id: 'C', name: '3C＋大環境框架', desc: '顧客、競爭者、自己、大環境', formula: '外部（顧客、競爭者、大環境）＋ 內部（自己）',
+  { id: 'C', name: '3C＋大環境框架', desc: '顧客、競爭者、自己、大環境', formula: '外部（市場：可控／大環境：不可控）＋ 內部（自己）',
     tree: { t: '3C＋大環境框架', kids: [
       { t: '外部', x: 'c1', kids: [
-        { t: '顧客', kids: [{ t: '首購族' }, { t: '換屋族', x: 'c2' }, { t: '賣方屋主' }] },
-        { t: '競爭者', x: 'c3', kids: [{ t: '其他房仲品牌官網' }, { t: '找房平台網站' }] },
-        { t: '大環境', kids: [{ t: '房市政策與信用管制' }, { t: '利率走勢', x: 'c4' }, { t: 'AI 等新科技' }] }] },
+        { t: '市場（可控）', kids: [
+          { t: '顧客', kids: [{ t: '首購族' }, { t: '換屋族', x: 'c2' }, { t: '賣方屋主' }] },
+          { t: '競爭者', x: 'c3', kids: [{ t: '其他房仲品牌官網' }, { t: '找房平台網站' }] }] },
+        { t: '大環境（不可控）', kids: [{ t: '房市政策與信用管制' }, { t: '利率走勢', x: 'c4' }, { t: 'AI 等新科技' }] }] },
       { t: '內部（自己）', kids: [
-        { t: '引流能力', kids: [{ t: '廣告投放' }, { t: 'SEO 與內容', x: 'c5' }] },
-        { t: '網站體驗', kids: [{ t: '搜尋與篩選', x: 'c6' }, { t: '物件明細頁' }] },
-        { t: '業務承接', x: 'c7', kids: [{ t: '留單回覆速度', x: 'c8' }, { t: '帶看安排' }] }] }] },
+        { t: '引流能力', kids: [{ t: '廣告投放' }, { t: 'SEO 與內容', x: 'c5' }, { t: '社群經營' }] },
+        { t: '網站體驗', kids: [{ t: '搜尋與篩選', x: 'c6' }, { t: '物件明細頁' }, { t: '會員與收藏' }] },
+        { t: '業務承接', x: 'c7', kids: [{ t: '留單回覆速度', x: 'c8' }, { t: '帶看安排' }, { t: '議價與成交' }] }] }] },
     traps: [{ id: 'cx1', t: '成長五成', why: '這是目標的幅度，不是分類' }, { id: 'cx2', t: '全面改版官網', why: '這是做法，不是分類' }, { id: 'cx3', t: '手機版使用者', why: '裝置是另一種分法，跟顧客分群重疊' }],
     order: ['c5', 'cx1', 'c2', 'c7', 'cx3', 'c4', 'c1', 'c8', 'cx2', 'c6', 'c3'] }
 ];
@@ -1229,34 +1256,33 @@ const TEACH_TREES = {
 };
 
 const SIZE_IN = [
-  { id: 'a', t: '全台家戶數', u: '萬戶' },
-  { id: 'b', t: '租屋的比例', u: '%' },
-  { id: 'c', t: '一年內打算買房的比例', u: '%' },
-  { id: 'd', t: '會用我們租轉買服務的比例', u: '%' },
-  { id: 'e', t: '用了之後留資料的比例', u: '%' }
+  { id: 'a', t: '官網一天的人次', u: '萬人次' },
+  { id: 'b', t: '進到物件明細頁的比例', u: '%' },
+  { id: 'c', t: '明細頁留資料的比例', u: '%' },
+  { id: 'd', t: '改版後留資料比例提升的幅度', u: '%' }
 ];
 const HINTS = [
-  { t: '家戶統計', b: '全台約 976 萬戶（主計總處 2025）。' },
   { t: '房市交易量', b: '去年（2025）全台買賣移轉約 26 萬棟。' },
-  { t: '住宅自有率', b: '全台住宅自有率約 84%；其餘約 16% 裡，大約三分之二是租屋，其他是住宿舍、借住等。（公開資料約略值＋課堂假設）' },
-  { t: '新屋市場', b: '去年建物第一次登記約 17.7 萬棟。' },
-  { t: '租屋族調查', b: '租屋族裡，一年內打算買房的約 15%。（課堂假設）' },
+  { t: '官網流量', b: '官網現在一天約 5.6 萬人次（第 1 關老闆說的）。' },
+  { t: '家戶統計', b: '全台約 976 萬戶（主計總處 2025）。' },
+  { t: '頁面路徑', b: '進到官網的人，約四成會點進物件明細頁。（課堂假設）' },
   { t: '數位調查', b: '台灣上網率約 89%（TWNIC 2025）。' },
-  { t: '服務觸及', b: '打算買房的租屋族，約兩成會用到我們的租轉買內容或規劃工具。（課堂假設）' },
+  { t: '明細頁轉換', b: '點進明細頁的人，約 1% 會留下聯絡資料。（課堂假設）' },
   { t: '社群互動', b: '房產相關社群貼文，每月互動約 50 萬次。（課堂假設）' },
-  { t: '內容轉換', b: '用過規劃工具、看過內容的人，約 15% 會留下聯絡資料。（課堂假設）' },
+  { t: '同業改版案例', b: '同業把明細頁改得更直觀後，留資料的比例平均提升約一成。（課堂假設）' },
+  { t: '手機占比', b: '官網流量約七成來自手機。（課堂假設）' },
   { t: '人口結構', b: '2025 年新生兒不到 11 萬人。' }
 ];
-const PASS = { leads: [2000, 12000] };
+const PASS = { leads: [3000, 20000] };
 function sizeVals(v) {
   if (v && v.hint) { const r = sizeCalc(v); return { leads: r.ok ? r.leads : NaN, hint: true }; }
   return { leads: num(v && v.leads), hint: false };
 }
 function sizeCalc(v) {
   const g = k => num(v && v[k]);
-  const a = g('a'), b = g('b'), c = g('c'), d = g('d'), e = g('e');
-  const renters = a * 1e4 * (b / 100), users = renters * (c / 100) * (d / 100);
-  return { renters, users, leads: users * (e / 100), ok: [a, b, c, d, e].every(x => isFinite(x) && x > 0) };
+  const a = g('a'), b = g('b'), c = g('c'), d = g('d');
+  const yearly = a * 1e4 * 365, detail = yearly * (b / 100);
+  return { yearly, detail, leads: detail * (c / 100) * (d / 100), ok: [a, b, c, d].every(x => isFinite(x) && x > 0) };
 }
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -1268,36 +1294,60 @@ const CHARTS = [
   { id: 'cr', t: '各頁留資料比例：今年 vs 去年', type: 'group', time: false, unit: '%', max: 4, cats: ['明細 → 留單', '社區頁 → 留單', '估價 → 委託'], s: [{ n: '去年', c: 3, v: [2.4, 1.1, 3.0] }, { n: '今年', c: 1, v: [2.5, 1.1, 3.1] }] },
   { id: 'bounce', t: '手機版跳出率', type: 'line', time: true, unit: '%', max: 80, s: [{ n: '跳出率', c: 1, v: [42, 43, 58, 42, 41, 43, 42, 41, 43, 42, 41, 42] }] }
 ];
+const MIX_NAT = [4.6, 4.7, 4.8, 4.7, 4.6, 4.7, 4.7, 4.6, 4.8, 4.7, 4.6, 4.7], MIX_AD = [4.7, 4.6, 4.8, 4.7, 4.7, 2.0, 2.0, 2.1, 2.0, 1.9, 2.0, 2.0];
+const MIXCHARTS = [
+  { id: 'share', t: '留單來源占比', type: 'pct', time: true, unit: '%', s: [{ n: '自然流量', c: 4, v: MIX_NAT }, { n: '廣告流量', c: 1, v: MIX_AD }] },
+  { id: 'total', t: '每月留單數', type: 'line', time: true, unit: '千筆', max: 12, s: [{ n: '留單數', c: 1, v: MIX_NAT.map((n, i) => Math.round((n + MIX_AD[i]) * 10) / 10) }] },
+  { id: 'adclick', t: '廣告：每次點擊成本 vs 點擊數', type: 'scatter', unit: '每點是一個月', lab: true, ylLeft: true, xl: '每次點擊成本（元）', yl: '點擊數（萬次）', xmax: 40, max: 6, pts: [['1月', 25, 4.0, '1–5 月'], ['2月', 24.6, 3.9, ''], ['3月', 25.4, 4.1, ''], ['4月', 25.1, 4.0, ''], ['5月', 24.8, 4.0, ''], ['6月', 25.2, 2.4, '6–12 月'], ['7月', 24.9, 2.4, ''], ['8月', 25.3, 2.4, ''], ['9月', 24.7, 2.4, ''], ['10月', 25, 2.4, ''], ['11月', 25.1, 2.4, ''], ['12月', 24.8, 2.4, '']] },
+  { id: 'members', t: '累積會員數', type: 'line', time: true, unit: '萬人', max: 160, s: [{ n: '累積會員數', c: 1, v: [120.0, 122.0, 124.1, 126.0, 128.0, 129.6, 131.2, 132.8, 134.4, 136.0, 137.6, 139.2] }] }
+];
+const MIXLEADS = { t: '換算成數量：每月留單數', type: 'stack', time: true, unit: '千筆', max: 10, s: [{ n: '自然流量', c: 4, v: MIX_NAT }, { n: '廣告流量', c: 1, v: MIX_AD }] };
+const MIX_Q1 = [
+  { id: 'strong', t: '自然流量變強了，經營有成效', why: '占比要乘上總量：總留單從約 9.4 千筆掉到 6.7 千筆，自然流量的留單一直約 4.7 千筆，沒有變多' },
+  { id: 'flat', t: '自然流量沒變多，是廣告留單變少', why: '' },
+  { id: 'pricey', t: '廣告變貴了，同樣的錢買到的人變少', why: '散佈圖上每次點擊成本都在 25 元左右，沒變貴；是點擊數從 4 萬掉到 2.4 萬，買的量變少了' },
+  { id: 'member', t: '會員變多了，留單結構變好了', why: '累積會員數只會往上，看不出留單結構' }
+];
+const MIX_Q2 = [
+  { id: 'ads', t: '加碼廣告，把比例拉回五比五', why: '老闆說廣告預算不會增加' },
+  { id: 'grow', t: '想辦法讓自然流量帶來的留單變多', why: '' },
+  { id: 'keep', t: '自然已經占七成，維持現狀就好', why: '占比高不代表數量多；自然流量沒成長，留單也不會變多' },
+  { id: 'lower', t: '降低留單目標', why: '目標是老闆定的，要先想辦法達成' }
+];
 const CO4 = ['傑克房地產', '同業房仲 A', '同業房仲 B', '找房平台'];
 const GAPCHARTS = [
-  { id: 'mix', t: '各家流量組成', type: 'pct', cats: CO4, unit: '%', s: [{ n: '買屋', c: 1, v: [57, 52, 50, 37] }, { n: '賣屋', c: 3, v: [17, 15, 14, 4] }, { n: '租屋', c: 2, v: [2, 13, 13, 46] }, { n: '實價登錄', c: 4, v: [24, 20, 23, 13] }] },
-  { id: 'traffic', t: '各家每月總流量', type: 'line', time: true, unit: '萬人次', max: 400, s: [{ n: '傑克房地產', c: 1, v: [204, 198, 208, 201, 203, 170, 163, 167, 162, 165, 163, 167] }, { n: '同業房仲 A', c: 3, v: [168, 170, 172, 169, 171, 170, 168, 172, 170, 169, 171, 173] }, { n: '同業房仲 B', c: 4, v: [138, 140, 141, 139, 142, 140, 139, 141, 140, 142, 141, 143] }, { n: '找房平台', c: 2, v: [345, 348, 352, 350, 355, 352, 350, 356, 354, 353, 357, 360] }] },
-  { id: 'pages', t: '各類頁面每月流量', type: 'group', unit: '萬人次', max: 180, cats: ['買屋', '賣屋', '租屋', '實價登錄'], s: [{ n: '傑克房地產', c: 1, v: [94, 28, 3, 40] }, { n: '同業房仲 A', c: 3, v: [88, 26, 22, 34] }, { n: '同業房仲 B', c: 4, v: [70, 20, 18, 32] }, { n: '找房平台', c: 2, v: [131, 14, 163, 46] }] },
-  { id: 'seo', t: '各類頁面自然搜尋曝光', type: 'group', unit: '萬次／月', max: 140, cats: ['買屋', '賣屋', '租屋', '實價登錄'], s: [{ n: '傑克房地產', c: 1, v: [120, 40, 5, 70] }, { n: '同業平均', c: 3, v: [95, 32, 58, 52] }] }
+  { id: 'natural', t: '自然流量', type: 'group', unit: '萬人次／月', max: 260, cats: CO4, s: [{ n: '自然流量', c: 1, v: [118, 120, 98, 250] }] },
+  { id: 'market', t: '找房搜尋熱度 vs 我們的自然流量', type: 'line', time: true, unit: '指數，1 月 ＝ 100', max: 140, base: 100, s: [{ n: '市場找房搜尋熱度', c: 3, v: [100, 97, 104, 101, 99, 102, 100, 98, 103, 101, 99, 102] }, { n: '我們的自然流量', c: 1, v: [100, 98, 103, 100, 101, 100, 99, 101, 102, 100, 99, 101] }] },
+  { id: 'funnel', t: '找房五步驟的轉換率', type: 'group', unit: '同業 ＝ 100', max: 120, base: 100, cats: ['①搜尋', '②看結果', '③點開物件', '④留資料', '⑤約帶看'], s: [{ n: '我們 ÷ 同業', c: 1, v: [98, 99, 84, 77, 106] }] },
+  { id: 'survey', t: '消費者調查：各家評分', type: 'group', unit: '5 分滿分', max: 5, cats: ['物件夠多', '品牌可信', '業務回覆快', '實價資訊完整'], s: [{ n: '傑克房地產', c: 1, v: [4.3, 4.4, 4.1, 4.2] }, { n: '同業平均', c: 3, v: [3.9, 4.0, 4.0, 4.1] }] }
 ];
-/* 解答用：占比 × 6–12 月平均總流量，換算成每月流量（萬人次） */
-const GAPPAGES = { t: '各類頁面每月流量', type: 'group', unit: '萬人次', max: 180, cats: ['買屋', '賣屋', '租屋', '實價登錄'], s: [{ n: '傑克房地產', c: 1, v: [94, 28, 3, 40] }, { n: '同業房仲 A', c: 3, v: [88, 26, 22, 34] }, { n: '同業房仲 B', c: 4, v: [70, 20, 18, 32] }, { n: '找房平台', c: 2, v: [131, 14, 163, 46] }] };
-const GAP_SEG = [{ id: 'buy', t: '買屋' }, { id: 'sell', t: '賣屋' }, { id: 'rent', t: '租屋' }, { id: 'price', t: '實價登錄' }];
-const GAP_ACT = [
-  { id: 'rentbiz', t: '開始經營租屋市場，收租屋服務費', why: '不符公司方針：公司不經營租屋市場、不收租屋服務費' },
-  { id: 'r2b', t: '把租屋族當成未來的買方，經營「租轉買」', why: '' },
-  { id: 'ads', t: '加碼租屋關鍵字廣告，把租屋流量買回來', why: '廣告是租來的，錢停了流量就沒了；而且公司不經營租屋' },
-  { id: 'skip', t: '公司不做租屋，這個差距不用管', why: '不經營租屋市場，不代表要放掉這群人：租屋族是未來的買方' }
+const GAP_Q1 = [
+  { id: 'traffic', t: '流量規模：自然流量低於同業', why: '我們的自然流量跟同業房仲相當' },
+  { id: 'market', t: '市場需求：找房搜尋熱度下滑', why: '市場找房搜尋熱度全年持平，我們的自然流量也沒掉' },
+  { id: 'conv', t: '站內轉換：訪客進站後未完成留資料', why: '' },
+  { id: 'supply', t: '供給與品牌：物件或品牌力不如同業', why: '消費者調查裡物件、品牌、業務回覆我們都不輸同業' }
+  
+];
+const GAP_Q2 = [
+  { id: 'home', t: '首頁', why: '① 進站後搜尋，跟同業差不多' },
+  { id: 'search', t: '搜尋列', why: '② 搜尋後看結果，跟同業差不多' },
+  { id: 'listdetail', t: '物件列表頁與物件明細頁', why: '' },
+  { id: 'sales', t: '業務回覆與帶看流程', why: '⑤ 約帶看比同業還高，業務接得住' }
 ];
 const CULPRITS = ['budget'];
 const CHART = Object.fromEntries(CHARTS.map(c => [c.id, c]));
 
 const CALC = [
-  { id: 'q1', tp: '廣告少掉的留單', t: '6 月起廣告流量每天少了約 1 萬人次，廣告流量留資料的比例約 0.3%，一年少了多少筆留單？', u: '筆', ans: 10950, ex: '1 萬 × 0.3% × 365 ＝ 10,950 筆' },
-  { id: 'q2', tp: '損益平衡', t: '租轉買服務一次投入 300 萬元。同樣一筆留單用廣告買要 500 元，這個服務要帶來多少筆留單才回本？', u: '筆', ans: 6000, ex: '300 萬 ÷ 500 元 ＝ 6,000 筆' },
-  { id: 'q3', tp: '回本期', t: '前段估出租轉買一年約帶來 4,500 筆留單（每月約 375 筆），幾個月回本？', u: '個月', ans: 16, ex: '6,000 ÷ 375 ＝ 16 個月' },
-  { id: 'q4', tp: '淨現值 NPV', t: '這個服務投入 300 萬元，接下來三年，每年預估會節省 225 萬元的廣告費，折現率 10%。淨現值（NPV）約多少萬元？', u: '萬元', ans: 260, ex: '約 ＋260 萬元' }
+  { id: 'q1', tp: '自然流量要成長多少', t: '現在一年約 8 萬筆留單，自然：廣告 ＝ 7：3。廣告預算不會增加，廣告帶來的留單維持不變；2030 年要做到 12 萬筆，自然流量帶來的留單要成長幾 %？', u: '%', ans: 71, ex: '自然 5.6 萬 → 12 萬 − 2.4 萬 ＝ 9.6 萬；9.6 ÷ 5.6 − 1 ≈ 71%' },
+  { id: 'q2', tp: '損益平衡', t: '版面改善一次投入 400 萬元。同樣一筆留單用廣告買要 500 元，這次改版要帶來多少筆留單才回本？', u: '筆', ans: 8000, ex: '400 萬 ÷ 500 元 ＝ 8,000 筆' },
+  { id: 'q3', tp: '回本期', t: '前段估出版面改善一年約多帶來 8,000 筆留單（每月約 667 筆），幾個月回本？', u: '個月', ans: 12, ex: '8,000 ÷ 667 ≈ 12 個月' },
+  { id: 'q4', tp: '淨現值 NPV', t: '這次改版投入 400 萬元，接下來三年，每年預估會節省 400 萬元的廣告費，折現率 10%。淨現值（NPV）約多少萬元？', u: '萬元', ans: 595, ex: '約 ＋595 萬元' }
 ];
 
 const BRAIN = [
   { id: 'flow', col: 'c1', t: '流程（留單漏斗）', use: '照事情發生的順序，一段一段找做法', ex: '例：學童入學率低 → 政策法規、學校設施、師資、家庭', cats: ['引流 Acquisition', '探索 Discovery', '評估 Evaluation', '詢問 Inquiry', '跟進 Follow-up'], sub: ['把人從外面帶進官網', '在一堆物件裡找到想看的', '看懂物件，判斷值不值得聯絡', '留下聯絡資料', '業務接手回覆、安排帶看'] },
-  { id: 'seg', col: 'c3', t: '分群（依客群）', use: '把對象分成幾群，每一群各想做法', ex: '例：手搖飲想多賣 → 學生、上班族、家庭', cats: ['首購族', '換屋族', '賣方屋主', '租屋族'] },
-  { id: 'time', col: 'c4', t: '時間軸', use: '照時間先後，各想該做的事', ex: '例：準備馬拉松 → 這個月、三個月內、比賽前', cats: ['短期（今年）', '中期（1–2 年）', '長期（到 2030）'], hint: '想想怎麼讓租屋族變成買方（租轉買）；配合公司方針，不經營租屋市場' }
+  { id: 'seg', col: 'c3', t: '分群（依客群）', use: '把對象分成幾群，每一群各想做法', ex: '例：手搖飲想多賣 → 學生、上班族、家庭', cats: ['首購族', '換屋族', '賣方屋主', '看行情的人'] },
+  { id: 'time', col: 'c4', t: '時間軸', use: '照時間先後，各想該做的事', ex: '例：準備馬拉松 → 這個月、三個月內、比賽前', cats: ['短期（今年）', '中期（1–2 年）', '長期（到 2030）'], hint: '想想列表頁和明細頁怎麼改，讓網頁從「像百科」變成直觀、有參考性' }
 ];
 const BR = Object.fromEntries(BRAIN.map(b => [b.id, b]));
 const REC = [
@@ -1309,19 +1359,19 @@ const REC = [
 const RECAP = [
   ['目的', '成為客戶最依賴的房產數位服務窗口，不是衝一時的量'],
   ['目標', '2030 年前、廣告預算不增加，流量和留單都成長五成：一年 8 萬筆 → 12 萬筆'],
-  ['主因', '6 月廣告預算砍了四成，流量和留單少了將近兩成；廣告流量是租來的'],
-  ['差距', '跟同業比租屋最弱；租轉買是其中一條符合方針的路徑'],
-  ['估算', '租轉買一年約 4,500 筆留單，約補 2030 缺口的一成'],
-  ['量化分析', '約 16 個月回本，三年淨現值約 ＋260 萬']
+  ['內部', '自然流量的留單占比升到七成，是因為廣告留單變少；自然流量其實沒成長'],
+  ['外部', '對標同業，流量規模和市場需求都沒問題，瓶頸在站內轉換：點開物件、留資料兩步落後；先改版列表頁和明細頁'],
+  ['估算', '版面改善一年約多 8,000 筆留單，約補 2030 缺口的兩成'],
+  ['量化分析', '自然流量帶來的留單要成長約七成；版面改善約 12 個月回本，三年淨現值約 ＋595 萬']
 ];
 /* 每一關最後的「這一關得出的結論」 */
 const CONCL = {
   1: { rows: [['目的', '成為客戶最依賴的房產數位服務窗口。這是方向，回答「為什麼做」，提醒我們不是衝一時的量。'], ['目標', '2030 年前、廣告預算不增加，讓官網流量和年留單都成長五成：一年從約 8 萬筆做到 12 萬筆。這是可以衡量的終點。']], next: '把目標拆開來，才知道要查什麼、先查哪裡。' },
-  2: { rows: [['公式', '留單 ＝ 流量 × 留資料的比例。'], ['流量', '人從哪裡來：付費、自然、自有。'], ['比例', '來的人在哪一步留下來：買方點進明細、留資料；賣方估價、委託。'], ['也可以', '用 3C＋大環境框架或損益框架拆，重點是同一層只用一種分法。']], next: '看今年的報表找出主因，再跟同業比，看我們差在哪。' },
-  3: { rows: [['主因', '6 月廣告預算砍了四成，流量和留單少了將近兩成，全年留單約少一成。廣告流量是租來的，錢一停就沒了。'], ['差距', '跟同業房仲和找房平台比，我們租屋這塊最弱。'], ['方針', '公司不經營租屋市場；租屋族是未來的買方，「租轉買」是其中一條符合方針的路徑。']], next: '依這兩個發現，想長期、自然流量的做法。' },
-  4: { rows: [['方向', '往長期、自然流量想；從租轉買切入，把租屋族變成未來的買方。'], ['做法', '短期做租轉買入門內容，中期做規劃服務，長期讓租屋族想買房時第一個想到我們。']], next: '挑一個做法，估它能帶來多少留單，再算值不值得做。' },
-  5: { rows: [['估算', '租轉買一年約 4,500 筆留單，約補 2030 缺口（一年 4 萬筆）的一成。'], ['量化', '約 16 個月回本，三年淨現值約 ＋260 萬，值得做；但一個做法補不滿缺口，還要搭配其他長期做法。']], next: '把這些結論寫成一份由上而下的建議。' },
-  6: { rows: [['建議', '發展租轉買內容和服務，同時逐年把預算從廣告移到自然流量：生活角度的內容、網頁改版、整合自家網站流量。'], ['連回目的', '這些做法都在累積客戶的信任，讓想買房、賣房的人，包括還在租屋的人，第一個想到我們，朝「客戶最依賴的房產數位服務窗口」前進。']], next: '' }
+  2: { rows: [['公式', '留單 ＝ 流量 × 留資料的比例。'], ['流量', '人從哪裡來：付費、自然、自有。'], ['比例', '來的人在哪一步留下來：買方點進明細、留資料；賣方估價、委託。'], ['也可以', '用 3C＋大環境框架或損益框架拆，重點是同一層只用一種分法。']], next: '先看內部數據，留單從哪裡來；再跟同業比，看我們差在哪。' },
+  3: { rows: [['內部', '6 月以後，自然流量的留單占比從五成升到七成；但總留單變少了，換算下來自然流量每月都差不多，是廣告留單變少，占比才變高。廣告不會加，要成長，就得讓自然流量帶來的留單變多。'], ['外部', '對標同業，自然流量相當、市場找房需求持平，物件、品牌、業務也不輸人；瓶頸在站內轉換，「點開物件」「留資料」兩步落後最多。'], ['方向', '先改版物件列表頁和明細頁，讓網頁從像百科，變成直觀、有參考性。房產指南內容、流量整合、租屋族也是之後可以發展的方向。']], next: '依這兩個發現，想長期、自然流量的做法。' },
+  4: { rows: [['方向', '往長期、自然流量想；先改版列表頁和明細頁，讓網頁從像百科，變成直觀、有參考性。'], ['做法', '列表頁改成卡片式、篩選欄拉出來；明細頁色塊分區、字型統一、圖片放大、內容精簡，加上 AI 特色和數據洞察欄位；長期讓整體 UI/UX 一致。']], next: '挑一個做法，估它能帶來多少留單，再算值不值得做。' },
+  5: { rows: [['估算', '版面改善一年約多 8,000 筆留單，約補 2030 缺口（一年 4 萬筆）的兩成。'], ['量化', '廣告不加，自然流量帶來的留單要成長約七成；版面改善約 12 個月回本，三年淨現值約 ＋595 萬，值得做，但一個做法補不滿，還要搭配內容經營、流量整合等長期做法。']], next: '把這些結論寫成一份由上而下的建議。' },
+  6: { rows: [['建議', '先改版物件列表頁和明細頁，讓網頁從像百科變成直觀、有參考性；再逐年把預算移到自然流量：房產指南內容、整合自家網站流量。'], ['連回目的', '這些做法都在累積客戶的信任，讓想買房、賣房、看行情的人第一個想到我們，朝「客戶最依賴的房產數位服務窗口」前進。']], next: '' }
 };
 
 const STAGES = [
@@ -1329,18 +1379,18 @@ const STAGES = [
     lesson: '好問題先講目的（為什麼做、最後想變成什麼樣子），再講可以衡量的目標：期限、限制、指標、成長幅度。老闆在意的兩件事（流量、留單）都要放進來，而且不能把做法當成目標。' },
   { id: 's1b', lv: 2, part: '', kind: 'frame', time: 300, max: 1000, title: '選一種框架，把挖空的格子補起來', desc: '',
     lesson: '同一層只用一種分法，才不會重疊；越往下拆越細，下游一定比上游多；列出九成的原因就夠，不用鑽到太細。' },
-  { id: 's2', lv: 5, part: '前段', kind: 'sizing', time: 180, max: 500, title: '租轉買規劃服務，一年能帶來多少筆留單？', desc: '第 4 關每個人想到的做法都不一樣。Jak 選的是「租轉買」：把租屋族變成未來的買方。這一關就以租轉買為例，先估它一年能帶來多少筆留單（留下聯絡資料的人），再算值不值得做。數據提示卡免費看；卡住了可以看估算鏈，但這段分數會減半。',
-    lesson: '新服務還不存在、查不到資料，就要先估：從公開數字出發，一層層往下拆，拆到每個數字都說得出依據就停。租轉買一年約 4,500 筆留單，約補 2030 缺口的一成：值得做，但一個做法補不滿。' },
-  { id: 's3a', lv: 3, part: '前段', kind: 'fog', time: 90, max: 500, title: '今年的留單好像變少，幫我看看哪裡出問題', desc: '六張圖的圖型和單位都不一樣，先看懂標題和座標。主因只有一張：點圖表放大，指定主因，再選出問題從哪個月開始，最後按「送出判斷」。',
-    lesson: '主因是 6 月廣告預算砍了四成：廣告流量跟著掉，6 月以後流量和留單都比去年少了將近兩成，全年留單約少一成。總流量是結果，不是原因；留資料比例、手機跳出率、6 月每日流量和累積會員數，都解釋不了為什麼從 6 月開始變少。' },
-  { id: 's3c', lv: 3, part: '後段', kind: 'gap', time: 150, max: 500, title: '跟同業比，我們差在哪？', desc: '四張圖比較傑克房地產、兩家同業房仲和找房平台（數字為課堂虛構）。先找出我們最弱的一塊，再想想可以往哪個方向發展。',
-    lesson: '占比要乘上總量才是數量：我們租屋只占約 2%，換算後每月約 3 萬人次，差同業最多。找到差距，先對照公司方針：公司不經營租屋市場、不收租屋服務費，但租屋族是未來的買方。「租轉買」是其中一條符合方針的路徑，讓這群人想買房時第一個想到我們。' },
-  { id: 's3b', lv: 5, part: '後段', kind: 'calc', time: 150, max: 500, title: '租轉買值不值得做？', desc: '前段估出租轉買一年約能帶來 4,500 筆留單。先算廣告少掉的留單，再算這個服務值不值得做。四題計算，可以用計算機，誤差 5% 內都算對。',
-    lesson: '廣告少掉的留單一年約 1.1 萬筆；租轉買要帶來 6,000 筆留單才回本，約 16 個月回本，三年淨現值約 ＋260 萬，值得做。價值用省下的廣告費算，不用服務費算：留單不等於成交，成交也要算業務的功勞。' },
-  { id: 's4a', lv: 4, part: '', kind: 'brain', time: 150, max: 1000, title: '2030 年要讓流量和留單都成長五成，有哪些長期做法？', desc: '從第 3 關的兩個發現出發：廣告是租來的，要往長期、自然流量想；我們租屋這塊最弱，但公司不經營租屋市場。先選一種結構，再在每一格寫下對應的做法。每個結構都附了一個例子。',
-    lesson: '依找到的問題發想：主因告訴我們要往長期、自然流量走；差距告訴我們租屋族是機會，但要配合公司方針，從租轉買切入。先選結構，每一塊都想到，才不會漏掉機會。' },
+  { id: 's2', lv: 5, part: '前段', kind: 'sizing', time: 180, max: 500, title: '版面改善一年能多帶來多少筆留單？', desc: '第 4 關每個人想到的做法都不一樣。Jak 選的是「版面改善」：改版物件列表頁和明細頁，讓它們讀起來直觀、有參考性。這一關就以版面改善為例，先估它一年能多帶來多少筆留單（留下聯絡資料的人），再算值不值得做。數據提示卡免費看；卡住了可以看估算鏈，但這段分數會減半。',
+    lesson: '還沒做的事查不到結果，就要先估：從手上有的數字出發，一層層往下拆，拆到每個數字都說得出依據就停。版面改善一年約多 8,000 筆留單，約補 2030 缺口的兩成：值得做，但一個做法補不滿。' },
+  { id: 's3a', lv: 3, part: '前段', kind: 'mix', time: 90, max: 500, title: '往內看：我們的留單從哪裡來？', desc: '先看懂四張圖的標題和單位，有些圖要一起看才看得出來。回答兩題；第 1 題按「確定」後，才會出現第 2 題的選項。',
+    lesson: '100% 堆疊只看得到占比：自然流量的留單占比從五成升到七成，不是因為自然流量變強，而是廣告留單變少。自然流量帶來的留單一直沒成長；廣告預算又不會增加，要成長，就得讓自然流量帶來的留單變多。' },
+  { id: 's3c', lv: 3, part: '後段', kind: 'gap', time: 150, max: 500, title: '對外查資料：留單少，卡在哪裡？', desc: '四張圖比較傑克房地產和同業（數字為課堂虛構）。先用圖排除不是原因的假設，再找出卡在哪裡、要先改哪裡。',
+    lesson: '先用框架列假設，再拿外部資料一個一個排除：流量規模跟同業相當，市場找房需求持平，物件、品牌、業務也不輸人，瓶頸在站內轉換；五步漏斗裡點開物件、留資料落後最多，所以先改版列表頁和明細頁。要知道客戶為什麼不留，下一步再看 Clarity 的滑動深度、熱點圖和問卷。' },
+  { id: 's3b', lv: 5, part: '後段', kind: 'calc', time: 150, max: 500, title: '版面改善值不值得做？', desc: '前段估出版面改善一年約能多帶來 8,000 筆留單。先算自然流量要成長多少，再算這次改版值不值得做。四題計算，可以用計算機，誤差 5% 內都算對。',
+    lesson: '廣告不加，自然流量帶來的留單要成長約七成；版面改善要帶來 8,000 筆留單才回本，約 12 個月回本，三年淨現值約 ＋595 萬，值得做。價值用省下的廣告費算，不用服務費算：留單不等於成交，成交也要算業務的功勞。' },
+  { id: 's4a', lv: 4, part: '', kind: 'brain', time: 150, max: 1000, title: '2030 年要讓流量和留單都成長五成，有哪些長期做法？', desc: '從第 3 關的兩個發現出發：自然流量沒長大、廣告又不會加，要往長期、自然流量想；對標同業，瓶頸在站內轉換，要先改版列表頁和明細頁。先選一種結構，再在每一格寫下對應的做法。每個結構都附了一個例子。',
+    lesson: '依找到的問題發想：內部發現告訴我們要讓自然流量帶來的留單變多；外部發現告訴我們瓶頸在站內轉換，要先改版列表頁和明細頁。先選結構，每一塊都想到，才不會漏掉機會。' },
   { id: 's4b', lv: 6, part: '', kind: 'rec', time: 150, max: 1000, title: '由上而下，寫下你的建議', desc: '先看一下前面幾關的結論和你在第 4 關寫的做法，再由上往下寫：一句話結論、支持事實、風險、下一步。結論要能連回老闆的目的。請具體寫出。',
-    lesson: '結論先講，而且連回目的；支持事實用前面算出的數字，最有力的放前面；建議要對齊公司方針；下一步回去看框架裡還沒驗證的分支。' }
+    lesson: '結論先講，而且連回目的；支持事實用前面算出的數字，最有力的放前面；先做最快見效的，其他長期做法也要排進來；下一步回去看框架裡還沒驗證的分支。' }
 ];
 const STAGE = Object.fromEntries(STAGES.map(s => [s.id, s]));
 const MISSIONS = { 1: ['s1a'], 2: ['s1b'], 3: ['s3a', 's3c'], 4: ['s4a'], 5: ['s2', 's3b'], 6: ['s4b'] };
@@ -1354,11 +1404,11 @@ const CH = [
 const SEVEN = [
   { n: '釐清問題', o: '目的：成為客戶最依賴的房產數位服務窗口；目標：2030 年前、廣告預算不增加，流量和留單都成長五成' },
   { n: '框架', o: '留單 ＝ 流量（付費、自然、自有）× 留資料的比例（買方、賣方）' },
-  { n: '解讀圖表', o: '6 月廣告預算砍了四成，流量和留單少了將近兩成；跟同業比租屋最弱，可以從租轉買切入' },
-  { n: '結構化發想', o: '照時間軸想租轉買：短期入門內容、中期規劃服務、長期成為租屋族想買房時第一個打開的地方' },
-  { n: '估算市場', o: '租轉買一年約 4,500 筆留單，約補 2030 缺口的一成' },
-  { n: '量化分析', o: '約 16 個月回本，三年淨現值約 ＋260 萬，值得做' },
-  { n: '提出建議', o: '發展租轉買，同時逐年把預算移到自然流量，朝客戶最依賴的數位服務窗口前進' }
+  { n: '解讀圖表', o: '自然流量占比升到七成，其實是廣告變少，自然流量沒長大；對標同業，瓶頸在站內轉換，要先改列表頁和明細頁' },
+  { n: '結構化發想', o: '照時間軸想版面改善：短期明細頁色塊分區、精簡內容，中期列表頁卡片式、加上 AI 和數據洞察欄位，長期整體 UI/UX 一致' },
+  { n: '估算市場', o: '版面改善一年約多 8,000 筆留單，約補 2030 缺口的兩成' },
+  { n: '量化分析', o: '自然流量的留單要成長約七成；版面改善約 12 個月回本，三年淨現值約 ＋595 萬，值得做' },
+  { n: '提出建議', o: '先改版列表頁和明細頁，再逐步經營內容、整合流量，朝客戶最依賴的數位服務窗口前進' }
 ];
 const CLOSING = '整合策劃力，就是用這條脈絡，把一句模糊的需求，變成一份有數據、能執行、可以邊做邊調整的計畫。';
 
@@ -1411,20 +1461,30 @@ function grade(sid, v) {
     if (!(r.leads > 0)) return { pts: 0, detail: [r.hint ? '估算鏈沒有填完' : '沒有填數字'] };
     const [lo, hi] = PASS.leads;
     const p = r.leads >= lo && r.leads <= hi ? 500 : Math.round(500 * Math.max(0, 1 - Math.log10(r.leads < lo ? lo / r.leads : r.leads / hi) / Math.log10(4)));
-    detail.push(`租轉買一年帶來的留單 ${fmt(r.leads)} 筆　${p === 500 ? '在合理區間' : '超出區間'}（+${Math.round(p * m)}）`);
+    detail.push(`版面改善一年多帶來的留單 ${fmt(r.leads)} 筆　${p === 500 ? '在合理區間' : '超出區間'}（+${Math.round(p * m)}）`);
     if (r.hint) detail.push('用了估算鏈提示，這段分數 × 0.5');
     return { pts: Math.round(p * m), detail };
   }
+  if (k === 'mix') {
+    let pts = 0;
+    const a1 = MIX_Q1.find(x => x.id === v.q1), a2 = MIX_Q2.find(x => x.id === v.q2);
+    if (v.q1 === 'flat') { pts += 300; detail.push('讀對了：自然流量沒成長，是廣告留單變少，占比才變高（+300）'); }
+    else if (a1) detail.push(`「${a1.t}」：${a1.why}（+0）`);
+    else detail.push('第 1 題沒有作答（+0）');
+    if (v.q2 === 'grow') { pts += 200; detail.push('方向對了：讓自然流量帶來的留單變多（+200）'); }
+    else if (a2) detail.push(`「${a2.t}」：${a2.why}（+0）`);
+    else detail.push('第 2 題沒有作答（+0）');
+    return { pts, detail };
+  }
   if (k === 'gap') {
     let pts = 0;
-    if (v.seg === 'rent') { pts += 250; detail.push('最弱的一塊找對了：租屋（+250）'); }
-    else if (v.seg === 'price') detail.push('實價登錄：我們比同業房仲多，只比找房平台少一點，不是最弱的（+0）');
-    else if (v.seg) detail.push(`「${(GAP_SEG.find(x => x.id === v.seg) || {}).t}」跟同業差不多，不是最弱的（+0）`);
-    else detail.push('沒有選最弱的一塊（+0）');
-    const a = GAP_ACT.find(x => x.id === v.act);
-    if (v.act === 'r2b') { pts += 250; detail.push('方向對了：把租屋族當成未來的買方，租轉買是符合方針的路徑（+250）'); }
-    else if (a) detail.push(`「${a.t}」：${a.why}（+0）`);
-    else detail.push('沒有選發展方向（+0）');
+    const a1 = GAP_Q1.find(x => x.id === v.q1), a2 = GAP_Q2.find(x => x.id === v.q2);
+    if (v.q1 === 'conv') { pts += 250; detail.push('找對了：瓶頸在站內轉換（+250）'); }
+    else if (a1) detail.push(`「${a1.t}」：${a1.why}（+0）`);
+    else detail.push('第 1 題沒有作答（+0）');
+    if (v.q2 === 'listdetail') { pts += 250; detail.push('找對了：③ 點開物件、④ 留資料掉最多，要先改物件列表頁和物件明細頁（+250）'); }
+    else if (a2) detail.push(`「${a2.t}」：${a2.why}（+0）`);
+    else detail.push('第 2 題沒有作答（+0）');
     return { pts, detail };
   }
   if (k === 'fog') {
@@ -1474,7 +1534,8 @@ function hasInput(sid, v) {
   if (k === 'boss') return isObj(v.slots) && Object.values(v.slots).some(Boolean);
   if (k === 'frame') return !!v.f && isObj(v.place) && Object.values(v.place).some(Boolean);
   if (k === 'sizing') return v.hint ? SIZE_IN.some(i => isFinite(num(v[i.id]))) : num(v.leads) > 0;
-  if (k === 'gap') return !!(v.seg || v.act);
+  if (k === 'gap') return !!(v.q1 || v.q2);
+  if (k === 'mix') return !!(v.q1 || v.q2);
   if (k === 'fog') return Array.isArray(v.culprits) && v.culprits.length > 0;
   if (k === 'calc') return CALC.some(q => isFinite(num(v[q.id])));
   if (k === 'brain' || k === 'rec') return Array.isArray(v.t) && v.t.some(s => typeof s === 'string' && s.trim());
@@ -1487,6 +1548,14 @@ const fmtv = v => String(Math.round(v * 10) / 10);
 function chartSVG(c, opt) {
   opt = opt || {};
   const big = !!opt.big;
+  if (c.type === 'quotes') return `<ul class="qlist">${c.items.map(([q, p]) => `<li><span class="qq">「${q}」</span><span class="qbar"><i style="width:${Math.round(p / c.max * 100)}%"></i><b>${p}%</b></span></li>`).join('')}</ul>`;
+  if (c.type === 'heat') {
+    const W2 = big ? 520 : 260, H2 = big ? 260 : 168, x0 = big ? 110 : 40, bw2 = W2 - 2 * x0, gap = 3;
+    const tot = c.blocks.reduce((a, b) => a + b[2], 0), avail = H2 - 8 - gap * (c.blocks.length - 1);
+    let y = 4, s2 = `<svg viewBox="0 0 ${W2} ${H2}" role="img" aria-label="${c.t}">`;
+    c.blocks.forEach(([n, heat, hh]) => { const h2 = hh / tot * avail; s2 += `<rect class="hb" x="${x0}" y="${y}" width="${bw2}" height="${h2}" rx="3"/><rect x="${x0}" y="${y}" width="${bw2}" height="${h2}" rx="3" style="fill:var(--data2);fill-opacity:${heat}"/><text class="hm" x="${W2 / 2}" y="${y + h2 / 2 + 3.5}" text-anchor="middle">${n}</text>`; y += h2 + gap; });
+    return s2 + '</svg>';
+  }
   const W = big ? 520 : 260, H = big ? 220 : 124, pl = big ? 40 : 30, pr = 8, pt = 10, pb = big ? 26 : 18;
   const iw = W - pl - pr, ih = H - pt - pb;
   const max = c.type === 'pct' ? 100 : c.max;
@@ -1498,10 +1567,10 @@ function chartSVG(c, opt) {
     const X = x => pl + x / c.xmax * iw;
     [0, c.xmax / 2, c.xmax].forEach(t => { s += `<text class="tk" x="${X(t)}" y="${H - 6}" text-anchor="middle">${fmtv(t)}</text>`; });
     if (big) s += `<text class="tk" x="${pl + iw}" y="${H - 16}" text-anchor="end">${c.xl}</text><text class="tk" x="${pl + 4}" y="${pt + 8}">${c.yl}</text>`;
-    if (!big && c.lab) s += `<text class="tk" x="${pl + iw}" y="${H - pb - 4}" text-anchor="end">${c.xl}</text><text class="tk" x="${pl + iw}" y="${pt + 7}" text-anchor="end">${c.yl}</text>`;
-    c.pts.forEach(([n, x, y]) => {
+    if (!big && c.lab) s += `<text class="tk" x="${pl + iw}" y="${H - pb - 4}" text-anchor="end">${c.xl}</text>` + (c.ylLeft ? `<text class="tk" x="${pl + 4}" y="${pt + 7}">${c.yl}</text>` : `<text class="tk" x="${pl + iw}" y="${pt + 7}" text-anchor="end">${c.yl}</text>`);
+    c.pts.forEach(([n, x, y, tg]) => {
       s += `<circle cx="${X(x)}" cy="${Y(y)}" r="${big ? 5 : 3.2}" style="fill:${colOf(1)}"><title>${n}：${c.xl} ${x}，${c.yl} ${y}</title></circle>`;
-      if (big || c.lab) s += `<text class="tk" x="${X(x) + (big ? 7 : 5)}" y="${Y(y) + 3}">${n}</text>`;
+      const lb = tg === undefined ? n : tg; if ((big || c.lab) && lb) s += `<text class="tk" x="${X(x) + (big ? 7 : 5)}" y="${Y(y) + 3}">${lb}</text>`;
     });
   } else if (c.xs) {
     const n = c.xs.length, step = iw / n, cx = i => pl + step * (i + 0.5);
@@ -1762,7 +1831,7 @@ function makeWidget(st, onSubmit) {
       if (!s.hint) {
         box.append(txt('h5', '', '你的估算'));
         const ch = h('div', 'chainin');
-        ch.append(inpRow('sz_leads', '租轉買一年帶來的留單', '筆 / 年', 'leads'));
+        ch.append(inpRow('sz_leads', '版面改善一年多帶來的留單', '筆 / 年', 'leads'));
         box.append(ch, txt('p', 'wnote', '自己決定要從哪些數字推起，可以用計算機。'));
         const hbtn = txt('button', 'btn sm hintbtn', '卡住了？看估算鏈（這段滿分減半）'); hbtn.type = 'button';
         hbtn.onclick = () => {
@@ -1784,9 +1853,9 @@ function makeWidget(st, onSubmit) {
           row.append(lab, w); ch.append(row);
         });
         const res = h('div', 'results');
-        rr = [h('div', 'res', '<span>租屋家戶</span><b class="num">—</b>'), h('div', 'res', '<span>會用我們服務的人</span><b class="num">—</b>'), h('div', 'res', '<span>一年留單（筆）</span><b class="num">—</b>')];
+        rr = [h('div', 'res', '<span>官網一年的人次</span><b class="num">—</b>'), h('div', 'res', '<span>一年進到明細頁</span><b class="num">—</b>'), h('div', 'res', '<span>一年多的留單（筆）</span><b class="num">—</b>')];
         res.append(...rr);
-        box.append(ch, txt('p', 'wnote', '租屋家戶 ＝ 家戶數 × 租屋比例；會用我們服務的人 ＝ 租屋家戶 × 打算買房 × 用我們的服務；一年留單 ＝ 會用的人 × 留資料的比例'), res);
+        box.append(ch, txt('p', 'wnote', '官網一年的人次 ＝ 一天的人次 × 365；一年進到明細頁 ＝ 一年人次 × 進到明細頁的比例；一年多的留單 ＝ 進到明細頁 × 留資料的比例 × 提升的幅度'), res);
       }
       if (W.submitted) lock();
     };
@@ -1794,7 +1863,7 @@ function makeWidget(st, onSubmit) {
       if (s.hint) {
         const r = sizeCalc(s);
         const ok = n => SIZE_IN.slice(0, n).every(x => num(s[x.id]) > 0);
-        if (rr) { $('b', rr[0]).textContent = ok(2) ? fmt(r.renters) : '—'; $('b', rr[1]).textContent = ok(4) ? fmt(r.users) : '—'; $('b', rr[2]).textContent = r.ok ? fmt(r.leads) : '—'; }
+        if (rr) { $('b', rr[0]).textContent = ok(1) ? fmt(r.yearly) : '—'; $('b', rr[1]).textContent = ok(2) ? fmt(r.detail) : '—'; $('b', rr[2]).textContent = r.ok ? fmt(r.leads) : '—'; }
         sub.disabled = !r.ok || W.submitted;
       } else sub.disabled = !(num(s.leads) > 0) || W.submitted;
     };
@@ -1868,35 +1937,40 @@ function makeWidget(st, onSubmit) {
     return W;
   }
 
-  if (st.kind === 'gap') {
-    const s = { seg: null, act: null, lock1: false };
+  if (st.kind === 'gap' || st.kind === 'mix') {
+    const G = st.kind === 'gap'
+      ? { charts: GAPCHARTS, k1: 'q1', k2: 'q2', o1: GAP_Q1, o2: GAP_Q2, c1: 'opts opts2', q1: '1　對標同業後，自然流量的留單偏低，主要瓶頸在哪一段？', q2: '2　轉換落差集中在哪裡，應優先改版？', hint: '' }
+      : { charts: MIXCHARTS, k1: 'q1', k2: 'q2', o1: MIX_Q1, o2: MIX_Q2, c1: 'opts opts2', q1: '1　6 月以後，留單的來源有什麼變化？這代表什麼？', q2: '2　廣告預算不會增加，要成長，該往哪裡想？', hint: '' };
+    const s = { [G.k1]: G.multi ? [] : null, [G.k2]: null, lock1: false };
     const sub = submitBtn('送出判斷');
     const charts = h('div', 'gapcharts');
-    GAPCHARTS.forEach(c => { const card = h('div', 'zoom gapc'); card.append(txt('b', '', c.t + (c.unit ? `（${c.unit}）` : ''))); card.insertAdjacentHTML('beforeend', legendHTML(c) + chartSVG(c)); charts.append(card); });
+    G.charts.forEach(c => { const card = h('div', 'zoom gapc'); card.append(txt('b', '', c.t + (c.unit ? `（${c.unit}）` : ''))); card.insertAdjacentHTML('beforeend', legendHTML(c) + chartSVG(c)); charts.append(card); });
     const qa = h('div', 'gapq');
-    const q1 = h('div', 'w'), o1 = h('div', 'opts opts4');
+    const q1 = h('div', 'w'), o1 = h('div', G.c1);
     const ok1 = txt('button', 'btn sm gapok', '確定第 1 題，看第 2 題'); ok1.type = 'button';
     const done1 = txt('p', 'wnote gapdone', '第 1 題已確定，不能再改。');
-    ok1.onclick = () => { if (W.submitted || !s.seg) return; s.lock1 = true; paint(); };
-    q1.append(txt('p', 'gql', '1　跟同業比，我們最弱的是哪一塊？'), o1, ok1, done1);
+    const has1 = () => G.multi ? s[G.k1].length > 0 : !!s[G.k1];
+    ok1.onclick = () => { if (W.submitted || !has1()) return; s.lock1 = true; paint(); };
+    q1.append(txt('p', 'gql', G.q1), o1, ok1, done1);
     const q2 = h('div', 'w'), o2 = h('div', 'opts opts2');
-    const hint = h('div', 'brhint', '<span class="htag">提示</span>做規劃要對齊公司的方向和方針。');
+    const hint = G.hint ? h('div', 'brhint', `<span class="htag">提示</span>${G.hint}`) : null;
     const wait2 = txt('p', 'wnote gapwait', '先確定第 1 題，才會出現第 2 題的選項。');
-    q2.append(txt('p', 'gql', '2　我們可能會想發展哪種服務或路徑？'), o2, wait2);
-    const mk = (list, key, box) => list.forEach(o => { const b = txt('button', 'opt', o.t); b.type = 'button'; b.dataset.k = o.id; b.onclick = () => { if (W.submitted || (key === 'seg' && s.lock1)) return; s[key] = o.id; paint(); }; box.append(b); });
-    mk(GAP_SEG, 'seg', o1); mk(GAP_ACT, 'act', o2);
+    q2.append(txt('p', 'gql', G.q2), o2, wait2);
+    const mk = (list, key, box) => list.forEach(o => { const b = txt('button', 'opt', o.t); b.type = 'button'; b.dataset.k = o.id; b.onclick = () => { if (W.submitted || (key === G.k1 && s.lock1)) return; if (G.multi && key === G.k1) { const a = s[key]; s[key] = a.includes(o.id) ? a.filter(x => x !== o.id) : a.concat(o.id); } else s[key] = o.id; paint(); }; box.append(b); });
+    mk(G.o1, G.k1, o1); mk(G.o2, G.k2, o2);
     const paint = () => {
-      $$('.opt', o1).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === s.seg)));
-      $$('.opt', o2).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === s.act)));
+      $$('.opt', o1).forEach(b => b.setAttribute('aria-pressed', String(G.multi ? s[G.k1].includes(b.dataset.k) : b.dataset.k === s[G.k1])));
+      $$('.opt', o2).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === s[G.k2])));
       $$('.opt', o1).forEach(b => { b.disabled = !!s.lock1 || W.submitted; });
-      ok1.hidden = !!s.lock1; ok1.disabled = !s.seg || W.submitted; done1.hidden = !s.lock1;
+      ok1.hidden = !!s.lock1; ok1.disabled = !has1() || W.submitted; done1.hidden = !s.lock1;
       o2.hidden = !s.lock1; wait2.hidden = !!s.lock1;
-      sub.disabled = !(s.seg && s.act) || W.submitted;
+      sub.disabled = !(has1() && s[G.k2]) || W.submitted;
     };
-    qa.append(hint, q1, q2);
+    if (hint) qa.append(hint);
+    qa.append(q1, q2);
     sub.onclick = doSubmit;
-    W.getValue = () => ({ seg: s.seg, act: s.act });
-    paint(); root.classList.add('gapw'); root.append(charts, qa, sub);
+    W.getValue = () => ({ [G.k1]: G.multi ? s[G.k1].slice() : s[G.k1], [G.k2]: s[G.k2] });
+    paint(); root.classList.add('gapw'); if (st.kind === 'mix') root.classList.add('mixw'); root.append(charts, qa, sub);
     return W;
   }
 
@@ -1934,7 +2008,7 @@ function makeWidget(st, onSubmit) {
 
   if (st.kind === 'rec') {
     const t = REC.map(() => '');
-    const focus = h('div', 'recfocus', '記得方向：長期經營自然流量；配合公司方針不經營租屋市場，把租屋族變成未來的買方。');
+    const focus = h('div', 'recfocus', '記得方向：長期經營自然流量；先改版列表頁和明細頁，內容經營、流量整合也要排進來。');
     const rv = h('div', 'wbox recap'); rv.append(txt('h5', '', '先回顧：前面幾關的結論'));
     const ul = h('ul'); RECAP.forEach(([k, x]) => ul.append(h('li', '', `<b>${k}</b>：${x}`))); rv.append(ul);
     const pv = (typeof S !== 'undefined' && S.brain) || (typeof scores !== 'undefined' && scores.s4a && isObj(scores.s4a.v) ? scores.s4a.v : null);
@@ -2024,27 +2098,34 @@ function revealEl(st, mine, teacher) {
     });
   } else if (st.kind === 'sizing') {
     const r = v ? sizeVals(v) : null;
-    const d1 = h('div', 'wbox dots'); d1.append(txt('h5', '', `租轉買一年帶來的留單（綠色是合理區間 2,000–12,000 筆）${r && r.leads > 0 ? '　你的估算：' + fmt(r.leads) + ' 筆' : ''}`)); d1.insertAdjacentHTML('beforeend', dotPlot(r && r.leads > 0 ? [r.leads] : [], PASS.leads, '租轉買一年帶來的留單', 200, 100000));
-    box.append(d1, whyEl('參考解法（估算鏈）', ['一年留單 ＝ 全台家戶 × 租屋比例 × 一年內打算買房 × 會用我們的服務 × 留資料的比例', '976 萬戶 × 約一成 ≈ 100 萬租屋家戶 → × 15% ＝ 15 萬 → × 20% ＝ 3 萬 → × 15% ≈ 一年 4,500 筆', '約是 2030 年缺口（一年 4 萬筆）的一成：值得做，但一個做法補不滿', '租屋比例從住宅自有率推：約 16% 不是自有，其中約三分之二是租屋', '房市交易量、新屋市場、數位調查、社群互動、人口結構是干擾卡']));
+    const d1 = h('div', 'wbox dots'); d1.append(txt('h5', '', `版面改善一年多帶來的留單（綠色是合理區間 3,000–20,000 筆）${r && r.leads > 0 ? '　你的估算：' + fmt(r.leads) + ' 筆' : ''}`)); d1.insertAdjacentHTML('beforeend', dotPlot(r && r.leads > 0 ? [r.leads] : [], PASS.leads, '版面改善一年多帶來的留單', 500, 100000));
+    box.append(d1, whyEl('參考解法（估算鏈）', ['一年多的留單 ＝ 官網一天的人次 × 365 × 進到明細頁的比例 × 明細頁留資料的比例 × 改版後提升的幅度', '5.6 萬 × 365 ≈ 2,044 萬人次 → × 40% ≈ 818 萬 → × 1% ≈ 8.2 萬筆 → × 10% ≈ 一年約 8,000 筆', '算到 × 1% 那一步約 8.2 萬筆，剛好對得上現在一年約 8 萬筆留單，可以拿來檢查', '約是 2030 年缺口（一年 4 萬筆）的兩成：值得做，但一個做法補不滿', '房市交易量、家戶統計、數位調查、社群互動、手機占比、人口結構是干擾卡']));
   } else if (st.kind === 'fog') {
     const c = h('div', 'cols'), L = h('div', 'w'), R = h('div', 'w');
     [['budget', '主因'], ['total', '結果']].forEach(([k, lb]) => { const z = h('div', 'zoom'); z.append(txt('b', '', `${lb}：${CHART[k].t}（${CHART[k].unit}，6 月開始）`)); z.insertAdjacentHTML('beforeend', legendHTML(CHART[k]) + chartSVG(CHART[k], { big: true, mark: 6 })); L.append(z); });
     R.append(whyEl('怎麼判斷', ['原因：6 月起廣告預算從每月 100 萬降到 60 萬，砍了四成', '結果：總流量從 6 月開始往下掉，之後沒回來，比去年少了將近兩成', '時間點對得上：預算砍下去的那個月，流量就開始掉；廣告約占流量一半，砍四成，總流量就少將近兩成']));
     R.append(whyEl('其他圖為什麼不是', ['總流量：方向對，但它是結果，不是原因', '6 月每日流量：只有一個月，看不出跟之前比；高低起伏是週末和端午連假', '累積會員數：累積的數字只會往上，看不出每月變少；6 月後變緩是結果，不是原因', '各頁留資料比例：今年和去年差不多，問題不在「留不留」', '手機版跳出率：3 月飆高、4 月恢復，一次性，時間也對不上']));
     c.append(L, R); box.append(c);
+  } else if (st.kind === 'mix') {
+    const c = h('div', 'cols'), L = h('div', 'w'), R = h('div', 'w');
+    const z = h('div', 'zoom'); z.append(txt('b', '', `${MIXLEADS.t}（${MIXLEADS.unit}）：自然流量每月都差不多`)); z.insertAdjacentHTML('beforeend', legendHTML(MIXLEADS) + chartSVG(MIXLEADS, { big: true, mark: 6 })); L.append(z);
+    R.append(whyEl('怎麼判斷：占比要乘上總量', ['留單來源占比：6 月起，自然流量從五成升到七成', '每月留單數：總留單從約 9.4 千筆掉到約 6.7 千筆', '換算：9.4 × 50% ≈ 4.7，6.7 × 70% ≈ 4.7，自然流量的留單每月都差不多；廣告留單從約 4.7 千筆掉到約 2 千筆', '廣告預算 6 月起從 100 萬降到 60 萬，正好對得上廣告留單變少']));
+    R.append(whyEl('其他選項為什麼不對', MIX_Q1.filter(x => x.why).map(x => `${x.t}：${x.why}`)));
+    R.append(whyEl('所以呢', ['廣告預算不會增加，廣告帶來的留單頂多持平', '要成長，就得讓自然流量帶來的留單變多：往長期、自然流量想']));
+    c.append(L, R); box.append(c);
   } else if (st.kind === 'gap') {
     const c = h('div', 'cols'), L = h('div', 'w'), R = h('div', 'w');
-    const z = h('div', 'zoom'); z.append(txt('b', '', `${GAPPAGES.t}（${GAPPAGES.unit}）：我們的租屋最弱`)); z.insertAdjacentHTML('beforeend', legendHTML(GAPPAGES) + chartSVG(GAPPAGES, { big: true, novals: true })); L.append(z);
-    R.append(whyEl('怎麼判斷：四張圖都指向租屋', ['各類頁面每月流量：租屋我們約 3 萬，同業房仲 18–22 萬、找房平台約 160 萬，差最多', '自然搜尋曝光：租屋我們只有同業的一成不到，其他三類都領先', '流量組成 × 總流量：我們的租屋只占約 2%，總流量跟同業房仲差不多，換算下來也一樣']));
-    R.append(whyEl('其他三類', ['買屋、賣屋：跟同業差不多，買屋還領先同業房仲', '實價登錄：我們比同業房仲多，只比找房平台少一點，不是弱項']));
-    R.append(whyEl('對照公司方針', ['公司不經營租屋市場、不收租屋服務費，所以不去做租屋', '但租屋族是未來的買方：「租轉買」是其中一條符合方針的路徑，讓他們想買房時第一個想到我們', '加碼租屋廣告：廣告是租來的，也不符方針；不用管：等於放掉未來的買方']));
+    const z = h('div', 'zoom'); z.append(txt('b', '', `${GAPCHARTS[2].t}（${GAPCHARTS[2].unit}）：③、④ 掉最多`)); z.insertAdjacentHTML('beforeend', chartSVG(GAPCHARTS[2], { big: true })); L.append(z);
+    R.append(whyEl('怎麼判斷：先排除，再定位', ['自然流量：跟同業房仲相當 → 不是流量規模', '找房搜尋熱度：全年持平，我們的自然流量也沒掉 → 不是市場需求下滑', '消費者調查：物件、品牌、業務、實價我們都不輸同業 → 不是供給或品牌', '五步漏斗：③ 點開物件、④ 留資料落後最多，⑤ 約帶看還比同業好 → 瓶頸在站內轉換，對應列表頁和明細頁']));
+    R.append(whyEl('對外查資料的其他發現（寫風險、下一步時可以提）', ['房產指南內容比同業少，內容帶來的流量不到同業的一半', '自家網站流量分散：房產新聞、房產知識和官網分開，沒有一起管理', '租屋族這塊最弱：租屋頁流量遠低於同業', '這些也是可以發展的方向；今天以最快見效的版面改善為例']));
+    R.append(whyEl('要知道為什麼，下一步可以看', ['Clarity 的滑動深度、熱點圖：客戶在頁面上看了哪裡、沒看哪裡', '問卷開放題：客戶自己怎麼說']));
     c.append(L, R); box.append(c);
   } else if (st.kind === 'calc') {
     CALC.forEach((q, i) => {
       const b = h('div', 'calcq'); b.append(txt('span', 'tp', `第 ${i + 1} 題 · ${q.tp}`), txt('p', '', q.t), h('p', '', `<b>答案：${q.ans.toLocaleString('en-US')} ${q.u}</b>　<span class="muted small">${q.id === 'q4' ? '' : q.ex}</span>`));
       box.append(b);
     });
-    box.append(whyEl('為什麼用省下的廣告費算，不用服務費算？', ['留單只是留下聯絡資料的人，不等於成交；租屋族買房也要時間', '成交是業務帶看、議價一起努力的成果，不能全算在這個服務', '老闆的限制是廣告預算不增加：一筆留單用廣告買要 500 元，用省下的廣告費估，是保守、站得住的算法']));
+    box.append(whyEl('為什麼用省下的廣告費算，不用服務費算？', ['留單只是留下聯絡資料的人，不等於成交', '成交是業務帶看、議價一起努力的成果，不能全算在這次改版', '老闆的限制是廣告預算不增加：一筆留單用廣告買要 500 元，用省下的廣告費估，是保守、站得住的算法']));
   } else if (st.kind === 'brain') {
     const wallOf = (b, texts, title, cls) => {
       box.append(txt('h4', '', title));
@@ -2074,15 +2155,15 @@ function revealEl(st, mine, teacher) {
   return box;
 }
 const BRAIN_EX = {
-  flow: ['租轉買入門內容做 SEO，讓還在租屋、想買房的人找到官網', '列表頁篩選加上學區、通勤時間', '網頁改版：明細頁加上物件熱度計，多少人看過、收藏', '一鍵預約看屋、線上客服', '30 分鐘內回電、帶看前提醒'],
-  seg: ['首購指南與貸款試算', '先賣後買的時程規劃', '線上估價、委託進度通知', '租轉買規劃：存自備款、首購預算'],
-  time: ['寫給租屋族的租轉買入門內容（存自備款、首購預算），做 SEO', '租轉買規劃服務：追蹤存款進度、推薦買得起的區域', '租屋族想買房時，第一個打開的就是我們']
+  flow: ['房產指南內容做 SEO，讓找房的人找到官網', '列表頁改成卡片式，篩選欄拉出來，一眼比較物件', '明細頁色塊分區、字型統一，圖片放大、內容精簡', '聯絡按鈕固定在畫面上，不用滑到最底', '30 分鐘內回電、帶看前提醒'],
+  seg: ['明細頁加上數據洞察：區域行情、貸款試算一眼看懂', '列表頁可以把物件並排比較', '估價結果用圖表呈現，好讀又有參考性', '實價登錄頁改版，一眼看懂區域行情'],
+  time: ['明細頁先改：色塊分區、字型統一、圖片放大、內容精簡', '列表頁改成卡片式、篩選欄拉出來；明細頁加上 AI 特色和數據洞察欄位', '整體 UI/UX 一致，官網讀起來直觀、有參考性，成為找房時第一個打開的網站']
 };
 const REC_EX = [
-  '我建議發展租轉買內容和服務，把租屋族變成未來的買方，同時長期經營自然流量，讓官網成為客戶最依賴的房產數位服務窗口',
-  '第一，6 月廣告預算砍了四成，流量和留單就少了將近兩成，廣告流量是租來的；第二，跟同業比我們租屋最弱，公司不經營租屋市場，租轉買是符合方針的切入點；第三，租轉買一年約 4,500 筆留單，16 個月回本，三年淨現值約 ＋260 萬',
-  '租屋族買房要時間，內容見效慢，前一兩年留單可能持平；先跟老闆對齊期待，每季檢視',
-  '先做租轉買入門內容，一季後看自然流量和留單；再排規劃服務、網頁改版'
+  '我建議先改版物件列表頁和明細頁，讓網頁從像百科變成直觀、有參考性，同時長期經營自然流量，讓官網成為客戶最依賴的房產數位服務窗口',
+  '第一，自然流量的留單占比升到七成，是因為廣告變少，自然流量其實沒成長；第二，對標同業，瓶頸在站內轉換，點開物件、留資料兩步落後最多；第三，改版一年約多 8,000 筆留單，12 個月回本，三年淨現值約 ＋595 萬',
+  '改版初期客戶要重新適應，數字可能先持平；房產指南內容不足、自家網站流量分散也會拖慢成效，要一起排進計畫',
+  '列表頁改卡片式、篩選欄拉出來；明細頁色塊分區、統一字型、放大圖片、精簡內容，加上 AI 特色和數據洞察欄位；每季看跳出率和留資料比例'
 ];
 function conclEl(lv) {
   const c = CONCL[lv], w = h('div', 'concl');
